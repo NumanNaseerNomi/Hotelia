@@ -9,37 +9,34 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">{{ __('Update Language') }}</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Update Session</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-
       <div class="modal-body">
         <form id="ajaxEditForm" action="{{ route('admin.languages.update_language') }}" method="POST">
           @csrf
           <input type="hidden" id="in_id" name="id">
-
           <div class="form-group">
             <label for="">{{ __('Name*') }}</label>
-            <input id="in_name" type="text" class="form-control" name="name" placeholder="Enter Language Name">
+            <input id="in_name" type="text" class="form-control" name="name" placeholder="Enter Session Name">
             <p id="editErr_name" class="mb-0 text-danger em"></p>
           </div>
-
           <div class="form-group">
-            <label for="">{{ __('Code*') }}</label>
-            <input id="in_code" type="text" class="form-control" name="code" placeholder="Enter Language Code">
-            <p id="editErr_code" class="mb-0 text-danger em"></p>
+            <label for="">Start Date*</label>
+            <input id="in_startDate" type="text" class="form-control" name="startDate" placeholder="Enter Start Date">
+            <p id="editErr_startDate" class="mb-0 text-danger em"></p>
           </div>
-
           <div class="form-group">
-            <label for="">{{ __('Direction*') }}</label>
-            <select id="in_direction" name="direction" class="form-control">
-              <option disabled>{{ __('Select a Direction') }}</option>
-              <option value="0">{{ __('LTR (Left To Right)') }}</option>
-              <option value="1">{{ __('RTL (Right To Left)') }}</option>
-            </select>
-            <p id="editErr_direction" class="mb-0 text-danger em"></p>
+            <label for="">End Date*</label>
+            <input id="in_endDate" type="text" class="form-control" name="endDate" placeholder="Enter End Date">
+            <p id="editErr_endDate" class="mb-0 text-danger em"></p>
+          </div>
+          <div class="form-group">
+            <label for="">Description</label>
+            <input id="in_description" type="text" class="form-control" name="description" placeholder="Enter Description">
+            <p id="editErr_description" class="mb-0 text-danger em"></p>
           </div>
         </form>
       </div>
