@@ -53,8 +53,8 @@
                       @foreach ($academicSessions as $academicSession)
                         <tr>
                           <td>{{ $academicSession->name }}</td>
-                          <td>{{ $academicSession->code }}</td>
-                          <td>{{ $academicSession->direction == 1 ? __('RTL') : __('LTR') }}</td>
+                          <td>{{ $academicSession->startDate }}</td>
+                          <td>{{ $academicSession->endDate }}</td>
                           <td>
                             @if ($academicSession->is_default == 1)
                               <strong class="badge badge-success">{{ __('Default') }}</strong>
