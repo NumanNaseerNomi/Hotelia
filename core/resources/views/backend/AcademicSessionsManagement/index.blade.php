@@ -64,7 +64,7 @@
                             @else
                               <form
                                 class="d-inline-block"
-                                action="{{ route('admin.languages.make_default_language', $language->id) }}"
+                                action="{{ route('admin.languages.make_default_language', $academicSession->id) }}"
                                 method="post"
                               >
                                 @csrf
