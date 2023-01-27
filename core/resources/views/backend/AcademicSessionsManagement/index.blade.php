@@ -121,5 +121,5 @@
   @include('backend.AcademicSessionsManagement.create')
 
   {{-- edit modal --}}
-  @include('backend.language.edit')
+  @include('backend.AcademicSessionsManagement.edit')
 @endsection
