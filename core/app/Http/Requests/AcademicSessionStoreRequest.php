@@ -25,8 +25,8 @@ class AcademicSessionStoreRequest extends FormRequest
   {
     return [
       'name' => 'required',
-      // 'code' => 'required|unique:languages',
-      // 'direction' => 'required'
+      'startDate' => 'required',
+      'endDate' => 'required'
     ];
   }
 }
