@@ -27,7 +27,7 @@ use App\Http\Requests\AcademicSessionStoreRequest;
 // use App\Models\HomePage\IntroSection;
 // use App\Models\HomePage\SectionHeading;
 // use App\Models\HomePage\Testimonial;
-// use App\Models\Language;
+use App\Models\Language;
 // use App\Models\Menu;
 // use App\Models\PackageManagement\Package;
 // use App\Models\PackageManagement\PackageBooking;
@@ -57,30 +57,13 @@ class AcademicSessionsManagementController extends Controller
   public function index()
   {
     $academicSessions = AcademicSessionsModel::all();
-
     return view('backend.AcademicSessionsManagement.index', compact('academicSessions'));
   }
 
   public function create(AcademicSessionStoreRequest $request)
   {
-    dd(111);
-    // get all the keywords from the default file of language
-    $data = file_get_contents(resource_path('lang/') . 'default.json');
-
-    // make a new json file for the new language
-    $file = strtolower($request->code) . '.json';
-
-    // create the path where the new language json file will be stored
-    $fileLocated = resource_path('lang/') . $file;
-
-    // finally, put the keywords in the new json file and store the file in lang folder
-    file_put_contents($fileLocated, $data);
-
-    // then, store data in db
-    Language::create($request->all());
-
-    $request->session()->flash('success', 'Language added successfully!');
-
+    AcademicSessionsModel::create($request->all());
+    $request->session()->flash('success', 'Session added successfully!');
     return 'success';
   }
 
