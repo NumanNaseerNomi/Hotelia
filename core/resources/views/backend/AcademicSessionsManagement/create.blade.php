@@ -14,40 +14,27 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-
       <div class="modal-body">
         <form id="ajaxForm" action="{{ url('/admin/academicSessionsManagement/create') }}" method="POST">
           @csrf
           <div class="form-group">
             <label for="">{{ __('Name*') }}</label>
-            <input 
-              type="text" 
-              class="form-control" 
-              name="name" 
-              placeholder="Enter Language Name"
-            >
+            <input type="text" class="form-control" name="name" placeholder="Enter Session Name">
             <p id="err_name" class="mb-0 text-danger em"></p>
           </div>
-          
           <div class="form-group">
-            <label for="">{{ __('Code*') }}</label>
-            <input
-              type="text"
-              class="form-control"
-              name="code"
-              placeholder="Enter Language Code"
-            >
-            <p id="err_code" class="mb-0 text-danger em"></p>
+            <label for="">Start Date*</label>
+            <input type="date" class="form-control" name="startDate" placeholder="Enter Start Date">
+            <p id="err_startDate" class="mb-0 text-danger em"></p>
           </div>
-
           <div class="form-group">
-            <label for="">{{ __('Direction*') }}</label>
-            <select name="direction" class="form-control">
-              <option selected disabled>{{ __('Select a Direction') }}</option>
-              <option value="0">{{ __('LTR (Left To Right)') }}</option>
-              <option value="1">{{ __('RTL (Right To Left)') }}</option>
-            </select>
-            <p id="err_direction" class="mb-0 text-danger em"></p>
+            <label for="">End Date*</label>
+            <input type="date" class="form-control" name="endDate" placeholder="Enter End Date">
+            <p id="err_endDate" class="mb-0 text-danger em"></p>
+          </div>
+          <div class="form-group">
+            <label for="">Description</label>
+            <textarea class="form-control" name="description" rows="4" placeholder="Enter Description"></textarea>
           </div>
         </form>
       </div>
