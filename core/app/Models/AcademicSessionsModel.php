@@ -10,5 +10,5 @@ class AcademicSessionsModel extends Model
   use HasFactory;
 
   protected $table = 'AcademicSessions';
-  protected $fillable = ['name', 'startDate', 'endDate', 'isDefault'];
+  protected $fillable = ['name', 'startDate', 'endDate', 'isDefault', 'description'];
 }
