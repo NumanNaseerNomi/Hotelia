@@ -323,7 +323,7 @@ Route::prefix('/admin')->middleware(['auth:admin', 'lfm.path'])->group(function 
   // language management route end
 
   // academic sessions management route start
-  Route::group(['middleware' => 'checkpermission:Language Management'], function ()
+  Route::group(['middleware' => 'checkpermission:Academic Sessions Management'], function ()
     {
       Route::get('/academicSessionsManagement', [AcademicSessionsManagementController::class, 'index']);
       Route::post('/academicSessionsManagement/create', [AcademicSessionsManagementController::class, 'create']);
