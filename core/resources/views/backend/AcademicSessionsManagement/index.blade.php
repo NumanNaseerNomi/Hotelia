@@ -56,7 +56,7 @@
                           <td>{{ $academicSession->startDate }}</td>
                           <td>{{ $academicSession->endDate }}</td>
                           <td>
-                            @if ($academicSession->is_default == 1)
+                            @if ($academicSession->isDefault == 1)
                               <strong class="badge badge-success">{{ __('Default') }}</strong>
                             @else
                               <form
@@ -71,7 +71,7 @@
                               </form>
                             @endif
                           </td>
-                          <td>{{ $academicSession->name }}</td>
+                          <td>{{ $academicSession->description }}</td>
                           <td>
                             <a
                               href="#"
