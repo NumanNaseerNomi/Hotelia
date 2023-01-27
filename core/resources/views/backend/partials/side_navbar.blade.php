@@ -58,7 +58,7 @@
           </a>
         </li>
 
-        @if (empty($admin->role) || (!empty($permissions) && in_array('Language Management', $permissions)))
+        @if (empty($admin->role) || (!empty($permissions) && in_array('Academic Sessions Management', $permissions)))
           <li class="nav-item @if (request()->routeIs('admin.languages')) active
             @elseif (request()->routeIs('admin.languages.edit_keyword')) active @endif"
           >
