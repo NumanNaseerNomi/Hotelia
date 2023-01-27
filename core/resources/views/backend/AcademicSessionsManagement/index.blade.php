@@ -46,9 +46,6 @@
                         <th scope="col">End Date</th>
                         <th scope="col">Default</th>
                         <th scope="col">Description</th>
-                        <!-- <th scope="col">{{ __('Code') }}</th>
-                        <th scope="col">{{ __('Direction') }}</th>
-                        <th scope="col">{{ __('Website Language') }}</th> -->
                         <th scope="col">{{ __('Actions') }}</th>
                       </tr>
                     </thead>
