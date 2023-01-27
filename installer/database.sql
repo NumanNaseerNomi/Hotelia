@@ -1305,7 +1305,7 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`, `permissions`, `created_at`, `updated_at`) VALUES
-(3, 'Super Admin', '[\"Dashboard\",\"Rooms Management\",\"Room Bookings\",\"Packages Management\",\"Package Bookings\",\"Home Page Sections\",\"Footer\",\"Services Management\",\"Blogs Management\",\"Gallery Management\",\"FAQ Management\",\"Custom Pages\",\"Announcement Popup\",\"Users Management\",\"Payment Gateways\",\"Theme & Home\",\"Menu Builder\",\"Settings\",\"Language Management\",\"Admins Management\",\"Sitemap\"]', '2019-10-04 02:52:29', '2021-06-16 10:11:25');
+(3, 'Super Admin', '[\"Dashboard\",\"Rooms Management\",\"Room Bookings\",\"Packages Management\",\"Package Bookings\",\"Home Page Sections\",\"Footer\",\"Services Management\",\"Blogs Management\",\"Gallery Management\",\"FAQ Management\",\"Custom Pages\",\"Announcement Popup\",\"Users Management\",\"Payment Gateways\",\"Theme & Home\",\"Menu Builder\",\"Settings\",\"Language Management\",\"Admins Management\",\"Sitemap\",\"Academic Sessions Management\"]', '2019-10-04 02:52:29', '2021-06-16 10:11:25');
 
 -- --------------------------------------------------------
 
