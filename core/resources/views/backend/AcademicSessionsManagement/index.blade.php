@@ -91,7 +91,7 @@
 
                             <form
                               class="deleteForm d-inline-block"
-                              action="{{ route('admin.languages.delete_language', $academicSession->id) }}"
+                              action="{{ url('admin/academicSessionsManagement/delete', $academicSession->id) }}"
                               method="post"
                             >
                               @csrf
