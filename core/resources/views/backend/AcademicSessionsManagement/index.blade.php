@@ -28,13 +28,13 @@
             class="btn btn-sm btn-primary float-right"
             data-toggle="modal"
             data-target="#createModal"
-          ><i class="fas fa-plus"></i> {{ __('Add Language') }}</a>
+          ><i class="fas fa-plus"></i> Add Session</a>
         </div>
 
         <div class="card-body">
           <div class="row">
             <div class="col-lg-12">
-              @if (count($languages) == 0)
+              @if (count($academicSessions) == 0)
                 <h3 class="text-center">{{ __('NO LANGUAGE FOUND!') }}</h3>
               @else
                 <div class="table-responsive">
@@ -42,20 +42,24 @@
                     <thead>
                       <tr>
                         <th scope="col">{{ __('Name') }}</th>
-                        <th scope="col">{{ __('Code') }}</th>
+                        <th scope="col">Start Date</th>
+                        <th scope="col">End Date</th>
+                        <th scope="col">Default</th>
+                        <th scope="col">Description</th>
+                        <!-- <th scope="col">{{ __('Code') }}</th>
                         <th scope="col">{{ __('Direction') }}</th>
-                        <th scope="col">{{ __('Website Language') }}</th>
+                        <th scope="col">{{ __('Website Language') }}</th> -->
                         <th scope="col">{{ __('Actions') }}</th>
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($languages as $language)
+                      @foreach ($academicSessions as $academicSession)
                         <tr>
-                          <td>{{ $language->name }}</td>
-                          <td>{{ $language->code }}</td>
-                          <td>{{ $language->direction == 1 ? __('RTL') : __('LTR') }}</td>
+                          <td>{{ $academicSession->name }}</td>
+                          <td>{{ $academicSession->code }}</td>
+                          <td>{{ $academicSession->direction == 1 ? __('RTL') : __('LTR') }}</td>
                           <td>
-                            @if ($language->is_default == 1)
+                            @if ($academicSession->is_default == 1)
                               <strong class="badge badge-success">{{ __('Default') }}</strong>
                             @else
                               <form
@@ -70,16 +74,17 @@
                               </form>
                             @endif
                           </td>
+                          <td>{{ $academicSession->name }}</td>
                           <td>
                             <a
                               href="#"
                               class="btn btn-secondary btn-sm mr-1 editBtn"
                               data-toggle="modal"
                               data-target="#editModal"
-                              data-id="{{ $language->id }}"
-                              data-name="{{ $language->name }}"
-                              data-code="{{ $language->code }}"
-                              data-direction="{{ $language->direction }}"
+                              data-id="{{ $academicSession->id }}"
+                              data-name="{{ $academicSession->name }}"
+                              data-code="{{ $academicSession->code }}"
+                              data-direction="{{ $academicSession->direction }}"
                             >
                               <span class="btn-label">
                                 <i class="fas fa-edit"></i>
@@ -89,7 +94,7 @@
 
                             <a
                               class="btn btn-info btn-sm text-dark mr-1"
-                              href="{{ route('admin.languages.edit_keyword', $language->id) }}"
+                              href="{{ route('admin.languages.edit_keyword', $academicSession->id) }}"
                             >
                               <span class="btn-label">
                                 <i class="fas fa-edit"></i>
@@ -99,7 +104,7 @@
 
                             <form
                               class="deleteForm d-inline-block"
-                              action="{{ route('admin.languages.delete_language', $language->id) }}"
+                              action="{{ route('admin.languages.delete_language', $academicSession->id) }}"
                               method="post"
                             >
                               @csrf
