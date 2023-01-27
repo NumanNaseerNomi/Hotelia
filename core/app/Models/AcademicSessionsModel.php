@@ -10,7 +10,7 @@ class AcademicSessionsModel extends Model
   use HasFactory;
 
   protected $table = 'AcademicSessions';
-  protected $fillable = ['name', 'code', 'direction', 'is_default'];
+  protected $fillable = ['name', 'startDate', 'endDate', 'is_default'];
 
   // public function pageName()
   // {
