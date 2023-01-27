@@ -15,7 +15,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="ajaxEditForm" action="{{ route('admin.languages.update_language') }}" method="POST">
+        <form id="ajaxEditForm" action="{{ url('admin/academicSessionsManagement/update') }}" method="POST">
           @csrf
           <input type="hidden" id="in_id" name="id">
           <div class="form-group">
