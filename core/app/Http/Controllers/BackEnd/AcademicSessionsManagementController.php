@@ -67,18 +67,13 @@ class AcademicSessionsManagementController extends Controller
     return 'success';
   }
 
-//   public function makeDefault($id)
-//   {
-//     // first, make other languages to non-default language
-//     Language::where('is_default', 1)->update(['is_default' => 0]);
-
-//     // second, make the selected language to default language
-//     $language = Language::findOrFail($id);
-
-//     $language->update(['is_default' => 1]);
-
-//     return back()->with('success', $language->name . ' ' . 'is set as default language.');
-//   }
+  public function makeDefault($id)
+  {
+    AcademicSessionsModel::where('isDefault', 1)->update(['isDefault' => 0]);
+    $academicSession = AcademicSessionsModel::findOrFail($id);
+    $academicSession->update(['isDefault' => 1]);
+    return back()->with('success', $academicSession->name . ' ' . 'is set as default academic session.');
+  }
 
 //   public function update(LanguageUpdateRequest $request)
 //   {
