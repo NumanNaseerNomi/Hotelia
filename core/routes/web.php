@@ -323,20 +323,21 @@ Route::prefix('/admin')->middleware(['auth:admin', 'lfm.path'])->group(function 
   // language management route end
 
   // academic sessions management route start
-  Route::group(['middleware' => 'checkpermission:Language Management'], function () {
-    Route::get('/academicSessionsManagement', [AcademicSessionsManagementController::class, 'index']);
-    Route::post('/academicSessionsManagement/create', [AcademicSessionsManagementController::class, 'create']);
+  Route::group(['middleware' => 'checkpermission:Language Management'], function ()
+    {
+      Route::get('/academicSessionsManagement', [AcademicSessionsManagementController::class, 'index']);
+      Route::post('/academicSessionsManagement/create', [AcademicSessionsManagementController::class, 'create']);
+      Route::post('/academicSessionsManagement/makeDefault/{id}', [AcademicSessionsManagementController::class, 'makeDefault']);
 
-    // Route::post('/language_management/make_default_language/{id}', [LanguageController::class, 'makeDefault'])->name('admin.languages.make_default_language');
+      // Route::post('/language_management/update_language', [LanguageController::class, 'update'])->name('admin.languages.update_language');
 
-    // Route::post('/language_management/update_language', [LanguageController::class, 'update'])->name('admin.languages.update_language');
+      // Route::get('/language_management/edit_keyword/{id}', [LanguageController::class, 'editKeyword'])->name('admin.languages.edit_keyword');
 
-    // Route::get('/language_management/edit_keyword/{id}', [LanguageController::class, 'editKeyword'])->name('admin.languages.edit_keyword');
+      // Route::post('/language_management/update_keyword/{id}', [LanguageController::class, 'updateKeyword'])->name('admin.languages.update_keyword');
 
-    // Route::post('/language_management/update_keyword/{id}', [LanguageController::class, 'updateKeyword'])->name('admin.languages.update_keyword');
-
-    // Route::post('/language_management/delete_language/{id}', [LanguageController::class, 'destroy'])->name('admin.languages.delete_language');
-  });
+      // Route::post('/language_management/delete_language/{id}', [LanguageController::class, 'destroy'])->name('admin.languages.delete_language');
+    }
+  );
   // academic sessions management route end
 
 
