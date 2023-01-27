@@ -58,6 +58,18 @@
           </a>
         </li>
 
+        @if (empty($admin->role) || (!empty($permissions) && in_array('Language Management', $permissions)))
+          <li class="nav-item @if (request()->routeIs('admin.languages')) active
+            @elseif (request()->routeIs('admin.languages.edit_keyword')) active @endif"
+          >
+            <a href="{{ url('/admin/academicSessionsManagement') }}">
+              <i class="far fa-calendar-week"></i>
+              <p>Academic Sessions</p>
+            </a>
+          </li>
+        @endif
+
+      @if(false)
         @if (empty($admin->role) || (!empty($permissions) && in_array('Rooms Management', $permissions)))
           {{-- rooms management --}}
           <li class="nav-item @if (request()->routeIs('admin.rooms_management.settings')) active
@@ -1028,6 +1040,7 @@
             </div>
           </li>
         @endif
+      @endif
       </ul>
     </div>
   </div>

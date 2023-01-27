@@ -21,6 +21,7 @@ use App\Http\Controllers\BackEnd\HomePage\SectionHeadingController;
 use App\Http\Controllers\BackEnd\HomePage\SectionsController;
 use App\Http\Controllers\BackEnd\HomePage\TestimonialController;
 use App\Http\Controllers\BackEnd\LanguageController;
+use App\Http\Controllers\BackEnd\AcademicSessionsManagementController;
 use App\Http\Controllers\BackEnd\PackageController as AdminPackageController;
 use App\Http\Controllers\BackEnd\PaymentGateway\OfflineGatewayController;
 use App\Http\Controllers\BackEnd\PaymentGateway\OnlineGatewayController;
@@ -320,6 +321,24 @@ Route::prefix('/admin')->middleware(['auth:admin', 'lfm.path'])->group(function 
     Route::post('/language_management/delete_language/{id}', [LanguageController::class, 'destroy'])->name('admin.languages.delete_language');
   });
   // language management route end
+
+  // academic sessions management route start
+  Route::group(['middleware' => 'checkpermission:Language Management'], function () {
+    Route::get('/academicSessionsManagement', [AcademicSessionsManagementController::class, 'index']);
+
+    // Route::post('/language_management/store_language', [LanguageController::class, 'store'])->name('admin.languages.store_language');
+
+    // Route::post('/language_management/make_default_language/{id}', [LanguageController::class, 'makeDefault'])->name('admin.languages.make_default_language');
+
+    // Route::post('/language_management/update_language', [LanguageController::class, 'update'])->name('admin.languages.update_language');
+
+    // Route::get('/language_management/edit_keyword/{id}', [LanguageController::class, 'editKeyword'])->name('admin.languages.edit_keyword');
+
+    // Route::post('/language_management/update_keyword/{id}', [LanguageController::class, 'updateKeyword'])->name('admin.languages.update_keyword');
+
+    // Route::post('/language_management/delete_language/{id}', [LanguageController::class, 'destroy'])->name('admin.languages.delete_language');
+  });
+  // academic sessions management route end
 
 
   // payment gateways management route start
