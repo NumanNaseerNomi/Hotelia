@@ -130,6 +130,67 @@
         @endif
 
       @if(!true)
+      
+        @if(empty($admin->role) || (!empty($permissions) && in_array('Rooms Management', $permissions)))
+          {{-- rooms management --}}
+          <li class="nav-item @if (request()->routeIs('admin.rooms_management.settings')) active
+            @elseif (request()->routeIs('admin.rooms_management.coupons')) active
+            @elseif (request()->routeIs('admin.rooms_management.amenities')) active
+            @elseif (request()->routeIs('admin.rooms_management.categories')) active
+            @elseif (request()->routeIs('admin.rooms_management.rooms')) active
+            @elseif (request()->routeIs('admin.rooms_management.create_room')) active
+            @elseif (request()->routeIs('admin.rooms_management.edit_room')) active @endif"
+          >
+            <a data-toggle="collapse" href="#rooms">
+              <i class="fal fa-home"></i>
+              <p class="pr-2">{{ __('Rooms Management') }}</p>
+              <span class="caret"></span>
+            </a>
+            <div id="rooms" class="collapse
+              @if (request()->routeIs('admin.rooms_management.settings')) show
+              @elseif (request()->routeIs('admin.rooms_management.coupons')) show
+              @elseif (request()->routeIs('admin.rooms_management.amenities')) show
+              @elseif (request()->routeIs('admin.rooms_management.categories')) show
+              @elseif (request()->routeIs('admin.rooms_management.rooms')) show
+              @elseif (request()->routeIs('admin.rooms_management.create_room')) show
+              @elseif (request()->routeIs('admin.rooms_management.edit_room')) show @endif"
+            >
+              <ul class="nav nav-collapse">
+                <li class="{{ request()->routeIs('admin.rooms_management.settings') ? 'active' : '' }}">
+                  <a href="{{ route('admin.rooms_management.settings') }}">
+                    <span class="sub-item">{{ __('Settings') }}</span>
+                  </a>
+                </li>
+                <li class="{{ request()->routeIs('admin.rooms_management.coupons') ? 'active' : '' }}">
+                  <a href="{{ route('admin.rooms_management.coupons') }}">
+                    <span class="sub-item">{{ __('Coupons') }}</span>
+                  </a>
+                </li>
+                <li class="{{ request()->routeIs('admin.rooms_management.amenities') ? 'active' : '' }}">
+                  <a href="{{ route('admin.rooms_management.amenities') . '?language=' . $defaultLang->code }}">
+                    <span class="sub-item">Amenities</span>
+                  </a>
+                </li>
+                @if ($websiteInfo->room_category_status == 1)
+                  <li class="{{ request()->routeIs('admin.rooms_management.categories') ? 'active' : '' }}">
+                    <a href="{{ route('admin.rooms_management.categories') . '?language=' . $defaultLang->code }}">
+                      <span class="sub-item">{{ __('Categories') }}</span>
+                    </a>
+                  </li>
+                @endif
+                <li class="@if (request()->routeIs('admin.rooms_management.rooms')) active
+                  @elseif (request()->routeIs('admin.rooms_management.create_room')) active
+                  @elseif (request()->routeIs('admin.rooms_management.edit_room')) active @endif"
+                >
+                  <a href="{{ route('admin.rooms_management.rooms') }}">
+                    <span class="sub-item">Rooms</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        @endif
+
         @if (empty($admin->role) || (!empty($permissions) && in_array('Room Bookings', $permissions)))
           {{-- Room Bookings --}}
           <li class="nav-item @if (request()->routeIs('admin.room_bookings.all_bookings')) active
