@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\BackEnd;
 
 use App\Http\Controllers\Controller;
+use App\Models\AcademicSessionsModel;
 // use App\Http\Requests\LanguageStoreRequest;
 // use App\Http\Requests\LanguageUpdateRequest;
 // use App\Models\BasicSettings\CookieAlert;
@@ -53,9 +54,7 @@ class AcademicSessionsManagementController extends Controller
 {
   public function index()
   {
-    // $languages = Language::all();
-    $academicSessions = Language::all();
-    // dd($academicSessions);
+    $academicSessions = AcademicSessionsModel::all();
 
     return view('backend.AcademicSessionsManagement.index', compact('academicSessions'));
   }
