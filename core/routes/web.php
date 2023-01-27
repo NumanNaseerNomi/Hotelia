@@ -328,13 +328,7 @@ Route::prefix('/admin')->middleware(['auth:admin', 'lfm.path'])->group(function 
       Route::get('/academicSessionsManagement', [AcademicSessionsManagementController::class, 'index']);
       Route::post('/academicSessionsManagement/create', [AcademicSessionsManagementController::class, 'create']);
       Route::post('/academicSessionsManagement/makeDefault/{id}', [AcademicSessionsManagementController::class, 'makeDefault']);
-
-      // Route::post('/language_management/update_language', [LanguageController::class, 'update'])->name('admin.languages.update_language');
-
-      // Route::get('/language_management/edit_keyword/{id}', [LanguageController::class, 'editKeyword'])->name('admin.languages.edit_keyword');
-
-      // Route::post('/language_management/update_keyword/{id}', [LanguageController::class, 'updateKeyword'])->name('admin.languages.update_keyword');
-
+      Route::post('/academicSessionsManagement/update', [AcademicSessionsManagementController::class, 'update']);
       Route::post('/academicSessionsManagement/delete/{id}', [AcademicSessionsManagementController::class, 'delete']);
     }
   );
