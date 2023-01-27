@@ -3,59 +3,61 @@
 namespace App\Http\Controllers\BackEnd;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\LanguageStoreRequest;
-use App\Http\Requests\LanguageUpdateRequest;
-use App\Models\BasicSettings\CookieAlert;
-use App\Models\BasicSettings\PageHeading;
-use App\Models\BasicSettings\SEO;
-use App\Models\BlogManagement\Blog;
-use App\Models\BlogManagement\BlogCategory;
-use App\Models\BlogManagement\BlogContent;
-use App\Models\FAQ;
-use App\Models\Footer\FooterQuickLink;
-use App\Models\Footer\FooterText;
-use App\Models\GalleryManagement\Gallery;
-use App\Models\GalleryManagement\GalleryCategory;
-use App\Models\HomePage\Brand;
-use App\Models\HomePage\Facility;
-use App\Models\HomePage\HeroSlider;
-use App\Models\HomePage\HeroStatic;
-use App\Models\HomePage\IntroCountInfo;
-use App\Models\HomePage\IntroSection;
-use App\Models\HomePage\SectionHeading;
-use App\Models\HomePage\Testimonial;
+// use App\Http\Requests\LanguageStoreRequest;
+// use App\Http\Requests\LanguageUpdateRequest;
+// use App\Models\BasicSettings\CookieAlert;
+// use App\Models\BasicSettings\PageHeading;
+// use App\Models\BasicSettings\SEO;
+// use App\Models\BlogManagement\Blog;
+// use App\Models\BlogManagement\BlogCategory;
+// use App\Models\BlogManagement\BlogContent;
+// use App\Models\FAQ;
+// use App\Models\Footer\FooterQuickLink;
+// use App\Models\Footer\FooterText;
+// use App\Models\GalleryManagement\Gallery;
+// use App\Models\GalleryManagement\GalleryCategory;
+// use App\Models\HomePage\Brand;
+// use App\Models\HomePage\Facility;
+// use App\Models\HomePage\HeroSlider;
+// use App\Models\HomePage\HeroStatic;
+// use App\Models\HomePage\IntroCountInfo;
+// use App\Models\HomePage\IntroSection;
+// use App\Models\HomePage\SectionHeading;
+// use App\Models\HomePage\Testimonial;
 use App\Models\Language;
-use App\Models\Menu;
-use App\Models\PackageManagement\Package;
-use App\Models\PackageManagement\PackageBooking;
-use App\Models\PackageManagement\PackageCategory;
-use App\Models\PackageManagement\PackageContent;
-use App\Models\PackageManagement\PackageLocation;
-use App\Models\PackageManagement\PackagePlan;
-use App\Models\PackageManagement\PackageReview;
-use App\Models\Page;
-use App\Models\PageContent;
-use App\Models\Popup;
-use App\Models\RoomManagement\Room;
-use App\Models\RoomManagement\RoomAmenity;
-use App\Models\RoomManagement\RoomBooking;
-use App\Models\RoomManagement\RoomCategory;
-use App\Models\RoomManagement\RoomContent;
-use App\Models\RoomManagement\RoomReview;
-use App\Models\ServiceManagement\Service;
-use App\Models\ServiceManagement\ServiceContent;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+// use App\Models\Menu;
+// use App\Models\PackageManagement\Package;
+// use App\Models\PackageManagement\PackageBooking;
+// use App\Models\PackageManagement\PackageCategory;
+// use App\Models\PackageManagement\PackageContent;
+// use App\Models\PackageManagement\PackageLocation;
+// use App\Models\PackageManagement\PackagePlan;
+// use App\Models\PackageManagement\PackageReview;
+// use App\Models\Page;
+// use App\Models\PageContent;
+// use App\Models\Popup;
+// use App\Models\RoomManagement\Room;
+// use App\Models\RoomManagement\RoomAmenity;
+// use App\Models\RoomManagement\RoomBooking;
+// use App\Models\RoomManagement\RoomCategory;
+// use App\Models\RoomManagement\RoomContent;
+// use App\Models\RoomManagement\RoomReview;
+// use App\Models\ServiceManagement\Service;
+// use App\Models\ServiceManagement\ServiceContent;
+// use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\DB;
 
-use function GuzzleHttp\json_decode;
+// use function GuzzleHttp\json_decode;
 
 class AcademicSessionsManagementController extends Controller
 {
   public function index()
   {
-    $languages = Language::all();
+    // $languages = Language::all();
+    $academicSessions = Language::all();
+    // dd($academicSessions);
 
-    return view('backend.AcademicSessionsManagement.index', compact('languages'));
+    return view('backend.AcademicSessionsManagement.index', compact('academicSessions'));
   }
 
   public function store(LanguageStoreRequest $request)
