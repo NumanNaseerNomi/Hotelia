@@ -16,7 +16,7 @@
       </div>
 
       <div class="modal-body">
-        <form id="ajaxForm" action="{{ route('admin.languages.store_language') }}" method="POST">
+        <form id="ajaxForm" action="{{ url('/admin/academicSessionsManagement/create') }}" method="POST">
           @csrf
           <div class="form-group">
             <label for="">{{ __('Name*') }}</label>
