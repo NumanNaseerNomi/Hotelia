@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\BackEnd;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\AcademicSessionsModel;
+use App\Http\Requests\AcademicSessionStoreRequest;
 // use App\Http\Requests\LanguageStoreRequest;
 // use App\Http\Requests\LanguageUpdateRequest;
 // use App\Models\BasicSettings\CookieAlert;
@@ -59,27 +61,28 @@ class AcademicSessionsManagementController extends Controller
     return view('backend.AcademicSessionsManagement.index', compact('academicSessions'));
   }
 
-//   public function store(LanguageStoreRequest $request)
-//   {
-//     // get all the keywords from the default file of language
-//     $data = file_get_contents(resource_path('lang/') . 'default.json');
+  public function create(AcademicSessionStoreRequest $request)
+  {
+    dd(111);
+    // get all the keywords from the default file of language
+    $data = file_get_contents(resource_path('lang/') . 'default.json');
 
-//     // make a new json file for the new language
-//     $file = strtolower($request->code) . '.json';
+    // make a new json file for the new language
+    $file = strtolower($request->code) . '.json';
 
-//     // create the path where the new language json file will be stored
-//     $fileLocated = resource_path('lang/') . $file;
+    // create the path where the new language json file will be stored
+    $fileLocated = resource_path('lang/') . $file;
 
-//     // finally, put the keywords in the new json file and store the file in lang folder
-//     file_put_contents($fileLocated, $data);
+    // finally, put the keywords in the new json file and store the file in lang folder
+    file_put_contents($fileLocated, $data);
 
-//     // then, store data in db
-//     Language::create($request->all());
+    // then, store data in db
+    Language::create($request->all());
 
-//     $request->session()->flash('success', 'Language added successfully!');
+    $request->session()->flash('success', 'Language added successfully!');
 
-//     return 'success';
-//   }
+    return 'success';
+  }
 
 //   public function makeDefault($id)
 //   {
