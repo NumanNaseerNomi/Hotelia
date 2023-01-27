@@ -335,7 +335,7 @@ Route::prefix('/admin')->middleware(['auth:admin', 'lfm.path'])->group(function 
 
       // Route::post('/language_management/update_keyword/{id}', [LanguageController::class, 'updateKeyword'])->name('admin.languages.update_keyword');
 
-      // Route::post('/language_management/delete_language/{id}', [LanguageController::class, 'destroy'])->name('admin.languages.delete_language');
+      Route::post('/academicSessionsManagement/delete/{id}', [AcademicSessionsManagementController::class, 'delete']);
     }
   );
   // academic sessions management route end
