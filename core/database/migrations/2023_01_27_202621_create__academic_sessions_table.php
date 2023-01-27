@@ -18,7 +18,7 @@ class CreateAcademicSessionsTable extends Migration
             $table->string('name');
             $table->date('startDate');
             $table->date('endDate');
-            $table->boolean('isDefault');
+            $table->boolean('isDefault')->default(0);
             $table->string('description')->nullable();
             $table->timestamps();
         });
