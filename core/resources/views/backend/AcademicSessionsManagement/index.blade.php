@@ -89,16 +89,6 @@
                               {{ __('Edit') }}
                             </a>
 
-                            <a
-                              class="btn btn-info btn-sm text-dark mr-1"
-                              href="{{ route('admin.languages.edit_keyword', $academicSession->id) }}"
-                            >
-                              <span class="btn-label">
-                                <i class="fas fa-edit"></i>
-                              </span>
-                              {{ __('Edit Keyword') }}
-                            </a>
-
                             <form
                               class="deleteForm d-inline-block"
                               action="{{ route('admin.languages.delete_language', $academicSession->id) }}"
