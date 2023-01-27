@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\BackEnd;
 
+use App\Models\Language;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\AcademicSessionsModel;
-use App\Http\Requests\AcademicSessionStoreRequest;
 // use App\Http\Requests\LanguageStoreRequest;
 // use App\Http\Requests\LanguageUpdateRequest;
 // use App\Models\BasicSettings\CookieAlert;
@@ -27,7 +27,8 @@ use App\Http\Requests\AcademicSessionStoreRequest;
 // use App\Models\HomePage\IntroSection;
 // use App\Models\HomePage\SectionHeading;
 // use App\Models\HomePage\Testimonial;
-use App\Models\Language;
+use App\Http\Requests\AcademicSessionStoreRequest;
+use App\Http\Requests\AcademicSessionUpdateRequest;
 // use App\Models\Menu;
 // use App\Models\PackageManagement\Package;
 // use App\Models\PackageManagement\PackageBooking;
@@ -75,43 +76,13 @@ class AcademicSessionsManagementController extends Controller
     return back()->with('success', $academicSession->name . ' ' . 'is set as default academic session.');
   }
 
-//   public function update(LanguageUpdateRequest $request)
-//   {
-//     $language = Language::findOrFail($request->id);
-
-//     if ($language->code !== $request->code) {
-//       /**
-//        * get all the keywords from the previous file,
-//        * which was named using previous language code
-//        */
-//       $data = file_get_contents(resource_path('lang/') . $language->code . '.json');
-
-//       // make a new json file for the new language (code)
-//       $file = strtolower($request->code) . '.json';
-
-//       // create the path where the new language (code) json file will be stored
-//       $fileLocated = resource_path('lang/') . $file;
-
-//       // then, put the keywords in the new json file and store the file in lang folder
-//       file_put_contents($fileLocated, $data);
-
-//       // now, delete the previous language code file
-//       if (file_exists(resource_path('lang/') . $language->code . '.json')) {
-//         if (is_file(resource_path('lang/') . $language->code . '.json')) {
-//           unlink(resource_path('lang/') . $language->code . '.json');
-//         }
-//       }
-
-//       // finally, update the info in db
-//       $language->update($request->all());
-//     } else {
-//       $language->update($request->all());
-//     }
-
-//     $request->session()->flash('success', 'Language updated successfully!');
-
-//     return 'success';
-//   }
+  public function update(AcademicSessionUpdateRequest $request)
+  {
+    $academicSession = AcademicSessionsModel::findOrFail($request->id);
+    $academicSession->update($request->all());
+    $request->session()->flash('success', 'Session updated successfully!');
+    return 'success';
+  }
 
 //   public function editKeyword($id)
 //   {
