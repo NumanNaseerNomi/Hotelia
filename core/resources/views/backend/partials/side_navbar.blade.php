@@ -58,7 +58,7 @@
           </a>
         </li>
 
-        @if (empty($admin->role) || (!empty($permissions) && in_array('Academic Sessions Management', $permissions)))
+        @if(empty($admin->role) || (!empty($permissions) && in_array('Academic Sessions Management', $permissions)))
           <li class="nav-item @if (request()->routeIs('admin.languages')) active
             @elseif (request()->routeIs('admin.languages.edit_keyword')) active @endif"
           >
@@ -69,8 +69,7 @@
           </li>
         @endif
 
-      @if(false)
-        @if (empty($admin->role) || (!empty($permissions) && in_array('Rooms Management', $permissions)))
+        @if(empty($admin->role) || (!empty($permissions) && in_array('Rooms Management', $permissions)))
           {{-- rooms management --}}
           <li class="nav-item @if (request()->routeIs('admin.rooms_management.settings')) active
             @elseif (request()->routeIs('admin.rooms_management.coupons')) active
@@ -130,6 +129,7 @@
           </li>
         @endif
 
+      @if(!true)
         @if (empty($admin->role) || (!empty($permissions) && in_array('Room Bookings', $permissions)))
           {{-- Room Bookings --}}
           <li class="nav-item @if (request()->routeIs('admin.room_bookings.all_bookings')) active
