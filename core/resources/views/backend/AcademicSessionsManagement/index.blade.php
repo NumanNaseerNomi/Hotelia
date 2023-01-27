@@ -56,7 +56,7 @@
                           <td>{{ $academicSession->startDate }}</td>
                           <td>{{ $academicSession->endDate }}</td>
                           <td>
-                            @if ($academicSession->isDefault == 1)
+                            @if ($academicSession->isDefault)
                               <strong class="badge badge-success">{{ __('Default') }}</strong>
                             @else
                               <form
@@ -88,20 +88,21 @@
                               </span>
                               {{ __('Edit') }}
                             </a>
-
-                            <form
-                              class="deleteForm d-inline-block"
-                              action="{{ url('admin/academicSessionsManagement/delete', $academicSession->id) }}"
-                              method="post"
-                            >
-                              @csrf
-                              <button type="submit" class="btn btn-danger btn-sm deleteBtn">
-                                <span class="btn-label">
-                                  <i class="fas fa-trash"></i>
-                                </span>
-                                {{ __('Delete') }}
-                              </button>
-                            </form>
+                            @if(!$academicSession->isDefault)
+                              <form
+                                class="deleteForm d-inline-block"
+                                action="{{ url('admin/academicSessionsManagement/delete', $academicSession->id) }}"
+                                method="post"
+                              >
+                                @csrf
+                                <button type="submit" class="btn btn-danger btn-sm deleteBtn">
+                                  <span class="btn-label">
+                                    <i class="fas fa-trash"></i>
+                                  </span>
+                                  {{ __('Delete') }}
+                                </button>
+                              </form>
+                            @endif
                           </td>
                         </tr>
                       @endforeach
