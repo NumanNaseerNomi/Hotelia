@@ -80,8 +80,9 @@
                               data-target="#editModal"
                               data-id="{{ $academicSession->id }}"
                               data-name="{{ $academicSession->name }}"
-                              data-code="{{ $academicSession->code }}"
-                              data-direction="{{ $academicSession->direction }}"
+                              data-start-date="{{ $academicSession->startDate }}"
+                              data-end-date="{{ $academicSession->endDate }}"
+                              data-description="{{ $academicSession->description }}"
                             >
                               <span class="btn-label">
                                 <i class="fas fa-edit"></i>
