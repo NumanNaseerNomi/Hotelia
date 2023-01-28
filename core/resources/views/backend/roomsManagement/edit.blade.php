@@ -30,8 +30,7 @@
             <div class="col-lg-6">
               <div class="form-group">
                 <label for="">Building*</label>
-                <select class="form-control" name="building">
-                  <!-- <option selected disabled>Select Building</option> -->
+                <select class="form-control" name="building" id="in_building" selected="in_building">
                   @foreach($buildings as $building)
                     <option value="{{ $building->id }}">{{ $building->name }}</option>
                   @endforeach
@@ -43,12 +42,7 @@
             <div class="col-lg-6">
               <div class="form-group">
                 <label for="">Floor*</label>
-                <select class="form-control" name="floor">
-                  <!-- <option selected disabled>Select Building</option> -->
-                  @foreach($buildings as $building)
-                    <option value="{{ $building->id }}">{{ $building->name }}</option>
-                  @endforeach
-                </select>
+                <input type="number" id="in_floor" class="form-control" name="floor" placeholder="Enter Floor Number">
                 <p id="editErr_floor" class="mt-2 mb-0 text-danger em"></p>
               </div>
             </div>
