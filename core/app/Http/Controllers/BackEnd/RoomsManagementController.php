@@ -17,7 +17,7 @@ class RoomsManagementController extends Controller
   public function index()
   {
     $buildings = RoomsModel::all();
-    dd($buildings);
+    // dd($buildings);
     return view('backend.roomsManagement.index', compact('buildings'));
   }
 
