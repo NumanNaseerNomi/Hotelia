@@ -105,7 +105,7 @@
   </div>
 
   {{-- create modal --}}
-  @includeIf('backend.buildingsManagement.create')
+  @includeIf('backend.roomsManagement.create')
 
   {{-- edit modal --}}
   @includeIf('backend.buildingsManagement.edit')
