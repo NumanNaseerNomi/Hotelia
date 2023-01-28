@@ -15,17 +15,44 @@
             <div class="col-lg-6">
               <div class="form-group">
                 <label for="">{{ __('Name') . '*' }}</label>
-                <input type="text" id="in_name" class="form-control" name="name" placeholder="Enter Building Name">
+                <input type="text" id="in_name" class="form-control" name="name" placeholder="Enter Name">
                 <p id="editErr_name" class="mt-2 mb-0 text-danger em"></p>
               </div>
             </div>
             <div class="col-lg-6">
               <div class="form-group">
-                <label for="">Type*</label>
+                <label for="">Type</label>
                 <input type="text" id="in_type" class="form-control" name="type" placeholder="Enter Type">
                 <p id="editErr_type" class="mt-2 mb-0 text-danger em"></p>
               </div>
             </div>
+
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="">Building*</label>
+                <select class="form-control" name="building">
+                  <!-- <option selected disabled>Select Building</option> -->
+                  @foreach($buildings as $building)
+                    <option value="{{ $building->id }}">{{ $building->name }}</option>
+                  @endforeach
+                </select>
+                <p id="editErr_building" class="mt-2 mb-0 text-danger em"></p>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="">Floor*</label>
+                <select class="form-control" name="floor">
+                  <!-- <option selected disabled>Select Building</option> -->
+                  @foreach($buildings as $building)
+                    <option value="{{ $building->id }}">{{ $building->name }}</option>
+                  @endforeach
+                </select>
+                <p id="editErr_floor" class="mt-2 mb-0 text-danger em"></p>
+              </div>
+            </div>
+            
             <div class="col">
               <div class="form-group">
                 <label for="">Description</label>
