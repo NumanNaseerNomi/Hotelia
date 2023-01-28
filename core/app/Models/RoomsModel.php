@@ -9,6 +9,6 @@ class RoomsModel extends Model
 {
   use HasFactory;
 
-  protected $table = 'Buildings';
-  protected $fillable = ['name', 'location', 'description'];
+  protected $table = 'Room';
+  protected $fillable = ['name', 'type', 'buildingId', 'floor', 'description'];
 }
