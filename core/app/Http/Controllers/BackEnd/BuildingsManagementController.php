@@ -118,9 +118,6 @@ class BuildingsManagementController extends Controller
     );
 
     BuildingsModel::find($request->id)->update($request->all());
-
-    // $building = BuildingsModel::findOrFail($request->id);
-    // $building->update($request->all());
     $request->session()->flash('success', 'Building updated successfully!');
     return 'success';
   }
