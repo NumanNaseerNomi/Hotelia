@@ -106,5 +106,5 @@
   @includeIf('backend.roomsManagement.create')
 
   {{-- edit modal --}}
-  @includeIf('backend.buildingsManagement.edit')
+  @includeIf('backend.roomsManagement.edit')
 @endsection
