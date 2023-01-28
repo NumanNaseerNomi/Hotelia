@@ -653,8 +653,7 @@ Route::prefix('/admin')->middleware(['auth:admin', 'lfm.path'])->group(function 
     Route::get('/buildingsManagement', [BuildingsManagementController::class, 'index']);
     Route::post('/buildingsManagement/create', [BuildingsManagementController::class, 'create']);
     Route::post('/buildingsManagement/update', [BuildingsManagementController::class, 'update']);
-
-    // Route::post('/rooms_management/delete-coupon/{id}', [AdminRoomController::class, 'destroyCoupon'])->name('admin.rooms_management.delete_coupon');
+    Route::post('/buildingsManagement/delete/{id}', [BuildingsManagementController::class, 'delete']);
 
     // Route::get('/rooms_management/amenities', [AdminRoomController::class, 'amenities'])->name('admin.rooms_management.amenities');
 
