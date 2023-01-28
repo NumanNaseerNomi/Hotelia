@@ -102,23 +102,8 @@
                     <span class="sub-item">Buildings</span>
                   </a>
                 </li>
-                <li class="{{ request()->routeIs('admin.rooms_management.amenities') ? 'active' : '' }}">
-                  <a href="{{ route('admin.rooms_management.amenities') . '?language=' . $defaultLang->code }}">
-                    <span class="sub-item">Amenities</span>
-                  </a>
-                </li>
-                @if ($websiteInfo->room_category_status == 1)
-                  <li class="{{ request()->routeIs('admin.rooms_management.categories') ? 'active' : '' }}">
-                    <a href="{{ route('admin.rooms_management.categories') . '?language=' . $defaultLang->code }}">
-                      <span class="sub-item">{{ __('Categories') }}</span>
-                    </a>
-                  </li>
-                @endif
-                <li class="@if (request()->routeIs('admin.rooms_management.rooms')) active
-                  @elseif (request()->routeIs('admin.rooms_management.create_room')) active
-                  @elseif (request()->routeIs('admin.rooms_management.edit_room')) active @endif"
-                >
-                  <a href="{{ route('admin.rooms_management.rooms') }}">
+                <li class="{{ request()->routeIs('admin.rooms_management.coupons') ? 'active' : '' }}">
+                  <a href="{{ url('admin/buildingsManagement') }}">
                     <span class="sub-item">Rooms</span>
                   </a>
                 </li>
