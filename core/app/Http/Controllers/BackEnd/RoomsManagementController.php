@@ -26,10 +26,11 @@ class RoomsManagementController extends Controller
     $request->validate(
       [
         'name' => 'required|max:255',
-        'location' => 'required',
+        'building' => 'required',
+        'floor' => 'required',
       ]
     );
-
+dd($request->all());
     BuildingsModel::create($request->all());
     $request->session()->flash('success', 'Building added successfully!');
     return 'success';
