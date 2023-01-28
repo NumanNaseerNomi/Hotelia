@@ -9,7 +9,7 @@
       </div>
 
       <div class="modal-body">
-        <form id="ajaxForm" class="modal-form" action="{{ url('admin/buildingsManagement/create') }}" method="post">
+        <form id="ajaxForm" class="modal-form" action="{{ url('admin/roomsManagement/create') }}" method="post">
           @csrf
           <div class="row">
             <div class="col-lg-6">
@@ -22,7 +22,7 @@
 
             <div class="col-lg-6">
               <div class="form-group">
-                <label for="">Type*</label>
+                <label for="">Type</label>
                 <input type="text" class="form-control" name="type" placeholder="Enter Type">
                 <p id="err_type" class="mt-2 mb-0 text-danger em"></p>
               </div>
@@ -32,6 +32,7 @@
               <div class="form-group">
                 <label for="">Building*</label>
                 <select class="form-control" name="building">
+                  <option selected disabled>Select Building</option>
                   @foreach($buildings as $building)
                     <option value="{{ $building->id }}">{{ $building->name }}</option>
                   @endforeach
@@ -44,7 +45,8 @@
               <div class="form-group">
                 <label for="">Floor*</label>
                 <select class="form-control" name="floor">
-                  @foreach(range(1, 5) as $floor)
+                  <option selected disabled>Select Floor</option>
+                  @foreach(range(1, 10) as $floor)
                     <option value="{{ $floor }}">{{ $floor }}</option>
                   @endforeach
                 </select>
