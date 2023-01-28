@@ -13,8 +13,13 @@ class CreateRoomTable extends Migration
      */
     public function up()
     {
-        Schema::create('room', function (Blueprint $table) {
+        Schema::create('Room', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('type')->nullable();
+            $table->foreignId('buildingId')->constrained('Buildings');
+            $table->integer('floor');
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +31,6 @@ class CreateRoomTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('room');
+        Schema::dropIfExists('Room');
     }
 }
