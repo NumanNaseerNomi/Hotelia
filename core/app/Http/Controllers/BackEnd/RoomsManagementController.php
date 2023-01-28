@@ -47,7 +47,7 @@ class RoomsManagementController extends Controller
     );
 
     RoomsModel::find($request->id)->update($request->all());
-    $request->session()->flash('success', 'Building updated successfully!');
+    $request->session()->flash('success', 'Room updated successfully!');
     return 'success';
   }
 
