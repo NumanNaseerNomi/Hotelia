@@ -70,7 +70,7 @@
                           <td>{{ $room->floor }}</td>
                           <td>{{ $room->description }}</td>
                           <td>
-                            <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $room->id }}" data-name="{{ $room->name }}" data-location="{{ $room->location }}" data-description="{{ $room->description }}">
+                            <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $room->id }}" data-name="{{ $room->name }}" data-type="{{ $room->type }}" data-building="{{ $room->getBuilding->id }}" data-floor="{{ $room->floor }}" data-description="{{ $room->description }}">
                               <span class="btn-label">
                                 <i class="fas fa-edit"></i>
                               </span>
