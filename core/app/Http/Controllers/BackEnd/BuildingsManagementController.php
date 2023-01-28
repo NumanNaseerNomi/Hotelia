@@ -94,25 +94,19 @@ class BuildingsManagementController extends Controller
     return view('backend.buildingsManagement.index', $information);
   }
 
-  // public function storeCoupon(CouponRequest $request)
-  // {
-  //   $startDate = Carbon::parse($request->start_date);
-  //   $endDate = Carbon::parse($request->end_date);
+  public function create(Request $request)
+  {
+    $request->validate(
+      [
+        'name' => 'required|max:255',
+        'location' => 'required',
+      ]
+    );
 
-  //   if ($request->filled('rooms')) {
-  //     $rooms = $request->rooms;
-  //   }
-
-  //   Coupon::create($request->except('start_date', 'end_date', 'rooms') + [
-  //     'start_date' => date_format($startDate, 'Y-m-d'),
-  //     'end_date' => date_format($endDate, 'Y-m-d'),
-  //     'rooms' => isset($rooms) ? json_encode($rooms) : null
-  //   ]);
-
-  //   $request->session()->flash('success', 'New coupon added successfully!');
-
-  //   return 'success';
-  // }
+    BuildingsModel::create($request->all());
+    $request->session()->flash('success', 'Building added successfully!');
+    return 'success';
+  }
 
   // public function updateCoupon(CouponRequest $request)
   // {
