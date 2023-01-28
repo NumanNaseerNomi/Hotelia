@@ -44,8 +44,8 @@
         <div class="card-body">
           <div class="row">
             <div class="col-lg-12">
-              @if (count($buildings) == 0)
-                <h3 class="text-center mt-2">NO BUILDINGS FOUND</h3>
+              @if (count($rooms) == 0)
+                <h3 class="text-center mt-2">NO ROOMS FOUND</h3>
               @else
                 <div class="table-responsive">
                   <table class="table table-striped mt-3" id="basic-datatables">
@@ -53,33 +53,29 @@
                       <tr>
                         <th scope="col">#</th>
                         <th scope="col">{{ __('Name') }}</th>
-                        <th scope="col">Location</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Building</th>
+                        <th scope="col">Floor</th>
                         <th scope="col">Description</th>
                         <th scope="col">{{ __('Actions') }}</th>
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($buildings as $building)
-                        @php
-                          $todayDate = Carbon\Carbon::now();
-                          $startDate = $todayDate;
-                          $endDate = $todayDate;
-                        @endphp
-
+                      @foreach ($rooms as $room)
                         <tr>
                           <td>{{ $loop->iteration }}</td>
-                          <td>{{ $building->name }}</td>
-                          <td>{{ $building->location }}</td>
-                          <td>{{ $building->description }}</td>
+                          <td>{{ $room->name }}</td>
+                          <td>{{ $room->location }}</td>
+                          <td>{{ $room->description }}</td>
                           <td>
-                            <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $building->id }}" data-name="{{ $building->name }}" data-location="{{ $building->location }}" data-description="{{ $building->description }}">
+                            <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $room->id }}" data-name="{{ $room->name }}" data-location="{{ $room->location }}" data-description="{{ $room->description }}">
                               <span class="btn-label">
                                 <i class="fas fa-edit"></i>
                               </span>
                               {{ __('Edit') }}
                             </a>
 
-                            <form class="deleteForm d-inline-block" action="{{ url('admin/buildingsManagement/delete', ['id' => $building->id]) }}" method="post">
+                            <form class="deleteForm d-inline-block" action="{{ url('admin/buildingsManagement/delete', ['id' => $room->id]) }}" method="post">
                               @csrf
                               <button type="submit" class="btn btn-danger btn-sm deleteBtn">
                                 <span class="btn-label">
