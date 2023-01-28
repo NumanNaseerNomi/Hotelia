@@ -15,25 +15,8 @@ class BuildingsManagementController extends Controller
 
   public function index()
   {
-    // get the coupons from db
-    // $information['coupons'] = Coupon::orderByDesc('id')->get();
-
-    // also, get the currency information from db
-    // $information['currencyInfo'] = MiscellaneousTrait::getCurrencyInfo();
-
-    $language = Language::where('is_default', 1)->first();
-
-    $rooms = Room::all();
-
-    $rooms->map(function ($room) use ($language) {
-      $room['title'] = $room->roomContent()->where('language_id', $language->id)->pluck('title')->first();
-    });
-
-    $information['rooms'] = $rooms;
     $buildings = BuildingsModel::all();
-    $information['buildings'] = $buildings;
-    // dd($buildings);
-    return view('backend.buildingsManagement.index', $information);
+    return view('backend.buildingsManagement.index', compact('buildings'));
   }
 
   public function create(Request $request)
