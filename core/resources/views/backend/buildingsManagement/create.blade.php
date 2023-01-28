@@ -9,7 +9,7 @@
       </div>
 
       <div class="modal-body">
-        <form id="ajaxForm" class="modal-form" action="{{ route('admin.rooms_management.store_coupon') }}" method="post">
+        <form id="ajaxForm" class="modal-form" action="{{ url('admin/buildingsManagement/create') }}" method="post">
           @csrf
           <div class="row">
             <div class="col-lg-6">
