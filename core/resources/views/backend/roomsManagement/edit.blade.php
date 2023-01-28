@@ -42,7 +42,11 @@
             <div class="col-lg-6">
               <div class="form-group">
                 <label for="">Floor*</label>
-                <input type="number" id="in_floor" class="form-control" name="floor" placeholder="Enter Floor Number">
+                <select class="form-control" name="floor" id="in_floor" selected="in_floor">
+                  @foreach(range(1, 10) as $floor)
+                    <option value="{{ $floor }}">{{ $floor }}</option>
+                  @endforeach
+                </select>
                 <p id="editErr_floor" class="mt-2 mb-0 text-danger em"></p>
               </div>
             </div>
