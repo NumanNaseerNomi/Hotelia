@@ -72,7 +72,7 @@
                           <td>{{ $building->location }}</td>
                           <td>{{ $building->description }}</td>
                           <td>
-                            <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $building->id }}" data-name="{{ $building->name }}" data-code="{{ $building->code }}" data-type="{{ $building->type }}" data-value="{{ $building->value }}" data-start_date="{{ date_format($startDate, 'm/d/Y') }}" data-end_date="{{ date_format($endDate, 'm/d/Y') }}" data-serial_number="{{ $building->serial_number }}" data-rooms="{{ empty($building->rooms) ? '' : $building->rooms }}">
+                            <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $building->id }}" data-name="{{ $building->name }}" data-location="{{ $building->location }}" data-description="{{ $building->type }}">
                               <span class="btn-label">
                                 <i class="fas fa-edit"></i>
                               </span>
@@ -108,5 +108,5 @@
   @includeIf('backend.buildingsManagement.create')
 
   {{-- edit modal --}}
-  @includeIf('backend.buildingsManagement.edit_coupon')
+  @includeIf('backend.buildingsManagement.edit')
 @endsection
