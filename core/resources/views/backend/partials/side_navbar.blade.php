@@ -80,13 +80,9 @@
               <span class="caret"></span>
             </a>
             <div id="rooms" class="collapse
-              @if (request()->routeIs('admin.rooms_management.settings')) show
-              @elseif (request()->routeIs('admin.rooms_management.coupons')) show
-              @elseif (request()->routeIs('admin.rooms_management.amenities')) show
-              @elseif (request()->routeIs('admin.rooms_management.categories')) show
-              @elseif (request()->routeIs('admin.rooms_management.rooms')) show
-              @elseif (request()->routeIs('admin.rooms_management.create_room')) show
-              @elseif (request()->routeIs('admin.rooms_management.edit_room')) show @endif"
+              @if(request()->is('admin/buildingsManagement')) show
+              @elseif(request()->is('admin/roomsManagement')) show
+              @endif"
             >
               <ul class="nav nav-collapse">
                 <!-- <li class="{{ request()->routeIs('admin.rooms_management.settings') ? 'active' : '' }}">
