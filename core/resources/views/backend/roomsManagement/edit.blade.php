@@ -21,9 +21,9 @@
             </div>
             <div class="col-lg-6">
               <div class="form-group">
-                <label for="">Location*</label>
-                <input type="text" id="in_location" class="form-control" name="location" placeholder="Enter Location">
-                <p id="editErr_location" class="mt-2 mb-0 text-danger em"></p>
+                <label for="">Type*</label>
+                <input type="text" id="in_type" class="form-control" name="type" placeholder="Enter Type">
+                <p id="editErr_type" class="mt-2 mb-0 text-danger em"></p>
               </div>
             </div>
             <div class="col">
