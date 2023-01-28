@@ -41,11 +41,12 @@ class RoomsManagementController extends Controller
     $request->validate(
       [
         'name' => 'required|max:255',
-        'location' => 'required',
+        'buildingId' => 'required',
+        'floor' => 'required',
       ]
     );
 
-    BuildingsModel::find($request->id)->update($request->all());
+    RoomsModel::find($request->id)->update($request->all());
     $request->session()->flash('success', 'Building updated successfully!');
     return 'success';
   }
