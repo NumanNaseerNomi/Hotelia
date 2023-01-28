@@ -646,52 +646,10 @@ Route::prefix('/admin')->middleware(['auth:admin', 'lfm.path'])->group(function 
 
   // rooms management route start
   Route::group(['middleware' => 'checkpermission:Rooms Management'], function () {
-    // Route::get('/rooms_management/settings', [AdminRoomController::class, 'settings'])->name('admin.rooms_management.settings');
-
-    // Route::post('/rooms_management/update_settings', [AdminRoomController::class, 'updateSettings'])->name('admin.rooms_management.update_settings');
-
     Route::get('/buildingsManagement', [BuildingsManagementController::class, 'index']);
     Route::post('/buildingsManagement/create', [BuildingsManagementController::class, 'create']);
     Route::post('/buildingsManagement/update', [BuildingsManagementController::class, 'update']);
     Route::post('/buildingsManagement/delete/{id}', [BuildingsManagementController::class, 'delete']);
-
-    // Route::get('/rooms_management/amenities', [AdminRoomController::class, 'amenities'])->name('admin.rooms_management.amenities');
-
-    // Route::post('/rooms_management/store_amenity/{language}', [AdminRoomController::class, 'storeAmenity'])->name('admin.rooms_management.store_amenity');
-
-    // Route::post('/rooms_management/update_amenity', [AdminRoomController::class, 'updateAmenity'])->name('admin.rooms_management.update_amenity');
-
-    // Route::post('/rooms_management/delete_amenity', [AdminRoomController::class, 'deleteAmenity'])->name('admin.rooms_management.delete_amenity');
-
-    // Route::post('/rooms_management/bulk_delete_amenity', [AdminRoomController::class, 'bulkDeleteAmenity'])->name('admin.rooms_management.bulk_delete_amenity');
-
-    // Route::get('/rooms_management/categories', [AdminRoomController::class, 'categories'])->name('admin.rooms_management.categories');
-
-    // Route::post('/rooms_management/store_category/{language}', [AdminRoomController::class, 'storeCategory'])->name('admin.rooms_management.store_category');
-
-    // Route::post('/rooms_management/update_category', [AdminRoomController::class, 'updateCategory'])->name('admin.rooms_management.update_category');
-
-    // Route::post('/rooms_management/delete_category', [AdminRoomController::class, 'deleteCategory'])->name('admin.rooms_management.delete_category');
-
-    // Route::post('/rooms_management/bulk_delete_category', [AdminRoomController::class, 'bulkDeleteCategory'])->name('admin.rooms_management.bulk_delete_category');
-
-    // Route::get('/rooms_management/rooms', [AdminRoomController::class, 'rooms'])->name('admin.rooms_management.rooms');
-
-    // Route::get('/rooms_management/create_room', [AdminRoomController::class, 'createRoom'])->name('admin.rooms_management.create_room');
-
-    // Route::post('/rooms_management/store_room', [AdminRoomController::class, 'storeRoom'])->name('admin.rooms_management.store_room');
-
-    // Route::post('/rooms_management/update_featured_room', [AdminRoomController::class, 'updateFeaturedRoom'])->name('admin.rooms_management.update_featured_room');
-
-    // Route::get('/rooms_management/edit_room/{id}', [AdminRoomController::class, 'editRoom'])->name('admin.rooms_management.edit_room');
-
-    // Route::get('/rooms_management/slider_images/{id}', [AdminRoomController::class, 'getSliderImages']);
-
-    // Route::post('/rooms_management/update_room/{id}', [AdminRoomController::class, 'updateRoom'])->name('admin.rooms_management.update_room');
-
-    // Route::post('/rooms_management/delete_room', [AdminRoomController::class, 'deleteRoom'])->name('admin.rooms_management.delete_room');
-
-    // Route::post('/rooms_management/bulk_delete_room', [AdminRoomController::class, 'bulkDeleteRoom'])->name('admin.rooms_management.bulk_delete_room');
   });
   // rooms management route end
 
