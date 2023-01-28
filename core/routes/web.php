@@ -644,12 +644,21 @@ Route::prefix('/admin')->middleware(['auth:admin', 'lfm.path'])->group(function 
   });
   // rooms management route end
 
-  // rooms management route start
+  // buildings management route start
   Route::group(['middleware' => 'checkpermission:Rooms Management'], function () {
     Route::get('/buildingsManagement', [BuildingsManagementController::class, 'index']);
     Route::post('/buildingsManagement/create', [BuildingsManagementController::class, 'create']);
     Route::post('/buildingsManagement/update', [BuildingsManagementController::class, 'update']);
     Route::post('/buildingsManagement/delete/{id}', [BuildingsManagementController::class, 'delete']);
+  });
+  // buildings management route end
+
+  // rooms management route start
+  Route::group(['middleware' => 'checkpermission:Rooms Management'], function () {
+    // Route::get('/buildingsManagement', [BuildingsManagementController::class, 'index']);
+    // Route::post('/buildingsManagement/create', [BuildingsManagementController::class, 'create']);
+    // Route::post('/buildingsManagement/update', [BuildingsManagementController::class, 'update']);
+    // Route::post('/buildingsManagement/delete/{id}', [BuildingsManagementController::class, 'delete']);
   });
   // rooms management route end
 
