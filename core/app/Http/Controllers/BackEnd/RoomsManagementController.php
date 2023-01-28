@@ -30,9 +30,9 @@ class RoomsManagementController extends Controller
         'floor' => 'required',
       ]
     );
-dd($request->all());
-    BuildingsModel::create($request->all());
-    $request->session()->flash('success', 'Building added successfully!');
+    
+    RoomsModel::create($request->all());
+    $request->session()->flash('success', 'Room added successfully!');
     return 'success';
   }
 
