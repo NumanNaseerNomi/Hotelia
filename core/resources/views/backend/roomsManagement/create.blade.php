@@ -31,13 +31,13 @@
             <div class="col-lg-6">
               <div class="form-group">
                 <label for="">Building*</label>
-                <select class="form-control" name="building">
+                <select class="form-control" name="buildingId">
                   <option selected disabled>Select Building</option>
                   @foreach($buildings as $building)
                     <option value="{{ $building->id }}">{{ $building->name }}</option>
                   @endforeach
                 </select>
-                <p id="err_building" class="mt-2 mb-0 text-danger em"></p>
+                <p id="err_buildingId" class="mt-2 mb-0 text-danger em"></p>
               </div>
             </div>
 
