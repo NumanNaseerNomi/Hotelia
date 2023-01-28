@@ -51,12 +51,12 @@
         </div>
 
         {{-- dashboard --}}
-        <li class="nav-item @if (request()->routeIs('admin.dashboard')) active @endif">
+        <!-- <li class="nav-item @if (request()->routeIs('admin.dashboard')) active @endif">
           <a href="{{ route('admin.dashboard') }}">
             <i class="la flaticon-paint-palette"></i>
             <p>Dashboard</p>
           </a>
-        </li>
+        </li> -->
 
         @if(empty($admin->role) || (!empty($permissions) && in_array('Academic Sessions Management', $permissions)))
           <li class="nav-item @if (request()->is('admin/academicSessionsManagement')) active @endif">
