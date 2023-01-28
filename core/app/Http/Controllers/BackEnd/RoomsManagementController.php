@@ -52,7 +52,7 @@ class RoomsManagementController extends Controller
 
   public function delete($id)
   {
-    BuildingsModel::findOrFail($id)->delete();
-    return back()->with('success', 'Building deleted successfully!');
+    RoomsModel::findOrFail($id)->delete();
+    return back()->with('success', 'Room deleted successfully!');
   }
 }
