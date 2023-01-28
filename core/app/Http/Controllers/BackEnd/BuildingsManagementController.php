@@ -3,32 +3,11 @@
 namespace App\Http\Controllers\BackEnd;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\AdminRoomBookingRequest;
-use App\Http\Requests\CouponRequest;
-use App\Models\BasicSettings\MailTemplate;
 use App\Models\BuildingsModel;
 use App\Models\Language;
-use App\Models\PaymentGateway\OfflineGateway;
-use App\Models\PaymentGateway\OnlineGateway;
-use App\Models\RoomManagement\Coupon;
 use App\Models\RoomManagement\Room;
-use App\Models\RoomManagement\RoomAmenity;
-use App\Models\RoomManagement\RoomBooking;
-use App\Models\RoomManagement\RoomCategory;
-use App\Models\RoomManagement\RoomContent;
 use App\Traits\MiscellaneousTrait;
-use Carbon\Carbon;
-use DateTime;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Response;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\URL;
-use Illuminate\Support\Facades\Validator;
-use PDF;
-use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\PHPMailer;
 
 class BuildingsManagementController extends Controller
 {
