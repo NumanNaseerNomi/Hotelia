@@ -69,13 +69,10 @@
 
         @if(empty($admin->role) || (!empty($permissions) && in_array('Rooms Management', $permissions)))
           {{-- rooms management --}}
-          <li class="nav-item @if (request()->routeIs('admin.rooms_management.settings')) active
-            @elseif (request()->routeIs('admin.rooms_management.coupons')) active
-            @elseif (request()->routeIs('admin.rooms_management.amenities')) active
-            @elseif (request()->routeIs('admin.rooms_management.categories')) active
-            @elseif (request()->routeIs('admin.rooms_management.rooms')) active
-            @elseif (request()->routeIs('admin.rooms_management.create_room')) active
-            @elseif (request()->routeIs('admin.rooms_management.edit_room')) active @endif"
+          <li class="nav-item
+            @if(request()->is('admin/buildingsManagement')) active
+            @elseif(request()->is('admin/roomsManagement')) active
+            @endif"
           >
             <a data-toggle="collapse" href="#rooms">
               <i class="fal fa-home"></i>
