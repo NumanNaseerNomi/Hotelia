@@ -72,7 +72,7 @@
                           <td>{{ $building->location }}</td>
                           <td>{{ $building->description }}</td>
                           <td>
-                            <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $building->id }}" data-name="{{ $building->name }}" data-location="{{ $building->location }}" data-description="{{ $building->type }}">
+                            <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $building->id }}" data-name="{{ $building->name }}" data-location="{{ $building->location }}" data-description="{{ $building->description }}">
                               <span class="btn-label">
                                 <i class="fas fa-edit"></i>
                               </span>
