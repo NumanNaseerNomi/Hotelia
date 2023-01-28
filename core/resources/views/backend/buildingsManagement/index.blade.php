@@ -44,8 +44,8 @@
         <div class="card-body">
           <div class="row">
             <div class="col-lg-12">
-              @if (count($coupons) == 0)
-                <h3 class="text-center mt-2">{{ __('NO COUPON FOUND') . '!' }}</h3>
+              @if (count($buildings) == 0)
+                <h3 class="text-center mt-2">NO BUILDINGS FOUND</h3>
               @else
                 <div class="table-responsive">
                   <table class="table table-striped mt-3" id="basic-datatables">
@@ -59,27 +59,27 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($coupons as $coupon)
+                      @foreach ($buildings as $building)
                         @php
                           $todayDate = Carbon\Carbon::now();
-                          $startDate = Carbon\Carbon::parse($coupon->start_date);
-                          $endDate = Carbon\Carbon::parse($coupon->end_date);
+                          $startDate = $todayDate;
+                          $endDate = $todayDate;
                         @endphp
 
                         <tr>
                           <td>{{ $loop->iteration }}</td>
-                          <td>{{ $coupon->code }}</td>
-                          <td>{{ $coupon->code }}</td>
-                          <td>{{ $coupon->code }}</td>
+                          <td>{{ $building->name }}</td>
+                          <td>{{ $building->location }}</td>
+                          <td>{{ $building->description }}</td>
                           <td>
-                            <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $coupon->id }}" data-name="{{ $coupon->name }}" data-code="{{ $coupon->code }}" data-type="{{ $coupon->type }}" data-value="{{ $coupon->value }}" data-start_date="{{ date_format($startDate, 'm/d/Y') }}" data-end_date="{{ date_format($endDate, 'm/d/Y') }}" data-serial_number="{{ $coupon->serial_number }}" data-rooms="{{ empty($coupon->rooms) ? '' : $coupon->rooms }}">
+                            <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $building->id }}" data-name="{{ $building->name }}" data-code="{{ $building->code }}" data-type="{{ $building->type }}" data-value="{{ $building->value }}" data-start_date="{{ date_format($startDate, 'm/d/Y') }}" data-end_date="{{ date_format($endDate, 'm/d/Y') }}" data-serial_number="{{ $building->serial_number }}" data-rooms="{{ empty($building->rooms) ? '' : $building->rooms }}">
                               <span class="btn-label">
                                 <i class="fas fa-edit"></i>
                               </span>
                               {{ __('Edit') }}
                             </a>
 
-                            <form class="deleteForm d-inline-block" action="{{ route('admin.rooms_management.delete_coupon', ['id' => $coupon->id]) }}" method="post">
+                            <form class="deleteForm d-inline-block" action="{{ route('admin.rooms_management.delete_coupon', ['id' => $building->id]) }}" method="post">
                               @csrf
                               <button type="submit" class="btn btn-danger btn-sm deleteBtn">
                                 <span class="btn-label">
@@ -105,8 +105,8 @@
   </div>
 
   {{-- create modal --}}
-  @includeIf('backend.rooms.create_coupon')
+  @includeIf('backend.buildingsManagement.create')
 
   {{-- edit modal --}}
-  @includeIf('backend.rooms.edit_coupon')
+  @includeIf('backend.buildingsManagement.edit_coupon')
 @endsection

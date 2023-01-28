@@ -30,6 +30,7 @@ use App\Http\Controllers\FrontEnd\Room\FlutterwaveController;
 use App\Http\Controllers\FrontEnd\Room\MercadoPagoController;
 use App\Http\Controllers\FrontEnd\Room\RoomBookingController;
 use App\Http\Controllers\BackEnd\HomePage\HeroVideoController;
+use App\Http\Controllers\BackEnd\BuildingsManagementController;
 use App\Http\Controllers\BackEnd\HomePage\HeroSliderController;
 use App\Http\Controllers\BackEnd\HomePage\HeroStaticController;
 use App\Http\Controllers\BackEnd\HomePage\TestimonialController;
@@ -649,7 +650,7 @@ Route::prefix('/admin')->middleware(['auth:admin', 'lfm.path'])->group(function 
 
     // Route::post('/rooms_management/update_settings', [AdminRoomController::class, 'updateSettings'])->name('admin.rooms_management.update_settings');
 
-    Route::get('/roomsManagement/buildings', [RoomsManagementController::class, 'coupons'])->name('admin.rooms_management.coupons');
+    Route::get('/roomsManagement/buildings', [BuildingsManagementController::class, 'index'])->name('admin.rooms_management.coupons');
 
     // Route::post('/rooms_management/store-coupon', [AdminRoomController::class, 'storeCoupon'])->name('admin.rooms_management.store_coupon');
 
