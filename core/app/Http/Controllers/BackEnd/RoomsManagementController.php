@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\BackEnd;
 
-use App\Http\Controllers\Controller;
-use App\Models\BuildingsModel;
 use App\Models\Language;
-use App\Models\RoomManagement\Room;
-use App\Traits\MiscellaneousTrait;
+use App\Models\RoomsModel;
 use Illuminate\Http\Request;
+use App\Models\BuildingsModel;
+use App\Traits\MiscellaneousTrait;
+use App\Models\RoomManagement\Room;
+use App\Http\Controllers\Controller;
 
 class RoomsManagementController extends Controller
 {
@@ -15,8 +16,9 @@ class RoomsManagementController extends Controller
 
   public function index()
   {
-    $buildings = BuildingsModel::all();
-    return view('backend.buildingsManagement.index', compact('buildings'));
+    $buildings = RoomsModel::all();
+    dd($buildings);
+    return view('backend.roomsManagement.index', compact('buildings'));
   }
 
   public function create(Request $request)
