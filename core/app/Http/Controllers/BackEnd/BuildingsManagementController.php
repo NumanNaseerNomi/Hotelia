@@ -108,6 +108,23 @@ class BuildingsManagementController extends Controller
     return 'success';
   }
 
+  public function update(Request $request)
+  {
+    $request->validate(
+      [
+        'name' => 'required|max:255',
+        'location' => 'required',
+      ]
+    );
+
+    BuildingsModel::find($request->id)->update($request->all());
+
+    // $building = BuildingsModel::findOrFail($request->id);
+    // $building->update($request->all());
+    $request->session()->flash('success', 'Building updated successfully!');
+    return 'success';
+  }
+
   // public function updateCoupon(CouponRequest $request)
   // {
   //   $startDate = Carbon::parse($request->start_date);
@@ -117,11 +134,11 @@ class BuildingsManagementController extends Controller
   //     $rooms = $request->rooms;
   //   }
 
-  //   Coupon::find($request->id)->update($request->except('start_date', 'end_date', 'rooms') + [
-  //     'start_date' => date_format($startDate, 'Y-m-d'),
-  //     'end_date' => date_format($endDate, 'Y-m-d'),
-  //     'rooms' => isset($rooms) ? json_encode($rooms) : null
-  //   ]);
+    // Coupon::find($request->id)->update($request->except('start_date', 'end_date', 'rooms') + [
+    //   'start_date' => date_format($startDate, 'Y-m-d'),
+    //   'end_date' => date_format($endDate, 'Y-m-d'),
+    //   'rooms' => isset($rooms) ? json_encode($rooms) : null
+    // ]);
 
   //   $request->session()->flash('success', 'Coupon updated successfully!');
 
