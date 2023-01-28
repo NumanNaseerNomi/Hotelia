@@ -8,7 +8,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="ajaxEditForm" class="modal-form" action="{{ route('admin.rooms_management.update_coupon') }}" method="post">
+        <form id="ajaxEditForm" class="modal-form" action="{{ url('admin/buildingsManagement/update') }}" method="post">
           @csrf
           <input type="hidden" id="in_id" name="id">
           <div class="row no-gutters">
