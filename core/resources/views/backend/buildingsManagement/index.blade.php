@@ -79,7 +79,7 @@
                               {{ __('Edit') }}
                             </a>
 
-                            <form class="deleteForm d-inline-block" action="{{ route('admin.rooms_management.delete_coupon', ['id' => $building->id]) }}" method="post">
+                            <form class="deleteForm d-inline-block" action="{{ url('admin/buildingsManagement/delete', ['id' => $building->id]) }}" method="post">
                               @csrf
                               <button type="submit" class="btn btn-danger btn-sm deleteBtn">
                                 <span class="btn-label">
