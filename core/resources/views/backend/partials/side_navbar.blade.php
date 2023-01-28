@@ -59,9 +59,7 @@
         </li>
 
         @if(empty($admin->role) || (!empty($permissions) && in_array('Academic Sessions Management', $permissions)))
-          <li class="nav-item @if (request()->routeIs('admin.languages')) active
-            @elseif (request()->routeIs('admin.languages.edit_keyword')) active @endif"
-          >
+          <li class="nav-item @if (request()->is('admin/academicSessionsManagement')) active @endif">
             <a href="{{ url('/admin/academicSessionsManagement') }}">
               <i class="far fa-calendar-week"></i>
               <p>Academic Sessions</p>
@@ -94,14 +92,14 @@
               @elseif (request()->routeIs('admin.rooms_management.edit_room')) show @endif"
             >
               <ul class="nav nav-collapse">
-                <li class="{{ request()->routeIs('admin.rooms_management.settings') ? 'active' : '' }}">
+                <!-- <li class="{{ request()->routeIs('admin.rooms_management.settings') ? 'active' : '' }}">
                   <a href="{{ route('admin.rooms_management.settings') }}">
                     <span class="sub-item">{{ __('Settings') }}</span>
                   </a>
-                </li>
+                </li> -->
                 <li class="{{ request()->routeIs('admin.rooms_management.coupons') ? 'active' : '' }}">
-                  <a href="{{ route('admin.rooms_management.coupons') }}">
-                    <span class="sub-item">{{ __('Coupons') }}</span>
+                  <a href="{{ url('admin/roomsManagement/buildings') }}">
+                    <span class="sub-item">Buildings</span>
                   </a>
                 </li>
                 <li class="{{ request()->routeIs('admin.rooms_management.amenities') ? 'active' : '' }}">
@@ -130,7 +128,7 @@
         @endif
 
       @if(!true)
-      
+
         @if(empty($admin->role) || (!empty($permissions) && in_array('Rooms Management', $permissions)))
           {{-- rooms management --}}
           <li class="nav-item @if (request()->routeIs('admin.rooms_management.settings')) active
