@@ -651,8 +651,7 @@ Route::prefix('/admin')->middleware(['auth:admin', 'lfm.path'])->group(function 
     // Route::post('/rooms_management/update_settings', [AdminRoomController::class, 'updateSettings'])->name('admin.rooms_management.update_settings');
 
     Route::get('/buildingsManagement', [BuildingsManagementController::class, 'index']);
-
-    // Route::post('/rooms_management/store-coupon', [AdminRoomController::class, 'storeCoupon'])->name('admin.rooms_management.store_coupon');
+    Route::post('/buildingsManagement/create', [BuildingsManagementController::class, 'create']);
 
     // Route::post('/rooms_management/update-coupon', [AdminRoomController::class, 'updateCoupon'])->name('admin.rooms_management.update_coupon');
 
