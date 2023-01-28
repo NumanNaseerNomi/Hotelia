@@ -89,7 +89,7 @@ class BuildingsManagementController extends Controller
 
     $information['rooms'] = $rooms;
     $buildings = BuildingsModel::all();
-    $information['buildings'] = Coupon::orderByDesc('id')->get();
+    $information['buildings'] = $buildings;
     // dd($buildings);
     return view('backend.buildingsManagement.index', $information);
   }
