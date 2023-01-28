@@ -98,7 +98,7 @@
                   </a>
                 </li> -->
                 <li class="{{ request()->routeIs('admin.rooms_management.coupons') ? 'active' : '' }}">
-                  <a href="{{ url('admin/roomsManagement/buildings') }}">
+                  <a href="{{ url('admin/buildingsManagement') }}">
                     <span class="sub-item">Buildings</span>
                   </a>
                 </li>
