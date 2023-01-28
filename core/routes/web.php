@@ -1,65 +1,66 @@
 <?php
 
-use App\Http\Controllers\BackEnd\AdminController;
-use App\Http\Controllers\BackEnd\BasicSettings\BasicSettingsController;
-use App\Http\Controllers\BackEnd\BasicSettings\CookieAlertController;
-use App\Http\Controllers\BackEnd\BasicSettings\MailTemplateController;
-use App\Http\Controllers\BackEnd\BasicSettings\PageHeadingController;
-use App\Http\Controllers\BackEnd\BasicSettings\SEOController;
-use App\Http\Controllers\BackEnd\BasicSettings\SocialLinkController;
-use App\Http\Controllers\BackEnd\BlogController as AdminBlogController;
-use App\Http\Controllers\BackEnd\FAQController as AdminFAQController;
-use App\Http\Controllers\BackEnd\FooterController;
-use App\Http\Controllers\BackEnd\GalleryController as AdminGalleryController;
-use App\Http\Controllers\BackEnd\HomePage\BrandSectionController;
-use App\Http\Controllers\BackEnd\HomePage\FacilityController;
-use App\Http\Controllers\BackEnd\HomePage\HeroSliderController;
-use App\Http\Controllers\BackEnd\HomePage\HeroStaticController;
-use App\Http\Controllers\BackEnd\HomePage\HeroVideoController;
-use App\Http\Controllers\BackEnd\HomePage\IntroSectionController;
-use App\Http\Controllers\BackEnd\HomePage\SectionHeadingController;
-use App\Http\Controllers\BackEnd\HomePage\SectionsController;
-use App\Http\Controllers\BackEnd\HomePage\TestimonialController;
-use App\Http\Controllers\BackEnd\LanguageController;
-use App\Http\Controllers\BackEnd\AcademicSessionsManagementController;
-use App\Http\Controllers\BackEnd\PackageController as AdminPackageController;
-use App\Http\Controllers\BackEnd\PaymentGateway\OfflineGatewayController;
-use App\Http\Controllers\BackEnd\PaymentGateway\OnlineGatewayController;
-use App\Http\Controllers\BackEnd\PushNotificationController;
-use App\Http\Controllers\BackEnd\RoomController as AdminRoomController;
-use App\Http\Controllers\BackEnd\ServiceController as AdminServiceController;
-use App\Http\Controllers\BackEnd\SummernoteController;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\FrontEnd\BlogController;
-use App\Http\Controllers\FrontEnd\ContactController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontEnd\FAQController;
-use App\Http\Controllers\FrontEnd\GalleryController;
+use App\Http\Controllers\BackEnd\AdminController;
+use App\Http\Controllers\FrontEnd\BlogController;
 use App\Http\Controllers\FrontEnd\HomeController;
-use App\Http\Controllers\FrontEnd\Package\FlutterwaveController as PackageFlutterwaveController;
-use App\Http\Controllers\FrontEnd\Package\InstamojoController as PackageInstamojoController;
-use App\Http\Controllers\FrontEnd\Package\MercadoPagoController as PackageMercadoPagoController;
-use App\Http\Controllers\FrontEnd\Package\MollieController as PackageMollieController;
-use App\Http\Controllers\FrontEnd\Package\PackageBookingController;
-use App\Http\Controllers\FrontEnd\Package\PackageController;
-use App\Http\Controllers\FrontEnd\Package\PayPalController as PackagePayPalController;
-use App\Http\Controllers\FrontEnd\Package\PaystackController as PackagePaystackController;
-use App\Http\Controllers\FrontEnd\Package\PaytmController as PackagePaytmController;
-use App\Http\Controllers\FrontEnd\Package\RazorpayController as PackageRazorpayController;
-use App\Http\Controllers\FrontEnd\Package\StripeController as PackageStripeController;
-use App\Http\Controllers\FrontEnd\PushNotificationController as UiPushNotificationController;
-use App\Http\Controllers\FrontEnd\Room\FlutterwaveController;
-use App\Http\Controllers\FrontEnd\Room\InstamojoController;
-use App\Http\Controllers\FrontEnd\Room\MercadoPagoController;
+use App\Http\Controllers\FrontEnd\UserController;
+use App\Http\Controllers\BackEnd\FooterController;
+use App\Http\Controllers\BackEnd\LanguageController;
+use App\Http\Controllers\FrontEnd\ContactController;
+use App\Http\Controllers\FrontEnd\GalleryController;
+use App\Http\Controllers\FrontEnd\ServiceController;
+use App\Http\Controllers\BackEnd\SummernoteController;
+use App\Http\Controllers\FrontEnd\Room\RoomController;
+use App\Http\Controllers\FrontEnd\Room\PaytmController;
 use App\Http\Controllers\FrontEnd\Room\MollieController;
 use App\Http\Controllers\FrontEnd\Room\PayPalController;
 use App\Http\Controllers\FrontEnd\Room\PaystackController;
-use App\Http\Controllers\FrontEnd\Room\PaytmController;
 use App\Http\Controllers\FrontEnd\Room\RazorpayController;
+use App\Http\Controllers\BackEnd\RoomsManagementController;
+use App\Http\Controllers\FrontEnd\Room\InstamojoController;
+use App\Http\Controllers\BackEnd\PushNotificationController;
+use App\Http\Controllers\FrontEnd\Package\PackageController;
+use App\Http\Controllers\BackEnd\BasicSettings\SEOController;
+use App\Http\Controllers\BackEnd\HomePage\FacilityController;
+use App\Http\Controllers\BackEnd\HomePage\SectionsController;
+use App\Http\Controllers\FrontEnd\Room\FlutterwaveController;
+use App\Http\Controllers\FrontEnd\Room\MercadoPagoController;
 use App\Http\Controllers\FrontEnd\Room\RoomBookingController;
-use App\Http\Controllers\FrontEnd\Room\RoomController;
-use App\Http\Controllers\FrontEnd\ServiceController;
-use App\Http\Controllers\FrontEnd\UserController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BackEnd\HomePage\HeroVideoController;
+use App\Http\Controllers\BackEnd\HomePage\HeroSliderController;
+use App\Http\Controllers\BackEnd\HomePage\HeroStaticController;
+use App\Http\Controllers\BackEnd\HomePage\TestimonialController;
+use App\Http\Controllers\BackEnd\HomePage\BrandSectionController;
+use App\Http\Controllers\BackEnd\HomePage\IntroSectionController;
+use App\Http\Controllers\BackEnd\HomePage\SectionHeadingController;
+use App\Http\Controllers\FrontEnd\Package\PackageBookingController;
+use App\Http\Controllers\BackEnd\BasicSettings\SocialLinkController;
+use App\Http\Controllers\BackEnd\BasicSettings\CookieAlertController;
+use App\Http\Controllers\BackEnd\BasicSettings\PageHeadingController;
+use App\Http\Controllers\BackEnd\FAQController as AdminFAQController;
+use App\Http\Controllers\BackEnd\AcademicSessionsManagementController;
+use App\Http\Controllers\BackEnd\BasicSettings\MailTemplateController;
+use App\Http\Controllers\BackEnd\BasicSettings\BasicSettingsController;
+use App\Http\Controllers\BackEnd\BlogController as AdminBlogController;
+use App\Http\Controllers\BackEnd\RoomController as AdminRoomController;
+use App\Http\Controllers\BackEnd\PaymentGateway\OnlineGatewayController;
+use App\Http\Controllers\BackEnd\PaymentGateway\OfflineGatewayController;
+use App\Http\Controllers\BackEnd\GalleryController as AdminGalleryController;
+use App\Http\Controllers\BackEnd\PackageController as AdminPackageController;
+use App\Http\Controllers\BackEnd\ServiceController as AdminServiceController;
+use App\Http\Controllers\FrontEnd\Package\PaytmController as PackagePaytmController;
+use App\Http\Controllers\FrontEnd\Package\MollieController as PackageMollieController;
+use App\Http\Controllers\FrontEnd\Package\PayPalController as PackagePayPalController;
+use App\Http\Controllers\FrontEnd\Package\StripeController as PackageStripeController;
+use App\Http\Controllers\FrontEnd\Package\PaystackController as PackagePaystackController;
+use App\Http\Controllers\FrontEnd\Package\RazorpayController as PackageRazorpayController;
+use App\Http\Controllers\FrontEnd\Package\InstamojoController as PackageInstamojoController;
+use App\Http\Controllers\FrontEnd\PushNotificationController as UiPushNotificationController;
+use App\Http\Controllers\FrontEnd\Package\FlutterwaveController as PackageFlutterwaveController;
+use App\Http\Controllers\FrontEnd\Package\MercadoPagoController as PackageMercadoPagoController;
 
 Route::fallback(function () {
   return view('errors.404');
@@ -639,6 +640,60 @@ Route::prefix('/admin')->middleware(['auth:admin', 'lfm.path'])->group(function 
     Route::post('/rooms_management/delete_room', [AdminRoomController::class, 'deleteRoom'])->name('admin.rooms_management.delete_room');
 
     Route::post('/rooms_management/bulk_delete_room', [AdminRoomController::class, 'bulkDeleteRoom'])->name('admin.rooms_management.bulk_delete_room');
+  });
+  // rooms management route end
+
+  // rooms management route start
+  Route::group(['middleware' => 'checkpermission:Rooms Management'], function () {
+    // Route::get('/rooms_management/settings', [AdminRoomController::class, 'settings'])->name('admin.rooms_management.settings');
+
+    // Route::post('/rooms_management/update_settings', [AdminRoomController::class, 'updateSettings'])->name('admin.rooms_management.update_settings');
+
+    Route::get('/roomsManagement/buildings', [RoomsManagementController::class, 'coupons'])->name('admin.rooms_management.coupons');
+
+    // Route::post('/rooms_management/store-coupon', [AdminRoomController::class, 'storeCoupon'])->name('admin.rooms_management.store_coupon');
+
+    // Route::post('/rooms_management/update-coupon', [AdminRoomController::class, 'updateCoupon'])->name('admin.rooms_management.update_coupon');
+
+    // Route::post('/rooms_management/delete-coupon/{id}', [AdminRoomController::class, 'destroyCoupon'])->name('admin.rooms_management.delete_coupon');
+
+    // Route::get('/rooms_management/amenities', [AdminRoomController::class, 'amenities'])->name('admin.rooms_management.amenities');
+
+    // Route::post('/rooms_management/store_amenity/{language}', [AdminRoomController::class, 'storeAmenity'])->name('admin.rooms_management.store_amenity');
+
+    // Route::post('/rooms_management/update_amenity', [AdminRoomController::class, 'updateAmenity'])->name('admin.rooms_management.update_amenity');
+
+    // Route::post('/rooms_management/delete_amenity', [AdminRoomController::class, 'deleteAmenity'])->name('admin.rooms_management.delete_amenity');
+
+    // Route::post('/rooms_management/bulk_delete_amenity', [AdminRoomController::class, 'bulkDeleteAmenity'])->name('admin.rooms_management.bulk_delete_amenity');
+
+    // Route::get('/rooms_management/categories', [AdminRoomController::class, 'categories'])->name('admin.rooms_management.categories');
+
+    // Route::post('/rooms_management/store_category/{language}', [AdminRoomController::class, 'storeCategory'])->name('admin.rooms_management.store_category');
+
+    // Route::post('/rooms_management/update_category', [AdminRoomController::class, 'updateCategory'])->name('admin.rooms_management.update_category');
+
+    // Route::post('/rooms_management/delete_category', [AdminRoomController::class, 'deleteCategory'])->name('admin.rooms_management.delete_category');
+
+    // Route::post('/rooms_management/bulk_delete_category', [AdminRoomController::class, 'bulkDeleteCategory'])->name('admin.rooms_management.bulk_delete_category');
+
+    // Route::get('/rooms_management/rooms', [AdminRoomController::class, 'rooms'])->name('admin.rooms_management.rooms');
+
+    // Route::get('/rooms_management/create_room', [AdminRoomController::class, 'createRoom'])->name('admin.rooms_management.create_room');
+
+    // Route::post('/rooms_management/store_room', [AdminRoomController::class, 'storeRoom'])->name('admin.rooms_management.store_room');
+
+    // Route::post('/rooms_management/update_featured_room', [AdminRoomController::class, 'updateFeaturedRoom'])->name('admin.rooms_management.update_featured_room');
+
+    // Route::get('/rooms_management/edit_room/{id}', [AdminRoomController::class, 'editRoom'])->name('admin.rooms_management.edit_room');
+
+    // Route::get('/rooms_management/slider_images/{id}', [AdminRoomController::class, 'getSliderImages']);
+
+    // Route::post('/rooms_management/update_room/{id}', [AdminRoomController::class, 'updateRoom'])->name('admin.rooms_management.update_room');
+
+    // Route::post('/rooms_management/delete_room', [AdminRoomController::class, 'deleteRoom'])->name('admin.rooms_management.delete_room');
+
+    // Route::post('/rooms_management/bulk_delete_room', [AdminRoomController::class, 'bulkDeleteRoom'])->name('admin.rooms_management.bulk_delete_room');
   });
   // rooms management route end
 
