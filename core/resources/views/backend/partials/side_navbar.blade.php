@@ -90,12 +90,12 @@
                     <span class="sub-item">{{ __('Settings') }}</span>
                   </a>
                 </li> -->
-                <li class="{{ request()->routeIs('admin.rooms_management.coupons') ? 'active' : '' }}">
+                <li class="{{ request()->is('admin/buildingsManagement') ? 'active' : '' }}">
                   <a href="{{ url('admin/buildingsManagement') }}">
                     <span class="sub-item">Buildings</span>
                   </a>
                 </li>
-                <li class="{{ request()->routeIs('admin.rooms_management.coupons') ? 'active' : '' }}">
+                <li class="{{ request()->is('admin/roomsManagement') ? 'active' : '' }}">
                   <a href="{{ url('admin/roomsManagement') }}">
                     <span class="sub-item">Rooms</span>
                   </a>
