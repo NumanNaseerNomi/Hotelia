@@ -122,6 +122,12 @@ class BuildingsManagementController extends Controller
     return 'success';
   }
 
+  public function delete($id)
+  {
+    BuildingsModel::findOrFail($id)->delete();
+    return back()->with('success', 'Building deleted successfully!');
+  }
+
   // public function updateCoupon(CouponRequest $request)
   // {
   //   $startDate = Carbon::parse($request->start_date);
