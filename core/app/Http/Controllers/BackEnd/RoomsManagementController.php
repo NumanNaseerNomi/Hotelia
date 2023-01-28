@@ -26,7 +26,7 @@ class RoomsManagementController extends Controller
     $request->validate(
       [
         'name' => 'required|max:255',
-        'building' => 'required',
+        'buildingId' => 'required',
         'floor' => 'required',
       ]
     );
