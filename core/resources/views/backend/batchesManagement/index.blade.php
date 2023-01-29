@@ -65,20 +65,20 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($rooms as $room)
+                      @foreach ($batches as $room)
                         <tr>
                           <td>{{ $loop->iteration }}</td>
                           <td>{{ $room->name }}</td>
-                          <td>{{ $room->type }}</td>
-                          <td>{{ $room->getBuilding->name }}</td>
-                          <td>{{ $room->floor }}</td>
-                          <td>{{ $room->description }}</td>
-                          <td>{{ $room->description }}</td>
-                          <td>{{ $room->description }}</td>
-                          <td>{{ $room->description }}</td>
+                          <td>{{ $room->getCourse->name }}</td>
+                          <td>{{ $room->maxStrength }}</td>
+                          <td></td>
+                          <td>{{ $room->rollNumberPrefix }}</td>
+                          <td>{{ $room->location }}</td>
+                          <td>{{ $room->startDate }}</td>
+                          <td>{{ $room->endDate }}</td>
                           <td>{{ $room->description }}</td>
                           <td>
-                            <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $room->id }}" data-name="{{ $room->name }}" data-type="{{ $room->type }}" data-building="{{ $room->getBuilding->id }}" data-floor="{{ $room->floor }}" data-description="{{ $room->description }}">
+                            <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $room->id }}" data-name="{{ $room->name }}" data-type="{{ $room->type }}" data-building="{{ $room->id }}" data-floor="{{ $room->floor }}" data-description="{{ $room->description }}">
                               <span class="btn-label">
                                 <i class="fas fa-edit"></i>
                               </span>
