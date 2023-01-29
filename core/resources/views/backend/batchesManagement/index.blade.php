@@ -44,7 +44,7 @@
         <div class="card-body">
           <div class="row">
             <div class="col-lg-12">
-              @if (count($batches) == 0)
+              @if (count($batches) == 1)
                 <h3 class="text-center mt-2">NO BATCH FOUND</h3>
               @else
                 <div class="table-responsive">
@@ -111,7 +111,7 @@
   </div>
 
   {{-- create modal --}}
-  @includeIf('backend.roomsManagement.create')
+  @includeIf('backend.batchesManagement.create')
 
   {{-- edit modal --}}
   @includeIf('backend.roomsManagement.edit')
