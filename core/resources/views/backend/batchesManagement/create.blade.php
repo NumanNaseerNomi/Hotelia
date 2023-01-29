@@ -22,6 +22,19 @@
 
             <div class="col-lg-6">
               <div class="form-group">
+                <label for="">Courses*</label>
+                <select class="form-control" name="course">
+                  <option selected disabled>Select Course</option>
+                  @foreach($courses as $course)
+                    <option value="{{ $course->id }}">{{ $course->name }}</option>
+                  @endforeach
+                </select>
+                <p id="err_course" class="mt-2 mb-0 text-danger em"></p>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="form-group">
                 <label for="">Type</label>
                 <input type="text" class="form-control" name="type" placeholder="Enter Type">
                 <p id="err_type" class="mt-2 mb-0 text-danger em"></p>
