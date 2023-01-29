@@ -42,6 +42,14 @@
 
             <div class="col-lg-6">
               <div class="form-group">
+                <label for="">Roll Number Prefix</label>
+                <input type="number" id="in_rollNumberPrefix" class="form-control" name="rollNumberPrefix" placeholder="Enter Roll Number Prefix">
+                <p id="editErr_rollNumberPrefix" class="mt-2 mb-0 text-danger em"></p>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="form-group">
                 <label for="">Building*</label>
                 <select class="form-control" name="buildingId" id="in_building" selected="in_building">
                   @foreach($buildings as $building)
