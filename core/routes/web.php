@@ -24,6 +24,7 @@ use App\Http\Controllers\FrontEnd\Room\InstamojoController;
 use App\Http\Controllers\BackEnd\PushNotificationController;
 use App\Http\Controllers\FrontEnd\Package\PackageController;
 use App\Http\Controllers\BackEnd\BasicSettings\SEOController;
+use App\Http\Controllers\BackEnd\BatchesManagementController;
 use App\Http\Controllers\BackEnd\CoursesManagementController;
 use App\Http\Controllers\BackEnd\HomePage\FacilityController;
 use App\Http\Controllers\BackEnd\HomePage\SectionsController;
@@ -671,6 +672,15 @@ Route::prefix('/admin')->middleware(['auth:admin', 'lfm.path'])->group(function 
     Route::post('/coursesManagement/delete/{id}', [CoursesManagementController::class, 'delete']);
   });
   // courses management route end
+
+  // batches management route start
+  Route::group(['middleware' => 'checkpermission:Rooms Management'], function () {
+    Route::get('/batchesManagement', [BatchesManagementController::class, 'index']);
+    Route::post('/batchesManagement/create', [BatchesManagementController::class, 'create']);
+    Route::post('/batchesManagement/update', [BatchesManagementController::class, 'update']);
+    Route::post('/batchesManagement/delete/{id}', [BatchesManagementController::class, 'delete']);
+  });
+  // batches management route end
 
 
   // Room Bookings Routes
