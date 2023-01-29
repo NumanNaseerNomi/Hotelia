@@ -78,7 +78,7 @@
                           <td>{{ $batch->endDate }}</td>
                           <td>{{ $batch->description }}</td>
                           <td>
-                            <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $batch->id }}" data-name="{{ $batch->name }}" data-type="{{ $batch->type }}" data-building="{{ $batch->id }}" data-floor="{{ $batch->floor }}" data-description="{{ $batch->description }}">
+                            <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $batch->id }}" data-name="{{ $batch->name }}" data-course="{{ $batch->getCourse->id }}" data-max-strength="{{ $batch->maxStrength }}" data-floor="{{ $batch->floor }}" data-description="{{ $batch->description }}">
                               <span class="btn-label">
                                 <i class="fas fa-edit"></i>
                               </span>
@@ -114,5 +114,5 @@
   @includeIf('backend.batchesManagement.create')
 
   {{-- edit modal --}}
-  @includeIf('backend.roomsManagement.edit')
+  @includeIf('backend.batchesManagement.edit')
 @endsection
