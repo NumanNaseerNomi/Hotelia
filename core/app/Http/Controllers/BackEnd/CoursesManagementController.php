@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\BackEnd;
 
 use App\Models\RoomsModel;
+use App\Models\CoursesModel;
 use Illuminate\Http\Request;
 use App\Models\BuildingsModel;
 use App\Traits\MiscellaneousTrait;
@@ -16,6 +17,7 @@ class CoursesManagementController extends Controller
   {
     $data['rooms'] = RoomsModel::all();
     $data['buildings'] = BuildingsModel::all();
+    $data['courses'] = CoursesModel::all();
     return view('backend.coursesManagement.index', $data);
   }
 
@@ -24,13 +26,11 @@ class CoursesManagementController extends Controller
     $request->validate(
       [
         'name' => 'required|max:255',
-        'buildingId' => 'required',
-        'floor' => 'required',
       ]
     );
     
-    RoomsModel::create($request->all());
-    $request->session()->flash('success', 'Room added successfully!');
+    CoursesModel::create($request->all());
+    $request->session()->flash('success', 'Course added successfully!');
     return 'success';
   }
 
