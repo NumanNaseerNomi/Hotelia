@@ -103,7 +103,7 @@
   </div>
 
   {{-- create modal --}}
-  @includeIf('backend.roomsManagement.create')
+  @includeIf('backend.coursesManagement.create')
 
   {{-- edit modal --}}
   @includeIf('backend.roomsManagement.edit')
