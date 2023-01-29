@@ -16,7 +16,7 @@ class CoursesManagementController extends Controller
   {
     $data['rooms'] = RoomsModel::all();
     $data['buildings'] = BuildingsModel::all();
-    return view('backend.roomsManagement.index', $data);
+    return view('backend.coursesManagement.index', $data);
   }
 
   public function create(Request $request)
