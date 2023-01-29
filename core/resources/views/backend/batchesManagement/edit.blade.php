@@ -8,7 +8,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="ajaxEditForm" class="modal-form" action="{{ url('admin/roomsManagement/update') }}" method="post">
+        <form id="ajaxEditForm" class="modal-form" action="{{ url('admin/batchesManagement/update') }}" method="post">
           @csrf
           <input type="hidden" id="in_id" name="id">
           <div class="row no-gutters">
@@ -71,35 +71,11 @@
                 <p id="editErr_location" class="mt-2 mb-0 text-danger em"></p>
               </div>
             </div>
-
-            <div class="col-lg-6">
-              <div class="form-group">
-                <label for="">Building*</label>
-                <select class="form-control" name="buildingId" id="in_building" selected="in_building">
-                  @foreach($buildings as $building)
-                    <option value="{{ $building->id }}">{{ $building->name }}</option>
-                  @endforeach
-                </select>
-                <p id="editErr_buildingId" class="mt-2 mb-0 text-danger em"></p>
-              </div>
-            </div>
-
-            <div class="col-lg-6">
-              <div class="form-group">
-                <label for="">Floor*</label>
-                <select class="form-control" name="floor" id="in_floor" selected="in_floor">
-                  @foreach(range(1, 10) as $floor)
-                    <option value="{{ $floor }}">{{ $floor }}</option>
-                  @endforeach
-                </select>
-                <p id="editErr_floor" class="mt-2 mb-0 text-danger em"></p>
-              </div>
-            </div>
             
             <div class="col">
               <div class="form-group">
                 <label for="">Description</label>
-                <textarea id="in_description" class="form-control" name="description" rows="4" placeholder="Enter Description"></textarea>
+                <textarea id="in_description" class="form-control" name="description" rows="1" placeholder="Enter Description"></textarea>
               </div>
             </div>
           </div>
