@@ -11,9 +11,9 @@ class BatchesModel extends Model
 
   protected $table = 'Batches';
   protected $fillable = ['name', 'courseId', 'maxStrength', 'rollNumberPrefix', 'location', 'startDate', 'endDate', 'description'];
-  
-  // public function getBuilding()
-  // {
-  //   return $this->belongsTo(BuildingsModel::class, 'buildingId');
-  // }
+
+  public function getCourse()
+  {
+    return $this->belongsTo(CoursesModel::class, 'courseId');
+  }
 }
