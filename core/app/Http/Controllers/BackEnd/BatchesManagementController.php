@@ -61,7 +61,7 @@ class BatchesManagementController extends Controller
 
   public function delete($id)
   {
-    RoomsModel::findOrFail($id)->delete();
-    return back()->with('success', 'Room deleted successfully!');
+    BatchesModel::findOrFail($id)->delete();
+    return back()->with('success', 'Batch deleted successfully!');
   }
 }
