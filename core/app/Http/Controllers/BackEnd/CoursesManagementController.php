@@ -51,7 +51,7 @@ class CoursesManagementController extends Controller
 
   public function delete($id)
   {
-    RoomsModel::findOrFail($id)->delete();
+    CoursesModel::findOrFail($id)->delete();
     return back()->with('success', 'Room deleted successfully!');
   }
 }
