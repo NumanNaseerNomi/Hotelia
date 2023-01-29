@@ -65,27 +65,27 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($batches as $room)
+                      @foreach ($batches as $batch)
                         <tr>
                           <td>{{ $loop->iteration }}</td>
-                          <td>{{ $room->name }}</td>
-                          <td>{{ $room->getCourse->name }}</td>
-                          <td>{{ $room->maxStrength }}</td>
+                          <td>{{ $batch->name }}</td>
+                          <td>{{ $batch->getCourse->name }}</td>
+                          <td>{{ $batch->maxStrength }}</td>
                           <td></td>
-                          <td>{{ $room->rollNumberPrefix }}</td>
-                          <td>{{ $room->location }}</td>
-                          <td>{{ $room->startDate }}</td>
-                          <td>{{ $room->endDate }}</td>
-                          <td>{{ $room->description }}</td>
+                          <td>{{ $batch->rollNumberPrefix }}</td>
+                          <td>{{ $batch->location }}</td>
+                          <td>{{ $batch->startDate }}</td>
+                          <td>{{ $batch->endDate }}</td>
+                          <td>{{ $batch->description }}</td>
                           <td>
-                            <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $room->id }}" data-name="{{ $room->name }}" data-type="{{ $room->type }}" data-building="{{ $room->id }}" data-floor="{{ $room->floor }}" data-description="{{ $room->description }}">
+                            <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $batch->id }}" data-name="{{ $batch->name }}" data-type="{{ $batch->type }}" data-building="{{ $batch->id }}" data-floor="{{ $batch->floor }}" data-description="{{ $batch->description }}">
                               <span class="btn-label">
                                 <i class="fas fa-edit"></i>
                               </span>
                               {{ __('Edit') }}
                             </a>
 
-                            <form class="deleteForm d-inline-block" action="{{ url('admin/roomsManagement/delete', ['id' => $room->id]) }}" method="post">
+                            <form class="deleteForm d-inline-block" action="{{ url('admin/batchesManagement/delete', ['id' => $batch->id]) }}" method="post">
                               @csrf
                               <button type="submit" class="btn btn-danger btn-sm deleteBtn">
                                 <span class="btn-label">
