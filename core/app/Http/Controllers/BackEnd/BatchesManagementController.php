@@ -38,10 +38,9 @@ class BatchesManagementController extends Controller
         'location' => 'required',
       ]
     );
-    dd($request->all());
     
-    RoomsModel::create($request->all());
-    $request->session()->flash('success', 'Room added successfully!');
+    BatchesModel::create($request->all());
+    $request->session()->flash('success', 'Batch added successfully!');
     return 'success';
   }
 
