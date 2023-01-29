@@ -100,6 +100,15 @@
           </li>
         @endif
 
+        @if(empty($admin->role) || (!empty($permissions) && in_array('Academic Sessions Management', $permissions)))
+          <li class="nav-item @if (request()->is('admin/academicSessionsManagement')) active @endif">
+            <a href="{{ url('/admin/academicSessionsManagement') }}">
+              <i class="far fa-calendar-week"></i>
+              <p>Courses Management</p>
+            </a>
+          </li>
+        @endif
+
       @if(!true)
 
         @if(empty($admin->role) || (!empty($permissions) && in_array('Rooms Management', $permissions)))
