@@ -15,7 +15,7 @@
             <div class="col-lg-6">
               <div class="form-group">
                 <label for="">{{ __('Name') . '*' }}</label>
-                <input type="text" class="form-control" name="name" placeholder="Enter Building Name">
+                <input type="text" class="form-control" name="name" placeholder="Enter Room Name">
                 <p id="err_name" class="mt-2 mb-0 text-danger em"></p>
               </div>
             </div>
