@@ -22,7 +22,7 @@
 
             <div class="col-lg-6">
               <div class="form-group">
-                <label for="">Courses*</label>
+                <label for="">Course*</label>
                 <select class="form-control" name="courseId">
                   <option selected disabled>Select Course</option>
                   @foreach($courses as $course)
