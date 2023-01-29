@@ -24,6 +24,7 @@ use App\Http\Controllers\FrontEnd\Room\InstamojoController;
 use App\Http\Controllers\BackEnd\PushNotificationController;
 use App\Http\Controllers\FrontEnd\Package\PackageController;
 use App\Http\Controllers\BackEnd\BasicSettings\SEOController;
+use App\Http\Controllers\BackEnd\CoursesManagementController;
 use App\Http\Controllers\BackEnd\HomePage\FacilityController;
 use App\Http\Controllers\BackEnd\HomePage\SectionsController;
 use App\Http\Controllers\FrontEnd\Room\FlutterwaveController;
