@@ -51,14 +51,6 @@
 
             <div class="col-lg-6">
               <div class="form-group">
-                <label for="">Location*</label>
-                <input type="text" class="form-control" name="location" placeholder="Enter Location">
-                <p id="err_location" class="mt-2 mb-0 text-danger em"></p>
-              </div>
-            </div>
-
-            <div class="col-lg-6">
-              <div class="form-group">
                 <label for="">Start Date*</label>
                 <input type="date" class="form-control" name="startDate">
                 <p id="err_startDate" class="mt-2 mb-0 text-danger em"></p>
@@ -70,6 +62,14 @@
                 <label for="">End Date*</label>
                 <input type="date" class="form-control" name="endDate">
                 <p id="err_endDate" class="mt-2 mb-0 text-danger em"></p>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="">Location*</label>
+                <input type="text" class="form-control" name="location" placeholder="Enter Location">
+                <p id="err_location" class="mt-2 mb-0 text-danger em"></p>
               </div>
             </div>
 
