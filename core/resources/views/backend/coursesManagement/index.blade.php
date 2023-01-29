@@ -70,7 +70,7 @@
                           <td>{{ $room->option }}</td>
                           <td>{{ $room->description }}</td>
                           <td>
-                            <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $room->id }}" data-name="{{ $room->name }}" data-type="{{ $room->type }}" data-floor="{{ $room->floor }}" data-description="{{ $room->description }}">
+                            <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $room->id }}" data-name="{{ $room->name }}" data-type="{{ $room->group }}" data-description="{{ $room->description }}">
                               <span class="btn-label">
                                 <i class="fas fa-edit"></i>
                               </span>
@@ -106,5 +106,5 @@
   @includeIf('backend.coursesManagement.create')
 
   {{-- edit modal --}}
-  <!-- @includeIf('backend.roomsManagement.edit') -->
+  @includeIf('backend.roomsManagement.edit')
 @endsection
