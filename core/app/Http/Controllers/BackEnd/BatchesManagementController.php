@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\BackEnd;
 
 use App\Models\RoomsModel;
+use App\Models\BatchesModel;
 use Illuminate\Http\Request;
 use App\Models\BuildingsModel;
 use App\Traits\MiscellaneousTrait;
@@ -16,6 +17,8 @@ class BatchesManagementController extends Controller
   {
     $data['rooms'] = RoomsModel::all();
     $data['buildings'] = BuildingsModel::all();
+    $data['batches'] = BatchesModel::all();
+
     return view('backend.batchesManagement.index', $data);
   }
 
