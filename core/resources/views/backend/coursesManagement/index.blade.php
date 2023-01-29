@@ -70,7 +70,7 @@
                           <td>{{ $course->option }}</td>
                           <td>{{ $course->description }}</td>
                           <td>
-                            <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $course->id }}" data-name="{{ $course->name }}" data-type="{{ $course->group }}" data-description="{{ $course->description }}">
+                            <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $course->id }}" data-name="{{ $course->name }}" data-group="{{ $course->group }}" data-description="{{ $course->description }}">
                               <span class="btn-label">
                                 <i class="fas fa-edit"></i>
                               </span>
@@ -106,5 +106,5 @@
   @includeIf('backend.coursesManagement.create')
 
   {{-- edit modal --}}
-  @includeIf('backend.roomsManagement.edit')
+  @includeIf('backend.coursesManagement.edit')
 @endsection
