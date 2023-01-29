@@ -8,7 +8,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="ajaxEditForm" class="modal-form" action="{{ url('admin/roomsManagement/update') }}" method="post">
+        <form id="ajaxEditForm" class="modal-form" action="{{ url('admin/coursesManagement/update') }}" method="post">
           @csrf
           <input type="hidden" id="in_id" name="id">
           <div class="row no-gutters">
@@ -21,13 +21,13 @@
             </div>
             <div class="col-lg-6">
               <div class="form-group">
-                <label for="">Type</label>
-                <input type="text" id="in_type" class="form-control" name="type" placeholder="Enter Type">
-                <p id="editErr_type" class="mt-2 mb-0 text-danger em"></p>
+                <label for="">Group</label>
+                <input type="text" id="in_group" class="form-control" name="group" placeholder="Enter Group">
+                <p id="editErr_group" class="mt-2 mb-0 text-danger em"></p>
               </div>
             </div>
 
-            <div class="col-lg-6">
+            <!-- <div class="col-lg-6">
               <div class="form-group">
                 <label for="">Building*</label>
                 <select class="form-control" name="buildingId" id="in_building" selected="in_building">
@@ -37,9 +37,9 @@
                 </select>
                 <p id="editErr_buildingId" class="mt-2 mb-0 text-danger em"></p>
               </div>
-            </div>
+            </div> -->
 
-            <div class="col-lg-6">
+            <!-- <div class="col-lg-6">
               <div class="form-group">
                 <label for="">Floor*</label>
                 <select class="form-control" name="floor" id="in_floor" selected="in_floor">
@@ -49,7 +49,7 @@
                 </select>
                 <p id="editErr_floor" class="mt-2 mb-0 text-danger em"></p>
               </div>
-            </div>
+            </div> -->
             
             <div class="col">
               <div class="form-group">
