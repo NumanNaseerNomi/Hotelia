@@ -16,9 +16,12 @@ class CreateBatchesTable extends Migration
         Schema::create('Batches', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('group')->nullable();
-            $table->string('batch')->nullable();
-            $table->string('option')->nullable();
+            $table->foreignId('courseId')->constrained('Courses');
+            $table->integer('maxStrength');
+            $table->string('rollNumberPrefix');
+            $table->string('location');
+            $table->date('startDate');
+            $table->date('endDate');
             $table->string('description')->nullable();
             $table->timestamps();
         });
