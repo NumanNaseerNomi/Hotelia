@@ -30,10 +30,15 @@ class BatchesManagementController extends Controller
     $request->validate(
       [
         'name' => 'required|max:255',
-        'buildingId' => 'required',
-        'floor' => 'required',
+        'courseId' => 'required',
+        'maxStrength' => 'required',
+        'rollNumberPrefix' => 'required',
+        'startDate' => 'required',
+        'endDate' => 'required',
+        'location' => 'required',
       ]
     );
+    dd($request->all());
     
     RoomsModel::create($request->all());
     $request->session()->flash('success', 'Room added successfully!');
