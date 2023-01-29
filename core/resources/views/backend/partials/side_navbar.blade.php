@@ -68,7 +68,6 @@
         @endif
 
         @if(empty($admin->role) || (!empty($permissions) && in_array('Rooms Management', $permissions)))
-          {{-- rooms management --}}
           <li class="nav-item
             @if(request()->is('admin/buildingsManagement')) active
             @elseif(request()->is('admin/roomsManagement')) active
@@ -76,7 +75,7 @@
           >
             <a data-toggle="collapse" href="#rooms">
               <i class="fal fa-home"></i>
-              <p class="pr-2">{{ __('Rooms Management') }}</p>
+              <p class="pr-2">Buildings & Rooms</p>
               <span class="caret"></span>
             </a>
             <div id="rooms" class="collapse
@@ -100,12 +99,35 @@
           </li>
         @endif
 
-        @if(empty($admin->role) || (!empty($permissions) && in_array('Academic Sessions Management', $permissions)))
-          <li class="nav-item @if (request()->is('admin/academicSessionsManagement')) active @endif">
-            <a href="{{ url('/admin/academicSessionsManagement') }}">
-              <i class="far fa-calendar-week"></i>
-              <p>Courses Management</p>
+        @if(empty($admin->role) || (!empty($permissions) && in_array('Rooms Management', $permissions)))
+          <li class="nav-item
+            @if(request()->is('admin/buildingsManagement')) active
+            @elseif(request()->is('admin/roomsManagement')) active
+            @endif"
+          >
+            <a data-toggle="collapse" href="#rooms">
+              <i class="fal fa-books"></i>
+              <p class="pr-2">Courses & Batches</p>
+              <span class="caret"></span>
             </a>
+            <div id="rooms" class="collapse
+              @if(request()->is('admin/buildingsManagement')) show
+              @elseif(request()->is('admin/roomsManagement')) show
+              @endif"
+            >
+              <ul class="nav nav-collapse">
+                <li class="{{ request()->is('admin/buildingsManagement') ? 'active' : '' }}">
+                  <a href="{{ url('admin/buildingsManagement') }}">
+                    <span class="sub-item">Courses</span>
+                  </a>
+                </li>
+                <li class="{{ request()->is('admin/roomsManagement') ? 'active' : '' }}">
+                  <a href="{{ url('admin/roomsManagement') }}">
+                    <span class="sub-item">Batches</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </li>
         @endif
 
