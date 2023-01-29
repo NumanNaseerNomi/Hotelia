@@ -35,9 +35,9 @@
 
             <div class="col-lg-6">
               <div class="form-group">
-                <label for="">Type</label>
-                <input type="text" class="form-control" name="type" placeholder="Enter Type">
-                <p id="err_type" class="mt-2 mb-0 text-danger em"></p>
+                <label for="">Max Strength</label>
+                <input type="number" class="form-control" name="maxStrength" placeholder="Enter Max Strength" min="0">
+                <p id="err_maxStrength" class="mt-2 mb-0 text-danger em"></p>
               </div>
             </div>
 
