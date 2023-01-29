@@ -19,11 +19,24 @@
                 <p id="editErr_name" class="mt-2 mb-0 text-danger em"></p>
               </div>
             </div>
+
             <div class="col-lg-6">
               <div class="form-group">
-                <label for="">Type</label>
-                <input type="text" id="in_type" class="form-control" name="type" placeholder="Enter Type">
-                <p id="editErr_type" class="mt-2 mb-0 text-danger em"></p>
+                <label for="">Course*</label>
+                <select class="form-control" name="courseId" id="in_course" selected="in_course">
+                  @foreach($courses as $course)
+                    <option value="{{ $course->id }}">{{ $course->name }}</option>
+                  @endforeach
+                </select>
+                <p id="editErr_buildingId" class="mt-2 mb-0 text-danger em"></p>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="">Max Strength</label>
+                <input type="number" id="in_maxStrength" class="form-control" name="maxStrength" placeholder="Enter Max Strength">
+                <p id="editErr_maxStrength" class="mt-2 mb-0 text-danger em"></p>
               </div>
             </div>
 
