@@ -67,7 +67,7 @@
           </li>
         @endif
 
-        @if(empty($admin->role) || (!empty($permissions) && in_array('Rooms Management', $permissions)))
+        @if(empty($admin->role) || (!empty($permissions) && in_array('Buildings & Rooms', $permissions)))
           <li class="nav-item
             @if(request()->is('admin/buildingsManagement')) active
             @elseif(request()->is('admin/roomsManagement')) active
@@ -116,8 +116,8 @@
               @endif"
             >
               <ul class="nav nav-collapse">
-                <li class="{{ request()->is('admin/buildingsManagement') ? 'active' : '' }}">
-                  <a href="{{ url('admin/buildingsManagement') }}">
+                <li class="{{ request()->is('admin/roomsManagement') ? 'active' : '' }}">
+                  <a href="{{ url('admin/roomsManagement') }}">
                     <span class="sub-item">Courses</span>
                   </a>
                 </li>
