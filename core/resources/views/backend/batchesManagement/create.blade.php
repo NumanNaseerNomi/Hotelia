@@ -35,9 +35,25 @@
 
             <div class="col-lg-6">
               <div class="form-group">
-                <label for="">Max Strength</label>
+                <label for="">Max Strength*</label>
                 <input type="number" class="form-control" name="maxStrength" placeholder="Enter Max Strength" min="0">
                 <p id="err_maxStrength" class="mt-2 mb-0 text-danger em"></p>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="">Roll Number Prefix</label>
+                <input type="number" class="form-control" name="rollNumberPrefix" placeholder="Enter Roll Number Prefix" min="0">
+                <p id="err_rollNumberPrefix" class="mt-2 mb-0 text-danger em"></p>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="">Location*</label>
+                <input type="text" class="form-control" name="location" placeholder="Enter Location">
+                <p id="err_location" class="mt-2 mb-0 text-danger em"></p>
               </div>
             </div>
 
