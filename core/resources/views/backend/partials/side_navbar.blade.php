@@ -85,11 +85,6 @@
               @endif"
             >
               <ul class="nav nav-collapse">
-                <!-- <li class="{{ request()->routeIs('admin.rooms_management.settings') ? 'active' : '' }}">
-                  <a href="{{ route('admin.rooms_management.settings') }}">
-                    <span class="sub-item">{{ __('Settings') }}</span>
-                  </a>
-                </li> -->
                 <li class="{{ request()->is('admin/buildingsManagement') ? 'active' : '' }}">
                   <a href="{{ url('admin/buildingsManagement') }}">
                     <span class="sub-item">Buildings</span>
