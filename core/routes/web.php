@@ -663,14 +663,14 @@ Route::prefix('/admin')->middleware(['auth:admin', 'lfm.path'])->group(function 
   });
   // rooms management route end
 
-  // rooms management route start
+  // courses management route start
   Route::group(['middleware' => 'checkpermission:Rooms Management'], function () {
     Route::get('/coursesManagement', [CoursesManagementController::class, 'index']);
     Route::post('/coursesManagement/create', [CoursesManagementController::class, 'create']);
     Route::post('/coursesManagement/update', [CoursesManagementController::class, 'update']);
     Route::post('/coursesManagement/delete/{id}', [CoursesManagementController::class, 'delete']);
   });
-  // rooms management route end
+  // courses management route end
 
 
   // Room Bookings Routes
