@@ -66,7 +66,11 @@
                           <td>{{ $loop->iteration }}</td>
                           <td>{{ $course->name }}</td>
                           <td>{{ $course->group }}</td>
-                          <td>{{ $course->batch }}</td>
+                          <td>
+                            @foreach ($course->getBatches as $batch)
+                              <p>{{ $batch->name }}</p>
+                            @endforeach
+                          </td>
                           <td>{{ $course->option }}</td>
                           <td>{{ $course->description }}</td>
                           <td>
