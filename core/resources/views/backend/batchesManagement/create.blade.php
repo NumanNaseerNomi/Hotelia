@@ -73,7 +73,7 @@
               </div>
             </div>
 
-            <div class="col-lg-6">
+            <!-- <div class="col-lg-6">
               <div class="form-group">
                 <label for="">Building*</label>
                 <select class="form-control" name="buildingId">
@@ -97,12 +97,12 @@
                 </select>
                 <p id="err_floor" class="mt-2 mb-0 text-danger em"></p>
               </div>
-            </div>
+            </div> -->
 
             <div class="col">
               <div class="form-group">
                 <label for="">Description</label>
-                <textarea class="form-control" name="description" rows="4" placeholder="Enter Description"></textarea>
+                <textarea class="form-control" name="description" rows="1" placeholder="Enter Description"></textarea>
               </div>
             </div>
 
