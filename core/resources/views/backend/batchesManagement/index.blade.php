@@ -45,7 +45,7 @@
           <div class="row">
             <div class="col-lg-12">
               @if (count($rooms) == 0)
-                <h3 class="text-center mt-2">NO ROOMS FOUND</h3>
+                <h3 class="text-center mt-2">NO BATCH FOUND</h3>
               @else
                 <div class="table-responsive">
                   <table class="table table-striped mt-3" id="basic-datatables">
@@ -53,9 +53,13 @@
                       <tr>
                         <th scope="col">#</th>
                         <th scope="col">{{ __('Name') }}</th>
-                        <th scope="col">Type</th>
-                        <th scope="col">Building</th>
-                        <th scope="col">Floor</th>
+                        <th scope="col">Course</th>
+                        <th scope="col">Max Strength</th>
+                        <th scope="col">Current Strength</th>
+                        <th scope="col">Roll Number Prefix</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Start Date</th>
+                        <th scope="col">End Date</th>
                         <th scope="col">Description</th>
                         <th scope="col">{{ __('Actions') }}</th>
                       </tr>
@@ -68,6 +72,10 @@
                           <td>{{ $room->type }}</td>
                           <td>{{ $room->getBuilding->name }}</td>
                           <td>{{ $room->floor }}</td>
+                          <td>{{ $room->description }}</td>
+                          <td>{{ $room->description }}</td>
+                          <td>{{ $room->description }}</td>
+                          <td>{{ $room->description }}</td>
                           <td>{{ $room->description }}</td>
                           <td>
                             <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $room->id }}" data-name="{{ $room->name }}" data-type="{{ $room->type }}" data-building="{{ $room->getBuilding->id }}" data-floor="{{ $room->floor }}" data-description="{{ $room->description }}">
