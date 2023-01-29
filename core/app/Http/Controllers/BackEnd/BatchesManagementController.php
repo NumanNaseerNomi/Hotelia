@@ -16,12 +16,8 @@ class BatchesManagementController extends Controller
 
   public function index()
   {
-    $data['rooms'] = RoomsModel::all();
-    $data['buildings'] = BuildingsModel::all();
     $data['batches'] = BatchesModel::all();
     $data['courses'] = CoursesModel::all();
-    // dd($data);
-
     return view('backend.batchesManagement.index', $data);
   }
 
@@ -49,13 +45,17 @@ class BatchesManagementController extends Controller
     $request->validate(
       [
         'name' => 'required|max:255',
-        'buildingId' => 'required',
-        'floor' => 'required',
+        'courseId' => 'required',
+        'maxStrength' => 'required',
+        'rollNumberPrefix' => 'required',
+        'startDate' => 'required',
+        'endDate' => 'required',
+        'location' => 'required',
       ]
     );
 
-    RoomsModel::find($request->id)->update($request->all());
-    $request->session()->flash('success', 'Room updated successfully!');
+    BatchesModel::find($request->id)->update($request->all());
+    $request->session()->flash('success', 'Batch updated successfully!');
     return 'success';
   }
 
