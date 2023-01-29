@@ -44,8 +44,8 @@
         <div class="card-body">
           <div class="row">
             <div class="col-lg-12">
-              @if (count($rooms) == 0)
-                <h3 class="text-center mt-2">NO ROOMS FOUND</h3>
+              @if (count($courses) == 0)
+                <h3 class="text-center mt-2">NO COURSES FOUND</h3>
               @else
                 <div class="table-responsive">
                   <table class="table table-striped mt-3" id="basic-datatables">
@@ -61,16 +61,16 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($rooms as $room)
+                      @foreach ($courses as $room)
                         <tr>
                           <td>{{ $loop->iteration }}</td>
                           <td>{{ $room->name }}</td>
-                          <td>{{ $room->type }}</td>
-                          <td>{{ $room->getBuilding->name }}</td>
-                          <td>{{ $room->floor }}</td>
+                          <td>{{ $room->group }}</td>
+                          <td>{{ $room->batch }}</td>
+                          <td>{{ $room->option }}</td>
                           <td>{{ $room->description }}</td>
                           <td>
-                            <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $room->id }}" data-name="{{ $room->name }}" data-type="{{ $room->type }}" data-building="{{ $room->getBuilding->id }}" data-floor="{{ $room->floor }}" data-description="{{ $room->description }}">
+                            <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $room->id }}" data-name="{{ $room->name }}" data-type="{{ $room->type }}" data-floor="{{ $room->floor }}" data-description="{{ $room->description }}">
                               <span class="btn-label">
                                 <i class="fas fa-edit"></i>
                               </span>
@@ -106,5 +106,5 @@
   @includeIf('backend.coursesManagement.create')
 
   {{-- edit modal --}}
-  @includeIf('backend.roomsManagement.edit')
+  <!-- @includeIf('backend.roomsManagement.edit') -->
 @endsection
