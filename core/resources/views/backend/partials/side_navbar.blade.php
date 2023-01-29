@@ -102,7 +102,7 @@
         @if(empty($admin->role) || (!empty($permissions) && in_array('Rooms Management', $permissions)))
           <li class="nav-item
             @if(request()->is('admin/coursesManagement')) active
-            @elseif(request()->is('admin/roomsManagement')) active
+            @elseif(request()->is('admin/batchesManagement')) active
             @endif"
           >
             <a data-toggle="collapse" href="#rooms">
@@ -112,7 +112,7 @@
             </a>
             <div id="rooms" class="collapse
               @if(request()->is('admin/coursesManagement')) show
-              @elseif(request()->is('admin/roomsManagement')) show
+              @elseif(request()->is('admin/batchesManagement')) show
               @endif"
             >
               <ul class="nav nav-collapse">
@@ -121,8 +121,8 @@
                     <span class="sub-item">Courses</span>
                   </a>
                 </li>
-                <li class="{{ request()->is('admin/roomsManagement') ? 'active' : '' }}">
-                  <a href="{{ url('admin/roomsManagement') }}">
+                <li class="{{ request()->is('admin/batchesManagement') ? 'active' : '' }}">
+                  <a href="{{ url('admin/batchesManagement') }}">
                     <span class="sub-item">Batches</span>
                   </a>
                 </li>
