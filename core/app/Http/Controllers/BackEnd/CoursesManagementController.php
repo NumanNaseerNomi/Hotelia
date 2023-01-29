@@ -39,19 +39,17 @@ class CoursesManagementController extends Controller
     $request->validate(
       [
         'name' => 'required|max:255',
-        'buildingId' => 'required',
-        'floor' => 'required',
       ]
     );
 
-    RoomsModel::find($request->id)->update($request->all());
-    $request->session()->flash('success', 'Room updated successfully!');
+    CoursesModel::find($request->id)->update($request->all());
+    $request->session()->flash('success', 'Course updated successfully!');
     return 'success';
   }
 
   public function delete($id)
   {
     CoursesModel::findOrFail($id)->delete();
-    return back()->with('success', 'Room deleted successfully!');
+    return back()->with('success', 'Course deleted successfully!');
   }
 }
