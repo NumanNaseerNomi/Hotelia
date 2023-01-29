@@ -11,4 +11,9 @@ class CoursesModel extends Model
 
   protected $table = 'Courses';
   protected $fillable = ['name', 'group', 'batch', 'option', 'description'];
+
+  public function getBatches()
+  {
+    return $this->hasMany(BatchesModel::class, 'courseId');
+  }
 }
