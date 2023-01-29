@@ -59,6 +59,22 @@
 
             <div class="col-lg-6">
               <div class="form-group">
+                <label for="">Start Date*</label>
+                <input type="date" class="form-control" name="startDate">
+                <p id="err_startDate" class="mt-2 mb-0 text-danger em"></p>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="">End Date*</label>
+                <input type="date" class="form-control" name="endDate">
+                <p id="err_endDate" class="mt-2 mb-0 text-danger em"></p>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="form-group">
                 <label for="">Building*</label>
                 <select class="form-control" name="buildingId">
                   <option selected disabled>Select Building</option>
