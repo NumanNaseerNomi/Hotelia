@@ -684,10 +684,10 @@ Route::prefix('/admin')->middleware(['auth:admin', 'lfm.path'])->group(function 
 
   // students management route start
   Route::group(['middleware' => 'checkpermission:Students Management'], function () {
-    Route::get('/batchesManagement', [StudentsManagementController::class, 'index']);
-    Route::post('/batchesManagement/create', [StudentsManagementController::class, 'create']);
-    Route::post('/batchesManagement/update', [StudentsManagementController::class, 'update']);
-    Route::post('/batchesManagement/delete/{id}', [StudentsManagementController::class, 'delete']);
+    Route::get('/studentsManagement', [StudentsManagementController::class, 'index']);
+    Route::post('/studentsManagement/create', [StudentsManagementController::class, 'create']);
+    Route::post('/studentsManagement/update', [StudentsManagementController::class, 'update']);
+    Route::post('/studentsManagement/delete/{id}', [StudentsManagementController::class, 'delete']);
   });
   // students management route end
 
