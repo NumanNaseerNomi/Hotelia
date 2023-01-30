@@ -51,16 +51,16 @@
                   <table class="table table-striped mt-3" id="basic-datatables">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">{{ __('Name') }}</th>
+                        <th scope="col">Admission #</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Guardian Name</th>
+                        <th scope="col">Admission Date</th>
+                        <th scope="col">Contact #</th>
+                        <th scope="col">Batch</th>
                         <th scope="col">Course</th>
-                        <th scope="col">Max Strength</th>
-                        <th scope="col">Current Strength</th>
-                        <th scope="col">Roll Number Prefix</th>
-                        <th scope="col">Location</th>
-                        <th scope="col">Start Date</th>
-                        <th scope="col">End Date</th>
-                        <th scope="col">Description</th>
+                        <!-- <th scope="col">End Date</th>
+                        <th scope="col">Description</th> -->
                         <th scope="col">{{ __('Actions') }}</th>
                       </tr>
                     </thead>
@@ -70,8 +70,6 @@
                           <td>{{ $loop->iteration }}</td>
                           <td>{{ $batch->name }}</td>
                           <td>{{ $batch->getCourse->name }}</td>
-                          <td>{{ $batch->maxStrength }}</td>
-                          <td></td>
                           <td>{{ $batch->rollNumberPrefix }}</td>
                           <td>{{ $batch->location }}</td>
                           <td>{{ $batch->startDate }}</td>
