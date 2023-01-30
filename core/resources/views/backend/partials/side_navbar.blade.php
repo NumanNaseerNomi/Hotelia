@@ -73,12 +73,12 @@
             @elseif(request()->is('admin/roomsManagement')) active
             @endif"
           >
-            <a data-toggle="collapse" href="#rooms">
+            <a data-toggle="collapse" href="#buildingsRooms">
               <i class="fal fa-home"></i>
               <p class="pr-2">Buildings & Rooms</p>
               <span class="caret"></span>
             </a>
-            <div id="rooms" class="collapse
+            <div id="buildingsRooms" class="collapse
               @if(request()->is('admin/buildingsManagement')) show
               @elseif(request()->is('admin/roomsManagement')) show
               @endif"
@@ -99,18 +99,18 @@
           </li>
         @endif
 
-        @if(empty($admin->role) || (!empty($permissions) && in_array('Rooms Management', $permissions)))
+        @if(empty($admin->role) || (!empty($permissions) && in_array('Courses & Batches', $permissions)))
           <li class="nav-item
             @if(request()->is('admin/coursesManagement')) active
             @elseif(request()->is('admin/batchesManagement')) active
             @endif"
           >
-            <a data-toggle="collapse" href="#rooms">
+            <a data-toggle="collapse" href="#coursesBatches">
               <i class="fal fa-books"></i>
               <p class="pr-2">Courses & Batches</p>
               <span class="caret"></span>
             </a>
-            <div id="rooms" class="collapse
+            <div id="coursesBatches" class="collapse
               @if(request()->is('admin/coursesManagement')) show
               @elseif(request()->is('admin/batchesManagement')) show
               @endif"
