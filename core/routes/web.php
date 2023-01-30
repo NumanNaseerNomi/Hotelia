@@ -32,6 +32,7 @@ use App\Http\Controllers\FrontEnd\Room\FlutterwaveController;
 use App\Http\Controllers\FrontEnd\Room\MercadoPagoController;
 use App\Http\Controllers\FrontEnd\Room\RoomBookingController;
 use App\Http\Controllers\BackEnd\HomePage\HeroVideoController;
+use App\Http\Controllers\BackEnd\StudentsManagementController;
 use App\Http\Controllers\BackEnd\BuildingsManagementController;
 use App\Http\Controllers\BackEnd\HomePage\HeroSliderController;
 use App\Http\Controllers\BackEnd\HomePage\HeroStaticController;
