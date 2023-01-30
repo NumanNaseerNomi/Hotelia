@@ -131,6 +131,15 @@
           </li>
         @endif
 
+        @if(empty($admin->role) || (!empty($permissions) && in_array('Students Management', $permissions)))
+          <li class="nav-item @if (request()->is('admin/batchesManagement')) active @endif">
+            <a href="{{ url('/admin/batchesManagement') }}">
+              <i class="far fa-users"></i>
+              <p>Students Management</p>
+            </a>
+          </li>
+        @endif
+
       @if(!true)
 
         @if(empty($admin->role) || (!empty($permissions) && in_array('Rooms Management', $permissions)))
