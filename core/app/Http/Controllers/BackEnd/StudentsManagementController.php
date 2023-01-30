@@ -18,7 +18,7 @@ class StudentsManagementController extends Controller
   {
     $data['batches'] = BatchesModel::all();
     $data['courses'] = CoursesModel::all();
-    return view('backend.batchesManagement.index', $data);
+    return view('backend.studentsManagement.index', $data);
   }
 
   public function create(Request $request)
