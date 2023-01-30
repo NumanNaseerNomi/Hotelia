@@ -132,8 +132,8 @@
         @endif
 
         @if(empty($admin->role) || (!empty($permissions) && in_array('Students Management', $permissions)))
-          <li class="nav-item @if (request()->is('admin/batchesManagement')) active @endif">
-            <a href="{{ url('/admin/batchesManagement') }}">
+          <li class="nav-item @if (request()->is('admin/studentsManagement')) active @endif">
+            <a href="{{ url('/admin/studentsManagement') }}">
               <i class="far fa-users"></i>
               <p>Students Management</p>
             </a>
