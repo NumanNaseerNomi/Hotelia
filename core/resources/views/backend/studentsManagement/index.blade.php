@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="page-header">
-    <h4 class="page-title">Batches</h4>
+    <h4 class="page-title">Students</h4>
     <ul class="breadcrumbs">
       <li class="nav-home">
         <a href="{{ route('admin.dashboard') }}">
@@ -13,13 +13,13 @@
         <i class="flaticon-right-arrow"></i>
       </li>
       <li class="nav-item">
-        <a href="#">Batches Management</a>
+        <a href="#">Students Management</a>
       </li>
       <li class="separator">
         <i class="flaticon-right-arrow"></i>
       </li>
       <li class="nav-item">
-        <a href="#">Batches</a>
+        <a href="#">Students</a>
       </li>
     </ul>
   </div>
@@ -30,7 +30,7 @@
         <div class="card-header">
           <div class="row">
             <div class="col-lg-8">
-              <div class="card-title d-inline-block">Batches</div>
+              <div class="card-title d-inline-block">Students</div>
             </div>
 
             <div class="col-lg-4 mt-2 mt-lg-0">
