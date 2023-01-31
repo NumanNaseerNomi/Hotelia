@@ -62,7 +62,7 @@ class StudentsManagementController extends Controller
 
   public function delete($id)
   {
-    BatchesModel::findOrFail($id)->delete();
-    return back()->with('success', 'Batch deleted successfully!');
+    StudentsModel::findOrFail($id)->delete();
+    return back()->with('success', 'Student deleted successfully!');
   }
 }
