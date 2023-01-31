@@ -14,9 +14,25 @@
           <div class="row">
             <div class="col-lg-6">
               <div class="form-group">
-                <label for="">{{ __('Name') . '*' }}</label>
-                <input type="text" class="form-control" name="name" placeholder="Enter Batch Name">
-                <p id="err_name" class="mt-2 mb-0 text-danger em"></p>
+                <label for="">First Name*</label>
+                <input type="text" class="form-control" name="firstName" placeholder="Enter First Name">
+                <p id="err_firstName" class="mt-2 mb-0 text-danger em"></p>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="">Last Name*</label>
+                <input type="text" class="form-control" name="lastName" placeholder="Enter Last Name">
+                <p id="err_lastName" class="mt-2 mb-0 text-danger em"></p>
+              </div>
+            </div>
+            
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="">Last Name*</label>
+                <input type="text" class="form-control" name="lastName" placeholder="Enter Last Name">
+                <p id="err_lastName" class="mt-2 mb-0 text-danger em"></p>
               </div>
             </div>
 
