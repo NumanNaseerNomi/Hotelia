@@ -6,6 +6,7 @@ use App\Models\RoomsModel;
 use App\Models\BatchesModel;
 use App\Models\CoursesModel;
 use Illuminate\Http\Request;
+use App\Models\StudentsModel;
 use App\Models\BuildingsModel;
 use App\Traits\MiscellaneousTrait;
 use App\Http\Controllers\Controller;
@@ -18,6 +19,7 @@ class StudentsManagementController extends Controller
   {
     $data['batches'] = BatchesModel::all();
     $data['courses'] = CoursesModel::all();
+    $data['students'] = StudentsModel::all();
     return view('backend.studentsManagement.index', $data);
   }
 
