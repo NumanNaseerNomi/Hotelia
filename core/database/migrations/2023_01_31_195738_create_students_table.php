@@ -19,6 +19,7 @@ class CreateStudentsTable extends Migration
             $table->string('lastName');
             $table->string('guardianName');
             $table->string('contactNumber');
+            $table->timestamp('admissionDate')->useCurrent();
             $table->timestamps();
         });
     }
