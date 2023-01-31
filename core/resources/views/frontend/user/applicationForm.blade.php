@@ -87,10 +87,205 @@
                   @enderror
                 </div>
 
+                <hr/>
+
+                <div class="input-box">
+                  <label>First Name*</label>
+                  <input type="text" name="username" value="{{ old('username') }}">
+                  @error('username')
+                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
+                  @enderror
+                </div>
+
+                <div class="input-box">
+                  <label>Last Name*</label>
+                  <input type="text" name="username" value="{{ old('username') }}">
+                  @error('username')
+                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
+                  @enderror
+                </div>
+
+                <div class="input-box">
+                  <label>Email*</label>
+                  <input type="email" name="username" value="{{ old('username') }}">
+                  @error('username')
+                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
+                  @enderror
+                </div>
+
+                <div class="input-box">
+                  <label>Your Occupation</label>
+                  <input type="text" name="username" value="{{ old('username') }}">
+                  @error('username')
+                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
+                  @enderror
+                </div>
+
+                <hr/>
+
+                <div class="input-box">
+                  <label>Gender*</label><br/>
+                  <input type="radio" id="html" name="fav_language" value="HTML">
+                  <label for="html">Male</label><br>
+                  <input type="radio" id="css" name="fav_language" value="CSS">
+                  <label for="css">Female</label><br>
+                  <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                  <label for="javascript">Other</label>
+                  @error('username')
+                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
+                  @enderror
+                </div>
+
+                <div class="input-box">
+                  <label>Date of Birth*</label>
+                  <input type="date" class="form-control" name="username" value="{{ old('username') }}">
+                  @error('username')
+                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
+                  @enderror
+                </div>
+
+                <div class="input-box">
+                  <label>Nationality*</label>
+                  <input type="text" name="username" value="{{ old('username') }}">
+                  @error('username')
+                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
+                  @enderror
+                </div>
+
+                <hr/>
+
+                <div class="input-box">
+                  <label>Street + House Number*</label>
+                  <input type="text" name="username" value="{{ old('username') }}">
+                  @error('username')
+                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
+                  @enderror
+                </div>
+
+                <div class="input-box">
+                  <label>City*</label>
+                  <input type="text" name="username" value="{{ old('username') }}">
+                  @error('username')
+                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
+                  @enderror
+                </div>
+
+                <div class="input-box">
+                  <label>Country*</label>
+                  <input type="text" name="username" value="{{ old('username') }}">
+                  @error('username')
+                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
+                  @enderror
+                </div>
+
+                <div class="input-box">
+                  <label>Zip Code*</label>
+                  <input type="text" name="username" value="{{ old('username') }}">
+                  @error('username')
+                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
+                  @enderror
+                </div>
+
+                <div class="input-box">
+                  <label>Phone*</label>
+                  <input type="text" name="username" value="{{ old('username') }}">
+                  @error('username')
+                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
+                  @enderror
+                </div>
+
+                <hr/>
+
+                <div class="input-box">
+                  <label>Name*</label>
+                  <input type="text" name="username" value="{{ old('username') }}">
+                  @error('username')
+                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
+                  @enderror
+                </div>
+
+                <div class="input-box">
+                  <label>Phone*</label>
+                  <input type="text" name="username" value="{{ old('username') }}">
+                  @error('username')
+                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
+                  @enderror
+                </div>
+
+                <div class="input-box">
+                  <label>Relationship*</label>
+                  <input type="text" name="username" value="{{ old('username') }}">
+                  @error('username')
+                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
+                  @enderror
+                </div>
+
+                <hr/>
+
+                <div class="input-box">
+                  <label>How long have you been practicing Yoga?*</label>
+                  <select id="cars" name="cars">
+                    <option value="volvo">Volvo XC90</option>
+                    <option value="saab">Saab 95</option>
+                    <option value="mercedes">Mercedes SLK</option>
+                    <option value="audi">Audi TT</option>
+                  </select>
+                  @error('username')
+                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
+                  @enderror
+                </div>
+
+                <div class="input-box">
+                  <label>Do you have any experience teaching yoga?*</label>
+                  <select id="cars" name="cars">
+                    <option value="volvo">Volvo XC90</option>
+                    <option value="saab">Saab 95</option>
+                    <option value="mercedes">Mercedes SLK</option>
+                    <option value="audi">Audi TT</option>
+                  </select>
+                  @error('username')
+                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
+                  @enderror
+                </div>
+
+                <div class="input-box">
+                  <label>What is your primary reason to join the course?*</label>
+                  <input type="text" name="username" value="{{ old('username') }}">
+                  @error('username')
+                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
+                  @enderror
+                </div>
+
+                <div class="input-box">
+                  <label>What is important to you in life?*</label>
+                  <input type="text" name="username" value="{{ old('username') }}">
+                  @error('username')
+                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
+                  @enderror
+                </div>
+
+                <div class="input-box">
+                  <label>Why did you choose Arhanta Yoga?*</label>
+                  <input type="text" name="username" value="{{ old('username') }}">
+                  @error('username')
+                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
+                  @enderror
+                </div>
+
+                <div class="input-box">
+                  <label>How did you hear about us?*</label>
+                  <input type="text" name="username" value="{{ old('username') }}">
+                  @error('username')
+                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
+                  @enderror
+                </div>
 
 
 
-                
+
+
+
+
 
                 <div class="input-box">
                   <label>{{ __('Username') . '*' }}</label>
