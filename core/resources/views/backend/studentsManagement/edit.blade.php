@@ -14,9 +14,45 @@
           <div class="row no-gutters">
             <div class="col-lg-6">
               <div class="form-group">
-                <label for="">{{ __('Name') . '*' }}</label>
-                <input type="text" id="in_name" class="form-control" name="name" placeholder="Enter Name">
-                <p id="editErr_name" class="mt-2 mb-0 text-danger em"></p>
+                <label for="">First Name*</label>
+                <input type="text" id="in_firstName" class="form-control" name="firstName" placeholder="Enter First Name">
+                <p id="editErr_firstName" class="mt-2 mb-0 text-danger em"></p>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="">First Last Name*</label>
+                <input type="text" id="in_lastName" class="form-control" name="lastName" placeholder="Enter Last Name">
+                <p id="editErr_lastName" class="mt-2 mb-0 text-danger em"></p>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="">Guardian Name*</label>
+                <input type="text" id="in_guardianName" class="form-control" name="guardianName" placeholder="Enter Guardian Name">
+                <p id="editErr_guardianName" class="mt-2 mb-0 text-danger em"></p>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="">Contact Number*</label>
+                <input type="text" id="in_contact" class="form-control" name="contact" placeholder="Enter Contact Number">
+                <p id="editErr_contact" class="mt-2 mb-0 text-danger em"></p>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="">Batch*</label>
+                <select class="form-control" name="batchId" id="in_batch" selected="in_batch">
+                  @foreach($courses as $course)
+                    <option value="{{ $course->id }}">{{ $course->name }}</option>
+                  @endforeach
+                </select>
+                <p id="editErr_batchId" class="mt-2 mb-0 text-danger em"></p>
               </div>
             </div>
 
@@ -28,18 +64,10 @@
                     <option value="{{ $course->id }}">{{ $course->name }}</option>
                   @endforeach
                 </select>
-                <p id="editErr_buildingId" class="mt-2 mb-0 text-danger em"></p>
+                <p id="editErr_courseId" class="mt-2 mb-0 text-danger em"></p>
               </div>
             </div>
-
-            <div class="col-lg-6">
-              <div class="form-group">
-                <label for="">Max Strength*</label>
-                <input type="number" id="in_maxStrength" class="form-control" name="maxStrength" placeholder="Enter Max Strength">
-                <p id="editErr_maxStrength" class="mt-2 mb-0 text-danger em"></p>
-              </div>
-            </div>
-
+<!-- 
             <div class="col-lg-6">
               <div class="form-group">
                 <label for="">Roll Number Prefix*</label>
@@ -77,7 +105,7 @@
                 <label for="">Description</label>
                 <textarea id="in_description" class="form-control" name="description" rows="1" placeholder="Enter Description"></textarea>
               </div>
-            </div>
+            </div> -->
           </div>
         </form>
       </div>
