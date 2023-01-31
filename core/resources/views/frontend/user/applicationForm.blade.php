@@ -215,7 +215,7 @@
                 </div>
 
                 <div class="input-box">
-                  <button type="submit" class="btn m-1 d-none">Register</button>
+                  <button type="submit" class="btn m-1 d-none" id="submitButton">Register</button>
                 </div>
               </form>
             </div>
@@ -246,9 +246,15 @@
       {
         element.classList.remove('d-none');
       }
-      else
+
+      let nextStep = currentStep;
+      nextStep++;
+      element = document.querySelector('#step' + nextStep);
+      
+      if(!element)
       {
         document.querySelector('#nextButton').classList.add('d-none');
+        document.querySelector('#submitButton').classList.remove('d-none');
       }
     }
   }
@@ -260,7 +266,7 @@
     if(element)
     {
       element.classList.add('d-none');
-      currentStep++;
+      currentStep--;
       element = document.querySelector('#step' + currentStep);
 
       if(element)
@@ -269,7 +275,7 @@
       }
       else
       {
-        document.querySelector('#nextButton').classList.add('d-none');
+        document.querySelector('#previousButton').classList.add('d-none');
       }
     }
   }
