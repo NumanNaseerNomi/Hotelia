@@ -109,7 +109,7 @@
   </div>
 
   {{-- create modal --}}
-  @includeIf('backend.batchesManagement.create')
+  @includeIf('backend.studentsManagement.create')
 
   {{-- edit modal --}}
   @includeIf('backend.batchesManagement.edit')
