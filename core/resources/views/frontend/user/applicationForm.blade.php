@@ -214,3 +214,7 @@
     <!-- Signup Area End -->
   </main>
 @endsection
+
+<script>
+  alert(11);
+</script>
