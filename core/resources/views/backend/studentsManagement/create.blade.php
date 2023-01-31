@@ -9,7 +9,7 @@
       </div>
 
       <div class="modal-body">
-        <form id="ajaxForm" class="modal-form" action="{{ url('admin/batchesManagement/create') }}" method="post">
+        <form id="ajaxForm" class="modal-form" action="{{ url('admin/studentsManagement/create') }}" method="post">
           @csrf
           <div class="row">
             <div class="col-lg-6">
