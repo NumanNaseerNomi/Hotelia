@@ -30,9 +30,17 @@
             
             <div class="col-lg-6">
               <div class="form-group">
-                <label for="">Last Name*</label>
-                <input type="text" class="form-control" name="lastName" placeholder="Enter Last Name">
-                <p id="err_lastName" class="mt-2 mb-0 text-danger em"></p>
+                <label for="">Guardian Name*</label>
+                <input type="text" class="form-control" name="guardianName" placeholder="Enter Guardian Name">
+                <p id="err_guardianName" class="mt-2 mb-0 text-danger em"></p>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="">Admission Date*</label>
+                <input type="date" class="form-control" name="admissionDate">
+                <p id="err_admissionDate" class="mt-2 mb-0 text-danger em"></p>
               </div>
             </div>
 
