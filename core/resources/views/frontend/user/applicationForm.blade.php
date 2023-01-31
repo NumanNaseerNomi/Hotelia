@@ -268,21 +268,22 @@
       element.classList.add('d-none');
       currentStep--;
       element = document.querySelector('#step' + currentStep);
+      document.querySelector('#nextButton').classList.remove('d-none');
+      document.querySelector('#submitButton').classList.add('d-none');
 
       if(element)
       {
         element.classList.remove('d-none');
       }
-      else
+
+      let nextStep = currentStep;
+      nextStep--;
+      element = document.querySelector('#step' + nextStep);
+      
+      if(!element)
       {
         document.querySelector('#previousButton').classList.add('d-none');
       }
     }
   }
-
-  // function previousStep()
-  // {
-  //   currentStep--;
-  //   alert('Previous' + currentStep);
-  // }
 </script>
