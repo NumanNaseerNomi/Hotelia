@@ -10,7 +10,7 @@ class StudentsModel extends Model
   use HasFactory;
 
   protected $table = 'Students';
-  protected $fillable = ['firstName', 'lastName', 'guardianName', 'contactNumber'];
+  protected $fillable = ['firstName', 'lastName', 'guardianName', 'contactNumber', 'admissionDate'];
 
   // public function getCourse()
   // {
