@@ -27,15 +27,15 @@ class StudentsManagementController extends Controller
   {
     $request->validate(
       [
-        'name' => 'required|max:255',
+        'firstName' => 'required|max:255',
+        'lastName' => 'required|max:255',
+        'guardianName' => 'required|max:255',
+        'contactNumber' => 'required',
+        'batchId' => 'required',
         'courseId' => 'required',
-        'maxStrength' => 'required',
-        'rollNumberPrefix' => 'required',
-        'startDate' => 'required',
-        'endDate' => 'required',
-        'location' => 'required',
       ]
     );
+    dd($request->all());
     
     BatchesModel::create($request->all());
     $request->session()->flash('success', 'Batch added successfully!');
