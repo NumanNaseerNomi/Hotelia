@@ -78,53 +78,6 @@
               </div>
             </div>
 
-            <div class="col-lg-6">
-              <div class="form-group">
-                <label for="">Max Strength*</label>
-                <input type="number" class="form-control" name="maxStrength" placeholder="Enter Max Strength" min="0">
-                <p id="err_maxStrength" class="mt-2 mb-0 text-danger em"></p>
-              </div>
-            </div>
-
-            <div class="col-lg-6">
-              <div class="form-group">
-                <label for="">Roll Number Prefix</label>
-                <input type="number" class="form-control" name="rollNumberPrefix" placeholder="Enter Roll Number Prefix" min="0">
-                <p id="err_rollNumberPrefix" class="mt-2 mb-0 text-danger em"></p>
-              </div>
-            </div>
-
-            <div class="col-lg-6">
-              <div class="form-group">
-                <label for="">Start Date*</label>
-                <input type="date" class="form-control" name="startDate">
-                <p id="err_startDate" class="mt-2 mb-0 text-danger em"></p>
-              </div>
-            </div>
-
-            <div class="col-lg-6">
-              <div class="form-group">
-                <label for="">End Date*</label>
-                <input type="date" class="form-control" name="endDate">
-                <p id="err_endDate" class="mt-2 mb-0 text-danger em"></p>
-              </div>
-            </div>
-
-            <div class="col-lg-6">
-              <div class="form-group">
-                <label for="">Location*</label>
-                <input type="text" class="form-control" name="location" placeholder="Enter Location">
-                <p id="err_location" class="mt-2 mb-0 text-danger em"></p>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="form-group">
-                <label for="">Description</label>
-                <textarea class="form-control" name="description" rows="1" placeholder="Enter Description"></textarea>
-              </div>
-            </div>
-
           </div>
         </form>
       </div>
