@@ -43,9 +43,6 @@
                     <option value="mercedes">Mercedes SLK</option>
                     <option value="audi">Audi TT</option>
                   </select>
-                  @error('username')
-                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
-                  @enderror
                 </div>
 
                 <div class="input-box">
@@ -56,9 +53,6 @@
                     <option value="mercedes">Mercedes SLK</option>
                     <option value="audi">Audi TT</option>
                   </select>
-                  @error('username')
-                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
-                  @enderror
                 </div>
 
                 <div class="input-box">
@@ -69,9 +63,6 @@
                     <option value="mercedes">Mercedes SLK</option>
                     <option value="audi">Audi TT</option>
                   </select>
-                  @error('username')
-                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
-                  @enderror
                 </div>
 
                 <div class="input-box">
@@ -82,9 +73,6 @@
                     <option value="mercedes">Mercedes SLK</option>
                     <option value="audi">Audi TT</option>
                   </select>
-                  @error('username')
-                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
-                  @enderror
                 </div>
 
                 <hr/>
@@ -92,33 +80,21 @@
                 <div class="input-box">
                   <label>First Name*</label>
                   <input type="text" name="username" value="{{ old('username') }}">
-                  @error('username')
-                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
-                  @enderror
                 </div>
 
                 <div class="input-box">
                   <label>Last Name*</label>
                   <input type="text" name="username" value="{{ old('username') }}">
-                  @error('username')
-                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
-                  @enderror
                 </div>
 
                 <div class="input-box">
                   <label>Email*</label>
                   <input type="email" name="username" value="{{ old('username') }}">
-                  @error('username')
-                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
-                  @enderror
                 </div>
 
                 <div class="input-box">
                   <label>Your Occupation</label>
                   <input type="text" name="username" value="{{ old('username') }}">
-                  @error('username')
-                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
-                  @enderror
                 </div>
 
                 <hr/>
@@ -131,25 +107,16 @@
                   <label for="css">Female</label><br>
                   <input type="radio" id="javascript" name="fav_language" value="JavaScript">
                   <label for="javascript">Other</label>
-                  @error('username')
-                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
-                  @enderror
                 </div>
 
                 <div class="input-box">
                   <label>Date of Birth*</label>
                   <input type="date" class="form-control" name="username" value="{{ old('username') }}">
-                  @error('username')
-                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
-                  @enderror
                 </div>
 
                 <div class="input-box">
                   <label>Nationality*</label>
                   <input type="text" name="username" value="{{ old('username') }}">
-                  @error('username')
-                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
-                  @enderror
                 </div>
 
                 <hr/>
@@ -157,41 +124,26 @@
                 <div class="input-box">
                   <label>Street + House Number*</label>
                   <input type="text" name="username" value="{{ old('username') }}">
-                  @error('username')
-                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
-                  @enderror
                 </div>
 
                 <div class="input-box">
                   <label>City*</label>
                   <input type="text" name="username" value="{{ old('username') }}">
-                  @error('username')
-                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
-                  @enderror
                 </div>
 
                 <div class="input-box">
                   <label>Country*</label>
                   <input type="text" name="username" value="{{ old('username') }}">
-                  @error('username')
-                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
-                  @enderror
                 </div>
 
                 <div class="input-box">
                   <label>Zip Code*</label>
                   <input type="text" name="username" value="{{ old('username') }}">
-                  @error('username')
-                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
-                  @enderror
                 </div>
 
                 <div class="input-box">
                   <label>Phone*</label>
                   <input type="text" name="username" value="{{ old('username') }}">
-                  @error('username')
-                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
-                  @enderror
                 </div>
 
                 <hr/>
@@ -199,25 +151,16 @@
                 <div class="input-box">
                   <label>Name*</label>
                   <input type="text" name="username" value="{{ old('username') }}">
-                  @error('username')
-                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
-                  @enderror
                 </div>
 
                 <div class="input-box">
                   <label>Phone*</label>
                   <input type="text" name="username" value="{{ old('username') }}">
-                  @error('username')
-                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
-                  @enderror
                 </div>
 
                 <div class="input-box">
                   <label>Relationship*</label>
                   <input type="text" name="username" value="{{ old('username') }}">
-                  @error('username')
-                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
-                  @enderror
                 </div>
 
                 <hr/>
@@ -230,9 +173,6 @@
                     <option value="mercedes">Mercedes SLK</option>
                     <option value="audi">Audi TT</option>
                   </select>
-                  @error('username')
-                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
-                  @enderror
                 </div>
 
                 <div class="input-box">
@@ -243,41 +183,26 @@
                     <option value="mercedes">Mercedes SLK</option>
                     <option value="audi">Audi TT</option>
                   </select>
-                  @error('username')
-                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
-                  @enderror
                 </div>
 
                 <div class="input-box">
                   <label>What is your primary reason to join the course?*</label>
                   <input type="text" name="username" value="{{ old('username') }}">
-                  @error('username')
-                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
-                  @enderror
                 </div>
 
                 <div class="input-box">
                   <label>What is important to you in life?*</label>
                   <input type="text" name="username" value="{{ old('username') }}">
-                  @error('username')
-                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
-                  @enderror
                 </div>
 
                 <div class="input-box">
                   <label>Why did you choose Arhanta Yoga?*</label>
                   <input type="text" name="username" value="{{ old('username') }}">
-                  @error('username')
-                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
-                  @enderror
                 </div>
 
                 <div class="input-box">
                   <label>How did you hear about us?*</label>
                   <input type="text" name="username" value="{{ old('username') }}">
-                  @error('username')
-                    <p class="mt-3 ml-2 text-danger">{{ $message }}</p>
-                  @enderror
                 </div>
 
 
