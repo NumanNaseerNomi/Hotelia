@@ -9,8 +9,8 @@ class StudentsModel extends Model
 {
   use HasFactory;
 
-  protected $table = 'Batches';
-  protected $fillable = ['name', 'courseId', 'maxStrength', 'rollNumberPrefix', 'location', 'startDate', 'endDate', 'description'];
+  protected $table = 'Students';
+  protected $fillable = ['firstName', 'lastName', 'maxStrength', 'guardianName', 'contactNumber', 'batchId'];
 
   public function getCourse()
   {
