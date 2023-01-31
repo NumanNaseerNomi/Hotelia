@@ -59,8 +59,6 @@
                         <th scope="col">Contact #</th>
                         <th scope="col">Batch</th>
                         <th scope="col">Course</th>
-                        <!-- <th scope="col">End Date</th>
-                        <th scope="col">Description</th> -->
                         <th scope="col">{{ __('Actions') }}</th>
                       </tr>
                     </thead>
