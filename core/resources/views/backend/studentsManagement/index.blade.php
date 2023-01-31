@@ -68,20 +68,20 @@
                           <td>{{ $student->id }}</td>
                           <td>{{ $student->firstName }}</td>
                           <td>{{ $student->lastName }}</td>
-                          <td>{{ $student->rollNumberPrefix }}</td>
-                          <td>{{ $student->location }}</td>
-                          <td>{{ $student->startDate }}</td>
-                          <td>{{ $student->endDate }}</td>
-                          <td>{{ $student->description }}</td>
+                          <td>{{ $student->guardianName }}</td>
+                          <td>{{ $student->admissionDate }}</td>
+                          <td>{{ $student->contactNumber }}</td>
+                          <td>{{ $student->batch }}</td>
+                          <td>{{ $student->course }}</td>
                           <td>
-                            <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $batch->id }}" data-name="{{ $batch->name }}" data-course="{{ $batch->getCourse->id }}" data-max-strength="{{ $batch->maxStrength }}" data-roll-Number-Prefix="{{ $batch->rollNumberPrefix }}" data-start-Date="{{ $batch->startDate }}" data-end-Date="{{ $batch->endDate }}" data-location="{{ $batch->location }}" data-description="{{ $batch->description }}">
+                            <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $student->id }}" data-first-Name="{{ $student->firstName }}" data-last-Name="{{ $student->firstName }}" data-guardian-Name="{{ $student->guardianName }}" data-contact-Number="{{ $student->contactNumber }}">
                               <span class="btn-label">
                                 <i class="fas fa-edit"></i>
                               </span>
                               {{ __('Edit') }}
                             </a>
 
-                            <form class="deleteForm d-inline-block" action="{{ url('admin/batchesManagement/delete', ['id' => $batch->id]) }}" method="post">
+                            <form class="deleteForm d-inline-block" action="{{ url('admin/batchesManagement/delete', ['id' => $student->id]) }}" method="post">
                               @csrf
                               <button type="submit" class="btn btn-danger btn-sm deleteBtn">
                                 <span class="btn-label">
