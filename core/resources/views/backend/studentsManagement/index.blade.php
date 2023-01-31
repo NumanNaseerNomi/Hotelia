@@ -81,7 +81,7 @@
                               {{ __('Edit') }}
                             </a>
 
-                            <form class="deleteForm d-inline-block" action="{{ url('admin/batchesManagement/delete', ['id' => $student->id]) }}" method="post">
+                            <form class="deleteForm d-inline-block" action="{{ url('admin/studentsManagement/delete', ['id' => $student->id]) }}" method="post">
                               @csrf
                               <button type="submit" class="btn btn-danger btn-sm deleteBtn">
                                 <span class="btn-label">
