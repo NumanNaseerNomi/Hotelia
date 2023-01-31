@@ -35,10 +35,9 @@ class StudentsManagementController extends Controller
         'courseId' => 'required',
       ]
     );
-    dd($request->all());
     
-    BatchesModel::create($request->all());
-    $request->session()->flash('success', 'Batch added successfully!');
+    StudentsModel::create($request->all());
+    $request->session()->flash('success', 'Student added successfully!');
     return 'success';
   }
 
