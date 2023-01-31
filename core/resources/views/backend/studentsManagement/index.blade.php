@@ -63,16 +63,16 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($students as $batch)
+                      @foreach ($students as $student)
                         <tr>
                           <td>{{ $loop->iteration }}</td>
-                          <td>{{ $batch->name }}</td>
-                          <td>{{ $batch->getCourse->name }}</td>
-                          <td>{{ $batch->rollNumberPrefix }}</td>
-                          <td>{{ $batch->location }}</td>
-                          <td>{{ $batch->startDate }}</td>
-                          <td>{{ $batch->endDate }}</td>
-                          <td>{{ $batch->description }}</td>
+                          <td>{{ $student->name }}</td>
+                          <td>{{ $student->getCourse->name }}</td>
+                          <td>{{ $student->rollNumberPrefix }}</td>
+                          <td>{{ $student->location }}</td>
+                          <td>{{ $student->startDate }}</td>
+                          <td>{{ $student->endDate }}</td>
+                          <td>{{ $student->description }}</td>
                           <td>
                             <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $batch->id }}" data-name="{{ $batch->name }}" data-course="{{ $batch->getCourse->id }}" data-max-strength="{{ $batch->maxStrength }}" data-roll-Number-Prefix="{{ $batch->rollNumberPrefix }}" data-start-Date="{{ $batch->startDate }}" data-end-Date="{{ $batch->endDate }}" data-location="{{ $batch->location }}" data-description="{{ $batch->description }}">
                               <span class="btn-label">
