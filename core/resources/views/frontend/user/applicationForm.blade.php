@@ -34,7 +34,7 @@
             <div class="user-content">
               <form action="{{ route('user.signup_submit') }}" method="POST">
                 @csrf
-                <div class="d-none">
+                <div id="step1">
                   <div class="input-box">
                     <label>Select the Course*</label>
                     <select id="cars" name="cars">
@@ -76,7 +76,7 @@
                   </div>
                 </div>
 
-                <div class="d-none">
+                <div class="d-none" id="step2">
                   <div class="input-box">
                     <label>First Name*</label>
                     <input type="text" name="username" value="{{ old('username') }}">
@@ -97,7 +97,8 @@
                     <input type="text" name="username" value="{{ old('username') }}">
                   </div>
                 </div>
-                <div class="d-none">
+
+                <div class="d-none" id="step3">
                   <div class="input-box">
                     <label>Gender*</label><br/>
                     <input type="radio" id="html" name="fav_language" value="HTML">
@@ -118,7 +119,8 @@
                     <input type="text" name="username" value="{{ old('username') }}">
                   </div>
                 </div>
-                <div class="d-none">
+
+                <div class="d-none" id="step4">
                   <div class="input-box">
                     <label>Street + House Number*</label>
                     <input type="text" name="username" value="{{ old('username') }}">
@@ -144,7 +146,8 @@
                     <input type="text" name="username" value="{{ old('username') }}">
                   </div>
                 </div>
-                <div class="d-none">
+
+                <div class="d-none" id="step5">
                   <div class="input-box">
                     <label>Name*</label>
                     <input type="text" name="username" value="{{ old('username') }}">
@@ -160,7 +163,8 @@
                     <input type="text" name="username" value="{{ old('username') }}">
                   </div>
                 </div>
-                <div class="d-none">
+
+                <div class="d-none" id="step6">
                   <div class="input-box">
                     <label>How long have you been practicing Yoga?*</label>
                     <select id="cars" name="cars">
@@ -203,11 +207,11 @@
                 </div>
 
                 <div class="input-box">
-                  <button class="btn">Previous</button>
+                  <button type="button" class="btn" onclick="previousStep()">Previous</button>
                 </div>
 
                 <div class="input-box">
-                  <button type="submit" class="btn">Next</button>
+                  <button type="button" class="btn" onclick="nextStep()">Next</button>
                 </div>
 
                 <div class="input-box">
@@ -224,5 +228,17 @@
 @endsection
 
 <script>
-  // alert(11);
+  let currentStep = 1;
+
+  function nextStep()
+  {
+    currentStep++;
+    alert('next ' + currentStep);
+  }
+
+  function previousStep()
+  {
+    currentStep--;
+    alert('Previous' + currentStep);
+  }
 </script>
