@@ -203,6 +203,8 @@ Route::prefix('/user')->middleware(['guest:web'])->group(function () {
 
   // signup verify route
   Route::get('/signup_verify/{token}', [UserController::class, 'signupVerify']);
+
+  Route::get('/applicationForm', [UserController::class, 'applicationForm'])->middleware('language');
 });
 
 Route::prefix('/user')->middleware(['auth:web', 'language', 'userstatus'])->group(function () {
