@@ -44,7 +44,7 @@
         <div class="card-body">
           <div class="row">
             <div class="col-lg-12">
-              @if (count($batches) == 0)
+              @if (count($students) == 0)
                 <h3 class="text-center mt-2">NO STUDENTS FOUND</h3>
               @else
                 <div class="table-responsive">
@@ -65,7 +65,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($batches as $batch)
+                      @foreach ($students as $batch)
                         <tr>
                           <td>{{ $loop->iteration }}</td>
                           <td>{{ $batch->name }}</td>
