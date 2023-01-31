@@ -112,5 +112,5 @@
   @includeIf('backend.studentsManagement.create')
 
   {{-- edit modal --}}
-  @includeIf('backend.batchesManagement.edit')
+  @includeIf('backend.studentsManagement.edit')
 @endsection
