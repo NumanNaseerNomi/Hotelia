@@ -46,6 +46,27 @@
 
             <div class="col-lg-6">
               <div class="form-group">
+                <label for="">Contact Number*</label>
+                <input type="text" class="form-control" name="contactNumber" placeholder="Enter Contact Number">
+                <p id="err_contactNumber" class="mt-2 mb-0 text-danger em"></p>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="">Batch*</label>
+                <select class="form-control" name="batchId">
+                  <option selected disabled>Select Batch</option>
+                  @foreach($courses as $course)
+                    <option value="{{ $course->id }}">{{ $course->name }}</option>
+                  @endforeach
+                </select>
+                <p id="err_batchId" class="mt-2 mb-0 text-danger em"></p>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="form-group">
                 <label for="">Course*</label>
                 <select class="form-control" name="courseId">
                   <option selected disabled>Select Course</option>
