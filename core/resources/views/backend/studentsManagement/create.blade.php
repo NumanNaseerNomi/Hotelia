@@ -36,13 +36,13 @@
               </div>
             </div>
 
-            <div class="col-lg-6">
+            <!-- <div class="col-lg-6">
               <div class="form-group">
                 <label for="">Admission Date*</label>
                 <input type="date" class="form-control" name="admissionDate">
                 <p id="err_admissionDate" class="mt-2 mb-0 text-danger em"></p>
               </div>
-            </div>
+            </div> -->
 
             <div class="col-lg-6">
               <div class="form-group">
