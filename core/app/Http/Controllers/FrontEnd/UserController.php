@@ -616,4 +616,9 @@ class UserController extends Controller
     // if logged in successfully
     return redirect($redirectUrl);
   }
+
+  public function applicationForm()
+  {
+    return view('frontend.user.applicationForm', ['breadcrumbInfo' => $this->breadcrumb]);
+  }
 }
