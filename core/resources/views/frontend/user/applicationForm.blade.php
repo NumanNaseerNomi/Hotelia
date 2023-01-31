@@ -26,7 +26,7 @@
       </div>
     </section>
 
-    <!-- Signup Area Start -->
+    <!-- Application Form Area Start -->
     <div class="user-area-section">
       <div class="container">
         <div class="row justify-content-center">
@@ -203,7 +203,15 @@
                 </div>
 
                 <div class="input-box">
-                  <button type="submit" class="btn">{{ __('sign up') }}</button>
+                  <button class="btn">Previous</button>
+                </div>
+
+                <div class="input-box">
+                  <button type="submit" class="btn">Next</button>
+                </div>
+
+                <div class="input-box">
+                  <button type="submit" class="btn">Register</button>
                 </div>
               </form>
             </div>
@@ -211,10 +219,10 @@
         </div>
       </div>
     </div>
-    <!-- Signup Area End -->
+    <!-- Application Form Area End -->
   </main>
 @endsection
 
 <script>
-  alert(11);
+  // alert(11);
 </script>
