@@ -8,7 +8,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="ajaxEditForm" class="modal-form" action="{{ url('admin/batchesManagement/update') }}" method="post">
+        <form id="ajaxEditForm" class="modal-form" action="{{ url('admin/studentsManagement/update') }}" method="post">
           @csrf
           <input type="hidden" id="in_id" name="id">
           <div class="row no-gutters">
@@ -39,8 +39,8 @@
             <div class="col-lg-6">
               <div class="form-group">
                 <label for="">Contact Number*</label>
-                <input type="text" id="in_contact" class="form-control" name="contact" placeholder="Enter Contact Number">
-                <p id="editErr_contact" class="mt-2 mb-0 text-danger em"></p>
+                <input type="text" id="in_contactNumber" class="form-control" name="contactNumber" placeholder="Enter Contact Number">
+                <p id="editErr_contactNumber" class="mt-2 mb-0 text-danger em"></p>
               </div>
             </div>
 
