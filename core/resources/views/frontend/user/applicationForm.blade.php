@@ -207,15 +207,15 @@
                 </div>
 
                 <div class="input-box">
-                  <button type="button" class="btn" onclick="previousStep()">Previous</button>
+                  <button type="button" class="btn m-1 d-none" id="previousButton" onclick="previousStep()">Previous</button>
                 </div>
 
                 <div class="input-box">
-                  <button type="button" class="btn" onclick="nextStep()">Next</button>
+                  <button type="button" class="btn m-1" id="nextButton" onclick="nextStep()">Next</button>
                 </div>
 
                 <div class="input-box">
-                  <button type="submit" class="btn">Register</button>
+                  <button type="submit" class="btn m-1 d-none">Register</button>
                 </div>
               </form>
             </div>
@@ -228,17 +228,55 @@
 @endsection
 
 <script>
+
   let currentStep = 1;
 
   function nextStep()
   {
-    currentStep++;
-    alert('next ' + currentStep);
+    let element = document.querySelector('#step' + currentStep);
+
+    if(element)
+    {
+      element.classList.add('d-none');
+      currentStep++;
+      element = document.querySelector('#step' + currentStep);
+      document.querySelector('#previousButton').classList.remove('d-none');
+
+      if(element)
+      {
+        element.classList.remove('d-none');
+      }
+      else
+      {
+        document.querySelector('#nextButton').classList.add('d-none');
+      }
+    }
   }
 
   function previousStep()
   {
-    currentStep--;
-    alert('Previous' + currentStep);
+    let element = document.querySelector('#step' + currentStep);
+
+    if(element)
+    {
+      element.classList.add('d-none');
+      currentStep++;
+      element = document.querySelector('#step' + currentStep);
+
+      if(element)
+      {
+        element.classList.remove('d-none');
+      }
+      else
+      {
+        document.querySelector('#nextButton').classList.add('d-none');
+      }
+    }
   }
+
+  // function previousStep()
+  // {
+  //   currentStep--;
+  //   alert('Previous' + currentStep);
+  // }
 </script>
