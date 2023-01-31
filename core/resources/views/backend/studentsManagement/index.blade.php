@@ -65,9 +65,9 @@
                     <tbody>
                       @foreach ($students as $student)
                         <tr>
-                          <td>{{ $loop->iteration }}</td>
-                          <td>{{ $student->name }}</td>
-                          <td>{{ $student->getCourse->name }}</td>
+                          <td>{{ $student->id }}</td>
+                          <td>{{ $student->firstName }}</td>
+                          <td>{{ $student->lastName }}</td>
                           <td>{{ $student->rollNumberPrefix }}</td>
                           <td>{{ $student->location }}</td>
                           <td>{{ $student->startDate }}</td>
