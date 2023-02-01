@@ -100,11 +100,9 @@
                 </div>
 
                 <div class="d-none" id="step3">
-
                   <div class="input-box">
                     <label>Gender*</label>
                     <select name="gender" required>
-                    <option disabled selected></option>
                       <option value="male">Male</option>
                       <option value="female">Female</option>
                       <option value="other">Other</option>
@@ -113,12 +111,12 @@
 
                   <div class="input-box">
                     <label>Date of Birth*</label>
-                    <input type="date" class="form-control" name="username" value="{{ old('username') }}">
+                    <input type="date" class="form-control" name="dob" value="{{ old('dob') }}" required>
                   </div>
 
                   <div class="input-box">
                     <label>Nationality*</label>
-                    <input type="text" name="username" value="{{ old('username') }}">
+                    <input type="text" name="nationality" value="{{ old('nationality') }}" required>
                   </div>
                 </div>
 
