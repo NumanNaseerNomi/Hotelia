@@ -205,6 +205,22 @@
                   </div>
                 </div>
 
+                <div class="d-none" id="step7">
+                  <div class="input-box">
+                    <label>Have you in the last 12 months used tobacco, alcohol, recreational drugs, or illicit substances?*</label>
+                    <select name="question7" required>
+                      <option value="No">No</option>
+                      <option value="Yes">Yes</option>
+                    </select>
+                  </div>
+                  <p>Please note that for any residential courses conducted at the premises of the Arhanta Yoga Ashrams in India and the Netherlands, the use of tobacco, alcohol and any other drugs is strictly prohibited. Please consider carefully before applying that you will be able to discontinue the use of any such substances during the entire duration of your course.</p>
+
+                  <div class="input-box">
+                    <label>Please mention in case you have any allergies or special dietary needs:</label>
+                    <textarea name="question8" rows="3">{{ old('question8') }}</textarea>
+                  </div>
+                </div>
+
                 <div class="input-box">
                   <button type="button" class="btn m-1 d-none" id="previousButton" onclick="previousStep()">Previous</button>
                 </div>
