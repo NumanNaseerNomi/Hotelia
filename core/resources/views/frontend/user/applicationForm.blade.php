@@ -67,7 +67,7 @@
 
                   <div class="input-box">
                     <label>Accommodation choice*</label>
-                    <select id="accommodation" name="accommodation" required>
+                    <select id="accommodation" name="accommodation">
                       <option value="Single Room">Single Room</option>
                       <option value="Double Shared Room">Double Shared Room</option>
                       <option value="Dormitory">Dormitory</option>
@@ -80,22 +80,22 @@
                   <h1 class="text-center">About You</h1>
                   <div class="input-box">
                     <label>First Name*</label>
-                    <input type="text" name="firstName" value="{{ old('firstName') }}" required>
+                    <input type="text" name="firstName" value="{{ old('firstName') }}">
                   </div>
 
                   <div class="input-box">
                     <label>Last Name*</label>
-                    <input type="text" name="lastName" value="{{ old('lastName') }}" required>
+                    <input type="text" name="lastName" value="{{ old('lastName') }}">
                   </div>
 
                   <div class="input-box">
                     <label>Email*</label>
-                    <input type="email" name="email" value="{{ old('email') }}" required>
+                    <input type="email" name="email" value="{{ old('email') }}">
                   </div>
 
                   <div class="input-box">
                     <label>Your Occupation</label>
-                    <input type="text" name="occupation" value="{{ old('occupation') }}" required>
+                    <input type="text" name="occupation" value="{{ old('occupation') }}">
                   </div>
                 </div>
 
@@ -103,7 +103,7 @@
                   <h1 class="text-center">About You</h1>
                   <div class="input-box">
                     <label>Gender*</label>
-                    <select name="gender" required>
+                    <select name="gender">
                       <option value="male">Male</option>
                       <option value="female">Female</option>
                       <option value="other">Other</option>
@@ -112,12 +112,12 @@
 
                   <div class="input-box">
                     <label>Date of Birth*</label>
-                    <input type="date" class="form-control" name="dob" value="{{ old('dob') }}" required>
+                    <input type="date" class="form-control" name="dob" value="{{ old('dob') }}">
                   </div>
 
                   <div class="input-box">
                     <label>Nationality*</label>
-                    <input type="text" name="nationality" value="{{ old('nationality') }}" required>
+                    <input type="text" name="nationality" value="{{ old('nationality') }}">
                   </div>
                 </div>
 
@@ -125,27 +125,27 @@
                   <h1 class="text-center">Your Contact Details</h1>
                   <div class="input-box">
                     <label>Street + House Number*</label>
-                    <input type="text" name="street" value="{{ old('street') }}" required>
+                    <input type="text" name="street" value="{{ old('street') }}">
                   </div>
 
                   <div class="input-box">
                     <label>City*</label>
-                    <input type="text" name="city" value="{{ old('city') }}" required>
+                    <input type="text" name="city" value="{{ old('city') }}">
                   </div>
 
                   <div class="input-box">
                     <label>Country*</label>
-                    <input type="text" name="country" value="{{ old('country') }}" required>
+                    <input type="text" name="country" value="{{ old('country') }}">
                   </div>
 
                   <div class="input-box">
                     <label>Zip Code*</label>
-                    <input type="text" name="zipCode" value="{{ old('zipCode') }}" required>
+                    <input type="text" name="zipCode" value="{{ old('zipCode') }}">
                   </div>
 
                   <div class="input-box">
                     <label>Phone*</label>
-                    <input type="text" name="phone" value="{{ old('phone') }}" required>
+                    <input type="text" name="phone" value="{{ old('phone') }}">
                   </div>
                 </div>
 
@@ -153,24 +153,24 @@
                   <h1 class="text-center">Emergency Contact</h1>
                   <div class="input-box">
                     <label>Name*</label>
-                    <input type="text" name="emergencyName" value="{{ old('emergencyName') }}" required>
+                    <input type="text" name="emergencyName" value="{{ old('emergencyName') }}">
                   </div>
 
                   <div class="input-box">
                     <label>Phone*</label>
-                    <input type="text" name="emergencyPhone" value="{{ old('emergencyPhone') }}" required>
+                    <input type="text" name="emergencyPhone" value="{{ old('emergencyPhone') }}">
                   </div>
 
                   <div class="input-box">
                     <label>Relationship*</label>
-                    <input type="text" name="emergencyRelationship" value="{{ old('emergencyRelationship') }}" required>
+                    <input type="text" name="emergencyRelationship" value="{{ old('emergencyRelationship') }}">
                   </div>
                 </div>
 
                 <div class="d-none" id="step6">
                   <div class="input-box">
                     <label>How long have you been practicing Yoga?*</label>
-                    <select name="question1" required>
+                    <select name="question1">
                       <option value="Less than a year">Less than a year</option>
                       <option value="More than a year">More than a year</option>
                     </select>
@@ -186,7 +186,7 @@
 
                   <div class="input-box">
                     <label>What is your primary reason to join the course?*</label>
-                    <input type="text" name="question3" value="{{ old('question3') }}" required>
+                    <input type="text" name="question3" value="{{ old('question3') }}">
                   </div>
 
                   <div class="input-box">
@@ -196,19 +196,19 @@
 
                   <div class="input-box">
                     <label>Why did you choose Arhanta Yoga?*</label>
-                    <input type="text" name="question5" value="{{ old('question5') }}" required>
+                    <input type="text" name="question5" value="{{ old('question5') }}">
                   </div>
 
                   <div class="input-box">
                     <label>How did you hear about us?*</label>
-                    <input type="text" name="question6" value="{{ old('question6') }}" required>
+                    <input type="text" name="question6" value="{{ old('question6') }}">
                   </div>
                 </div>
 
                 <div class="d-none" id="step7">
                   <div class="input-box">
                     <label>Have you in the last 12 months used tobacco, alcohol, recreational drugs, or illicit substances?*</label>
-                    <select name="question7" required>
+                    <select name="question7">
                       <option value="No">No</option>
                       <option value="Yes">Yes</option>
                     </select>
