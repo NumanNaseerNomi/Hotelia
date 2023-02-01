@@ -100,14 +100,15 @@
                 </div>
 
                 <div class="d-none" id="step3">
+
                   <div class="input-box">
-                    <label>Gender*</label><br/>
-                    <input type="radio" id="html" name="fav_language" value="HTML">
-                    <label for="html">Male</label><br>
-                    <input type="radio" id="css" name="fav_language" value="CSS">
-                    <label for="css">Female</label><br>
-                    <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-                    <label for="javascript">Other</label>
+                    <label>Gender*</label>
+                    <select name="gender" required>
+                    <option disabled selected></option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                      <option value="other">Other</option>
+                    </select>
                   </div>
 
                   <div class="input-box">
