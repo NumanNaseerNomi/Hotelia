@@ -67,16 +67,17 @@
 
                   <div class="input-box">
                     <label>Accommodation choice*</label>
-                    <select id="cars" name="cars">
-                      <option value="volvo">Volvo XC90</option>
-                      <option value="saab">Saab 95</option>
-                      <option value="mercedes">Mercedes SLK</option>
-                      <option value="audi">Audi TT</option>
+                    <select id="accommodation" name="accommodation" required>
+                      <option value="Single Room">Single Room</option>
+                      <option value="Double Shared Room">Double Shared Room</option>
+                      <option value="Dormitory">Dormitory</option>
+                      <option value="Dormitory (Same Gender Only)">Dormitory (Same Gender Only)</option>
                     </select>
                   </div>
                 </div>
 
                 <div class="d-none" id="step2">
+                  <h1 class="text-center">About You</h1>
                   <div class="input-box">
                     <label>First Name*</label>
                     <input type="text" name="username" value="{{ old('username') }}">
