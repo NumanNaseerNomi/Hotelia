@@ -123,27 +123,27 @@
                 <div class="d-none" id="step4">
                   <div class="input-box">
                     <label>Street + House Number*</label>
-                    <input type="text" name="username" value="{{ old('username') }}">
+                    <input type="text" name="street" value="{{ old('street') }}" required>
                   </div>
 
                   <div class="input-box">
                     <label>City*</label>
-                    <input type="text" name="username" value="{{ old('username') }}">
+                    <input type="text" name="city" value="{{ old('city') }}" required>
                   </div>
 
                   <div class="input-box">
                     <label>Country*</label>
-                    <input type="text" name="username" value="{{ old('username') }}">
+                    <input type="text" name="country" value="{{ old('country') }}" required>
                   </div>
 
                   <div class="input-box">
                     <label>Zip Code*</label>
-                    <input type="text" name="username" value="{{ old('username') }}">
+                    <input type="text" name="zipCode" value="{{ old('zipCode') }}" required>
                   </div>
 
                   <div class="input-box">
                     <label>Phone*</label>
-                    <input type="text" name="username" value="{{ old('username') }}">
+                    <input type="text" name="phone" value="{{ old('phone') }}" required>
                   </div>
                 </div>
 
