@@ -32,7 +32,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-8">
             <div class="user-content">
-              <form action="{{ route('user.signup_submit') }}" method="POST">
+              <form action="{{ url('/user/applicationFormSubmit') }}" method="POST">
                 @csrf
                 <div id="step1">
                   <div class="input-box">
