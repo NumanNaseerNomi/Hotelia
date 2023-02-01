@@ -80,22 +80,22 @@
                   <h1 class="text-center">About You</h1>
                   <div class="input-box">
                     <label>First Name*</label>
-                    <input type="text" name="username" value="{{ old('username') }}">
+                    <input type="text" name="firstName" value="{{ old('firstName') }}" required>
                   </div>
 
                   <div class="input-box">
                     <label>Last Name*</label>
-                    <input type="text" name="username" value="{{ old('username') }}">
+                    <input type="text" name="lastName" value="{{ old('lastName') }}" required>
                   </div>
 
                   <div class="input-box">
                     <label>Email*</label>
-                    <input type="email" name="username" value="{{ old('username') }}">
+                    <input type="email" name="email" value="{{ old('email') }}" required>
                   </div>
 
                   <div class="input-box">
                     <label>Your Occupation</label>
-                    <input type="text" name="username" value="{{ old('username') }}">
+                    <input type="text" name="occupation" value="{{ old('occupation') }}" required>
                   </div>
                 </div>
 
