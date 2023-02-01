@@ -621,4 +621,52 @@ class UserController extends Controller
   {
     return view('frontend.user.applicationForm', ['breadcrumbInfo' => $this->breadcrumb]);
   }
+
+  public function applicationFormSubmit(Request $request)
+  {
+    dd($request->all());
+    $rules = [
+      'username' => 'required|unique:users|max:255',
+      'email' => 'required|email:rfc,dns|unique:users|max:255',
+      'password' => 'required|confirmed',
+      'password_confirmation' => 'required'
+    ];
+
+    $message = [
+      'password_confirmation.required' => 'The confirm password field is required.',
+      'g-recaptcha-response.required' => 'Please verify that you are not a robot.',
+      'g-recaptcha-response.captcha' => 'Captcha error! try again later or contact site admin.'
+    ];
+
+    $bs = DB::table('basic_settings')->select('google_recaptcha_status')->first();
+
+    if ($bs->google_recaptcha_status == 1) {
+      $rules['g-recaptcha-response'] = 'required|captcha';
+    }
+
+    $validator = Validator::make($request->all(), $rules, $message);
+
+    if ($validator->fails()) {
+      return redirect()->back()->withErrors($validator)->withInput();
+    }
+
+    $user = new User();
+    $user->username = $request->username;
+    $user->email = $request->email;
+    $user->password = Hash::make($request->password);
+
+    // first, generate a random string
+    $randStr = Str::random(20);
+
+    // second, generate a token
+    $token = md5($randStr . $request->username . $request->email);
+
+    $user->verification_token = $token;
+    $user->save();
+
+    // send a mail to user for verify his/her email address
+    $this->sendVerificationEmail($request, $token);
+
+    return redirect()->back();
+  }
 }
