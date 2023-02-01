@@ -100,6 +100,7 @@
                 </div>
 
                 <div class="d-none" id="step3">
+                  <h1 class="text-center">About You</h1>
                   <div class="input-box">
                     <label>Gender*</label>
                     <select name="gender" required>
@@ -121,6 +122,7 @@
                 </div>
 
                 <div class="d-none" id="step4">
+                  <h1 class="text-center">Your Contact Details</h1>
                   <div class="input-box">
                     <label>Street + House Number*</label>
                     <input type="text" name="street" value="{{ old('street') }}" required>
@@ -148,19 +150,20 @@
                 </div>
 
                 <div class="d-none" id="step5">
+                  <h1 class="text-center">Emergency Contact</h1>
                   <div class="input-box">
                     <label>Name*</label>
-                    <input type="text" name="username" value="{{ old('username') }}">
+                    <input type="text" name="emergencyName" value="{{ old('emergencyName') }}" required>
                   </div>
 
                   <div class="input-box">
                     <label>Phone*</label>
-                    <input type="text" name="username" value="{{ old('username') }}">
+                    <input type="text" name="emergencyPhone" value="{{ old('emergencyPhone') }}" required>
                   </div>
 
                   <div class="input-box">
                     <label>Relationship*</label>
-                    <input type="text" name="username" value="{{ old('username') }}">
+                    <input type="text" name="emergencyRelationship" value="{{ old('emergencyRelationship') }}" required>
                   </div>
                 </div>
 
