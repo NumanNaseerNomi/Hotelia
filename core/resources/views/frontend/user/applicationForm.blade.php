@@ -170,42 +170,38 @@
                 <div class="d-none" id="step6">
                   <div class="input-box">
                     <label>How long have you been practicing Yoga?*</label>
-                    <select id="cars" name="cars">
-                      <option value="volvo">Volvo XC90</option>
-                      <option value="saab">Saab 95</option>
-                      <option value="mercedes">Mercedes SLK</option>
-                      <option value="audi">Audi TT</option>
+                    <select name="question1" required>
+                      <option value="Less than a year">Less than a year</option>
+                      <option value="More than a year">More than a year</option>
                     </select>
                   </div>
 
                   <div class="input-box">
-                    <label>Do you have any experience teaching yoga?*</label>
-                    <select id="cars" name="cars">
-                      <option value="volvo">Volvo XC90</option>
-                      <option value="saab">Saab 95</option>
-                      <option value="mercedes">Mercedes SLK</option>
-                      <option value="audi">Audi TT</option>
+                    <label>Do you have any experience teaching yoga?</label>
+                    <select name="question2">
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
                     </select>
                   </div>
 
                   <div class="input-box">
                     <label>What is your primary reason to join the course?*</label>
-                    <input type="text" name="username" value="{{ old('username') }}">
+                    <input type="text" name="question3" value="{{ old('question3') }}" required>
                   </div>
 
                   <div class="input-box">
-                    <label>What is important to you in life?*</label>
-                    <input type="text" name="username" value="{{ old('username') }}">
+                    <label>What is important to you in life?</label>
+                    <input type="text" name="question4" value="{{ old('question4') }}">
                   </div>
 
                   <div class="input-box">
                     <label>Why did you choose Arhanta Yoga?*</label>
-                    <input type="text" name="username" value="{{ old('username') }}">
+                    <input type="text" name="question5" value="{{ old('question5') }}" required>
                   </div>
 
                   <div class="input-box">
                     <label>How did you hear about us?*</label>
-                    <input type="text" name="username" value="{{ old('username') }}">
+                    <input type="text" name="question6" value="{{ old('question6') }}" required>
                   </div>
                 </div>
 
