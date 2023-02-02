@@ -8,6 +8,8 @@ use App\Models\CoursesModel;
 use Illuminate\Http\Request;
 use App\Models\BuildingsModel;
 use App\Traits\MiscellaneousTrait;
+use Illuminate\Support\Facades\DB;
+use App\Models\SessionBatchesModel;
 use App\Http\Controllers\Controller;
 use App\Models\AcademicSessionsModel;
 
@@ -36,8 +38,13 @@ class BatchesManagementController extends Controller
         'location' => 'required',
       ]
     );
+
+    DB::transaction(function() use ($request)
+    {
+      $batch = BatchesModel::create($request->all());
+      SessionBatchesModel::create(['sessionId' => getCurrentAcademicSession(), 'batchId' => $batch->id]);
+    });
     
-    BatchesModel::create($request->all());
     $request->session()->flash('success', 'Batch added successfully!');
     return 'success';
   }
