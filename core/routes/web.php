@@ -275,6 +275,7 @@ Route::prefix('/admin')->middleware(['auth:admin', 'lfm.path'])->group(function 
 
   // admin redirect to dashboard route
   Route::get('/change-theme', [AdminController::class, 'changeTheme'])->name('admin.theme.change');
+  Route::get('/changeCurrentAcademicSession', [AdminController::class, 'changeCurrentAcademicSession']);
 
   // admin redirect to dashboard route
   Route::get('/dashboard', [AdminController::class, 'redirectToDashboard'])->name('admin.dashboard');
