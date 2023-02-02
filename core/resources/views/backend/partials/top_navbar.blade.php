@@ -23,6 +23,19 @@
   <nav class="navbar navbar-header navbar-expand-lg" @if(request()->cookie('admin-theme') == 'dark') data-background-color="dark" @endif>
     <div class="container-fluid">
       <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+        @php
+        //dd(getCurrentAcademicSession(), getAcademicSessions());
+        @endphp
+        <form action="{{(url('/admin/changeCurrentAcademicSession'))}}" class="mr-4 form-inline">
+          <div class="form-group">
+            <select class="form-control" name="sessionId" onchange="this.form.submit()">
+              @foreach(getAcademicSessions() as $academicSession)
+                <option value="{{ $academicSession->id }}" @if(getCurrentAcademicSession() == $academicSession->id) selected disabled @endif>{{ $academicSession->name }}</option>
+              @endforeach
+            </select>
+          </div>
+        </form>
+
         <form action="{{(route('admin.theme.change'))}}" class="mr-4 form-inline" id="adminThemeForm">
           <div class="form-group">
             <div class="selectgroup selectgroup-secondary selectgroup-pills">
