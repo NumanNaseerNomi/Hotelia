@@ -2,6 +2,7 @@
 
 use App\Models\Page;
 use App\Models\PageContent;
+use App\Models\AcademicSessionsModel;
 
 if (!function_exists('convertUtf8')) {
   function convertUtf8($value)
@@ -140,5 +141,21 @@ if (!function_exists('getHref')) {
     }
 
     return $href;
+  }
+}
+
+if (!function_exists('getCurrentAcademicSession'))
+{
+  function getCurrentAcademicSession()
+  {
+    return request()->cookie('currentAcademicSession');
+  }
+}
+
+if (!function_exists('getAcademicSessions'))
+{
+  function getAcademicSessions()
+  {
+    return AcademicSessionsModel::all();
   }
 }
