@@ -70,7 +70,12 @@ class BatchesManagementController extends Controller
 
   public function delete($id)
   {
-    BatchesModel::findOrFail($id)->delete();
+    DB::transaction(function() use ($id)
+    {
+      SessionBatchesModel::where(['sessionId' => getCurrentAcademicSession(), 'batchId' => $id])->delete();
+      BatchesModel::findOrFail($id)->delete();
+    });
+    
     return back()->with('success', 'Batch deleted successfully!');
   }
 }
