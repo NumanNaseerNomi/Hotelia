@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\BuildingsModel;
 use App\Traits\MiscellaneousTrait;
 use App\Http\Controllers\Controller;
+use App\Models\AcademicSessionsModel;
 
 class BatchesManagementController extends Controller
 {
@@ -16,7 +17,8 @@ class BatchesManagementController extends Controller
 
   public function index()
   {
-    $data['batches'] = BatchesModel::all();
+
+    $data['batches'] = AcademicSessionsModel::find(getCurrentAcademicSession())->getBatches;
     $data['courses'] = CoursesModel::all();
     return view('backend.batchesManagement.index', $data);
   }
