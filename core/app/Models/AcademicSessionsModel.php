@@ -11,4 +11,9 @@ class AcademicSessionsModel extends Model
 
   protected $table = 'AcademicSessions';
   protected $fillable = ['name', 'startDate', 'endDate', 'isDefault', 'description'];
+
+  public function getBatches()
+  {
+    return $this->belongsToMany(BatchesModel::class, 'SessionBatches', 'sessionId', 'batchId');
+  }
 }
