@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers\BackEnd;
 
-use App\Models\RoomsModel;
 use App\Models\BatchesModel;
 use App\Models\CoursesModel;
 use Illuminate\Http\Request;
 use App\Models\StudentsModel;
-use App\Models\BuildingsModel;
 use App\Traits\MiscellaneousTrait;
 use App\Http\Controllers\Controller;
 
