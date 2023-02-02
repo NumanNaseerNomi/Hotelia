@@ -2,24 +2,25 @@
 
 namespace App\Http\Controllers\BackEnd;
 
-use App\Http\Controllers\Controller;
 use App\Models\Admin;
-use App\Models\PackageManagement\Package;
-use App\Models\PackageManagement\PackageBooking;
-use App\Models\RoomManagement\Room;
-use App\Models\RoomManagement\RoomBooking;
-use App\Rules\MatchEmailRule;
-use App\Rules\MatchOldPasswordRule;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Response;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Validator;
+use App\Rules\MatchEmailRule;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\DB;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
+use App\Models\RoomManagement\Room;
+use App\Rules\MatchOldPasswordRule;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use App\Models\AcademicSessionsModel;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Response;
+use App\Models\PackageManagement\Package;
+use Illuminate\Support\Facades\Validator;
+use App\Models\RoomManagement\RoomBooking;
+use App\Models\PackageManagement\PackageBooking;
 
 class AdminController extends Controller
 {
@@ -264,6 +265,11 @@ class AdminController extends Controller
 
   public function changeTheme(Request $request) {
     return redirect()->back()->withCookie(cookie()->forever('admin-theme', $request->theme));
+  }
+
+  public function changeCurrentAcademicSession(Request $request)
+  {
+    return redirect()->back()->withCookie(cookie()->forever('currentAcademicSession', $request->sessionId));
   }
 
 }
