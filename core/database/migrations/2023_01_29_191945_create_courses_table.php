@@ -18,7 +18,8 @@ class CreateCoursesTable extends Migration
             $table->string('name');
             $table->string('group')->nullable();
             $table->string('batch')->nullable();
-            $table->string('option')->nullable();
+            $table->float('registrationFee')->nullable();
+            $table->boolean('isRegistrationEnabled')->default(false);
             $table->string('description')->nullable();
             $table->timestamps();
         });
