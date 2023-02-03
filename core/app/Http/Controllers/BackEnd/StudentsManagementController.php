@@ -25,7 +25,7 @@ class StudentsManagementController extends Controller
     }
     
     $data['courses'] = CoursesModel::all();
-    $data['students'] = StudentsModel::all();
+    // $data['students'] = StudentsModel::all();
     return view('backend.studentsManagement.index', $data);
   }
 
