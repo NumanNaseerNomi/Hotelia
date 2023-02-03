@@ -12,7 +12,7 @@ class CoursesController extends Controller
 
   public function showCourses()
   {
-    $data['rooms'] = RoomsModel::paginate(6);
+    $data['courses'] = RoomsModel::paginate(6);
     $data['breadcrumbInfo'] = MiscellaneousTrait::getBreadcrumb();
     $data['pageHeading'] = "Courses";
     return view('frontend.courses', $data);
