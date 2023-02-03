@@ -75,7 +75,7 @@
                             <td>{{ $batch->name }}</td>
                             <td>{{ $batch->getCourse->name }}</td>
                             <td>
-                              <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $student->id }}" data-first-Name="{{ $student->firstName }}" data-last-Name="{{ $student->firstName }}" data-guardian-Name="{{ $student->guardianName }}" data-contact-Number="{{ $student->contactNumber }}">
+                              <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $student->id }}" data-first-Name="{{ $student->firstName }}" data-last-Name="{{ $student->firstName }}" data-guardian-Name="{{ $student->guardianName }}" data-contact-Number="{{ $student->contactNumber }}" data-batch="{{ $batch->id }}">
                                 <span class="btn-label">
                                   <i class="fas fa-edit"></i>
                                 </span>
