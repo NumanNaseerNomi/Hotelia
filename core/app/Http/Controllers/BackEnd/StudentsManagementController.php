@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\StudentsModel;
 use App\Traits\MiscellaneousTrait;
 use App\Http\Controllers\Controller;
+use App\Models\AcademicSessionsModel;
 
 class StudentsManagementController extends Controller
 {
@@ -15,7 +16,14 @@ class StudentsManagementController extends Controller
 
   public function index()
   {
-    $data['batches'] = BatchesModel::all();
+    $data['batches'] = AcademicSessionsModel::find(getCurrentAcademicSession())->getBatches;
+    $data['totalStudents'] = 0;
+
+    foreach($data['batches'] as $batch)
+    {
+      $data['totalStudents'] += count($batch->getStudents);
+    }
+    
     $data['courses'] = CoursesModel::all();
     $data['students'] = StudentsModel::all();
     return view('backend.studentsManagement.index', $data);
