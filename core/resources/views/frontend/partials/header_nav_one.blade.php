@@ -48,6 +48,9 @@
 
                         {{--- Level1 links which doesn't have dropdown menus ---}}
                         <li><a href="{{$href}}" target="{{$link["target"]}}">{{$link["text"]}}</a></li>
+                        @if ($loop->iteration == 3)
+                          <li><a href="/showCourses" target="_self">Courses</a></li>
+                        @endif
 
                     @else
                         <li class="have-submenu">
