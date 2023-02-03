@@ -16,4 +16,9 @@ class BatchesModel extends Model
   {
     return $this->belongsTo(CoursesModel::class, 'courseId');
   }
+
+  public function getStudents()
+  {
+    return $this->belongsToMany(StudentsModel::class, 'BatchStudents', 'batchId', 'studentId');
+  }
 }
