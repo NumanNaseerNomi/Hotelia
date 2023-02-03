@@ -72,7 +72,7 @@
                             <td>{{ $student->guardianName }}</td>
                             <td>{{ $student->admissionDate }}</td>
                             <td>{{ $student->contactNumber }}</td>
-                            <td>{{ $student->batch }}</td>
+                            <td>{{ $batch->name }}</td>
                             <td>{{ $student->course }}</td>
                             <td>
                               <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $student->id }}" data-first-Name="{{ $student->firstName }}" data-last-Name="{{ $student->firstName }}" data-guardian-Name="{{ $student->guardianName }}" data-contact-Number="{{ $student->contactNumber }}">
