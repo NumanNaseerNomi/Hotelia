@@ -43,7 +43,7 @@
 
         <div class="row">
           <div class="col-lg-12">
-            @if (count($rooms) == 0)
+            @if (count($courses) == 0)
               <div class="row text-center">
                 <div class="col bg-white py-5">
                   <h3>{{ __('No Room Found!') }}</h3>
@@ -51,20 +51,20 @@
               </div>
             @else
               <div class="row">
-                @foreach ($rooms as $roomInfo)
+                @foreach ($courses as $courseInfo)
                   <div class="col-md-4">
                     <!-- Single Room -->
                     <div class="single-room">
                       <div class="room-thumb d-block">
                         <img class="lazy" data-src="{{ asset('assets/img/rooms/' . '1640079042.jpg') }}" alt="room">
-                        <!-- <img class="lazy" data-src="{{ asset('assets/img/rooms/' . $roomInfo->id) }}" alt="room"> -->
+                        <!-- <img class="lazy" data-src="{{ asset('assets/img/rooms/' . $courseInfo->id) }}" alt="room"> -->
                       </div>
 
                       <div class="room-desc">
                         <h4>
-                          <p>{{ strlen($roomInfo->name) > 45 ? mb_substr($roomInfo->name, 0, 45, 'utf-8') . '...' : $roomInfo->name }}</p>
+                          <p>{{ strlen($courseInfo->name) > 45 ? mb_substr($courseInfo->name, 0, 45, 'utf-8') . '...' : $courseInfo->name }}</p>
                         </h4>
-                        <p>{{ $roomInfo->description }}</p>
+                        <p>{{ $courseInfo->description }}</p>
                       </div>
 
                     </div>
@@ -73,7 +73,7 @@
               </div>
             @endif
             <div class="row">
-                <div class="col-12">{{$rooms->links()}}</div>
+                <div class="col-12">{{$courses->links()}}</div>
             </div>
           </div>
         </div>
