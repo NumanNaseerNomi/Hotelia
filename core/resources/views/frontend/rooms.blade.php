@@ -2,7 +2,7 @@
 
 @section('pageHeading')
   @if (!is_null($pageHeading))
-    {{ $pageHeading->rooms_title }}
+    {{ $pageHeading }}
   @endif
 @endsection
 
@@ -21,7 +21,7 @@
       <div class="container">
         <div class="breadcrumb-content text-center">
           @if (!is_null($pageHeading))
-            <h1>{{ convertUtf8($pageHeading->rooms_title) }}</h1>
+            <h1>{{ convertUtf8($pageHeading) }}</h1>
           @endif
 
           <ul class="list-inline">
@@ -29,7 +29,7 @@
             <li><i class="far fa-angle-double-right"></i></li>
 
             @if (!is_null($pageHeading))
-              <li>{{ convertUtf8($pageHeading->rooms_title) }}</li>
+              <li>{{ convertUtf8($pageHeading) }}</li>
             @endif
           </ul>
         </div>
@@ -42,50 +42,40 @@
       <div class="container">
 
         <div class="row">
-            
+          <div class="col-lg-12">
+            @if (count($rooms) == 0)
+              <div class="row text-center">
+                <div class="col bg-white py-5">
+                  <h3>{{ __('No Room Found!') }}</h3>
+                </div>
+              </div>
+            @else
+              <div class="row">
+                @foreach ($rooms as $roomInfo)
+                  <div class="col-md-4">
+                    <!-- Single Room -->
+                    <div class="single-room">
+                      <div class="room-thumb d-block">
+                        <img class="lazy" data-src="{{ asset('assets/img/rooms/' . '1640079042.jpg') }}" alt="room">
+                        <!-- <img class="lazy" data-src="{{ asset('assets/img/rooms/' . $roomInfo->id) }}" alt="room"> -->
+                      </div>
 
+                      <div class="room-desc">
+                        <h4>
+                          <p>{{ strlen($roomInfo->name) > 45 ? mb_substr($roomInfo->name, 0, 45, 'utf-8') . '...' : $roomInfo->name }}</p>
+                        </h4>
+                        <p>{{ $roomInfo->description }}</p>
+                      </div>
 
-            <div class="col-lg-12">
-  @if (count($roomInfos) == 0)
-    <div class="row text-center">
-      <div class="col bg-white py-5">
-        <h3>{{ __('No Room Found!') }}</h3>
-      </div>
-    </div>
-  @else
-    <div class="row">
-      @foreach ($roomInfos as $roomInfo)
-        <div class="col-md-4">
-          <!-- Single Room -->
-          <div class="single-room">
-            <a class="room-thumb d-block" href="{{route('room_details', [$roomInfo->room_id, $roomInfo->slug])}}">
-              <img class="lazy" data-src="{{ asset('assets/img/rooms/' . $roomInfo->featured_img) }}" alt="room">
-            </a>
-
-            <div class="room-desc">
-              <h4>
-                <a href="{{ route('room_details', ['id' => $roomInfo->room_id, 'slug' => $roomInfo->slug]) }}">{{ strlen($roomInfo->title) > 45 ? mb_substr($roomInfo->title, 0, 45, 'utf-8') . '...' : $roomInfo->title }}</a>
-              </h4>
-              <p>{{ $roomInfo->summary }}</p>
+                    </div>
+                  </div>
+                @endforeach
+              </div>
+            @endif
+            <div class="row">
+                <div class="col-12">{{$rooms->links()}}</div>
             </div>
-
           </div>
-        </div>
-      @endforeach
-    </div>
-  @endif
-  <div class="row">
-      <div class="col-12">
-          {{$roomInfos->appends(['category' => request()->input('category'), 'dates' => request()->input('dates'),'beds' => request()->input('beds'),'baths' => request()->input('baths'),'guests' => request()->input('guests'),'sort_by' => request()->input('sort_by'),'rents' => request()->input('rents'),'ammenities' => request()->input('ammenities')])->links()}}
-      </div>
-  </div>
-</div>
-
-
-
-
-
-
         </div>
 
       </div>
