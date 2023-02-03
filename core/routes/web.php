@@ -10,6 +10,7 @@ use App\Http\Controllers\FrontEnd\UserController;
 use App\Http\Controllers\BackEnd\FooterController;
 use App\Http\Controllers\BackEnd\LanguageController;
 use App\Http\Controllers\FrontEnd\ContactController;
+use App\Http\Controllers\FrontEnd\CoursesController;
 use App\Http\Controllers\FrontEnd\GalleryController;
 use App\Http\Controllers\FrontEnd\ServiceController;
 use App\Http\Controllers\BackEnd\SummernoteController;
@@ -85,6 +86,7 @@ Route::middleware('language')->group(function () {
 
   Route::get('/rooms', [RoomController::class, 'rooms'])->name('rooms');
   Route::get('/showRooms', [RoomsController::class, 'showRooms'])->name('rooms');
+  Route::get('/showCourses', [CoursesController::class, 'showCourses']);
 
   Route::get('/room_details/{id}/{slug}', [RoomController::class, 'roomDetails'])->name('room_details');
 });
