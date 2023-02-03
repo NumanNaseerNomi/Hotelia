@@ -12,8 +12,8 @@ class StudentsModel extends Model
   protected $table = 'Students';
   protected $fillable = ['firstName', 'lastName', 'guardianName', 'contactNumber', 'admissionDate'];
 
-  // public function getCourse()
-  // {
-  //   return $this->belongsTo(CoursesModel::class, 'courseId');
-  // }
+  public function getCourse()
+  {
+    return $this->belongsTo(CoursesModel::class, 'courseId');
+  }
 }
