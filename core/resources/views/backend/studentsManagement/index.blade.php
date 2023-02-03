@@ -64,36 +64,36 @@
                     </thead>
                     <tbody>
                       @foreach ($batches as $batch)
-                      @foreach ($batch->getStudents as $student)
-                        <tr>
-                          <td>{{ $student->id }}</td>
-                          <td>{{ $student->firstName }}</td>
-                          <td>{{ $student->lastName }}</td>
-                          <td>{{ $student->guardianName }}</td>
-                          <td>{{ $student->admissionDate }}</td>
-                          <td>{{ $student->contactNumber }}</td>
-                          <td>{{ $student->batch }}</td>
-                          <td>{{ $student->course }}</td>
-                          <td>
-                            <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $student->id }}" data-first-Name="{{ $student->firstName }}" data-last-Name="{{ $student->firstName }}" data-guardian-Name="{{ $student->guardianName }}" data-contact-Number="{{ $student->contactNumber }}">
-                              <span class="btn-label">
-                                <i class="fas fa-edit"></i>
-                              </span>
-                              {{ __('Edit') }}
-                            </a>
-
-                            <form class="deleteForm d-inline-block" action="{{ url('admin/studentsManagement/delete', ['id' => $student->id]) }}" method="post">
-                              @csrf
-                              <button type="submit" class="btn btn-danger btn-sm deleteBtn">
+                        @foreach ($batch->getStudents as $student)
+                          <tr>
+                            <td>{{ $student->id }}</td>
+                            <td>{{ $student->firstName }}</td>
+                            <td>{{ $student->lastName }}</td>
+                            <td>{{ $student->guardianName }}</td>
+                            <td>{{ $student->admissionDate }}</td>
+                            <td>{{ $student->contactNumber }}</td>
+                            <td>{{ $student->batch }}</td>
+                            <td>{{ $student->course }}</td>
+                            <td>
+                              <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $student->id }}" data-first-Name="{{ $student->firstName }}" data-last-Name="{{ $student->firstName }}" data-guardian-Name="{{ $student->guardianName }}" data-contact-Number="{{ $student->contactNumber }}">
                                 <span class="btn-label">
-                                  <i class="fas fa-trash"></i>
+                                  <i class="fas fa-edit"></i>
                                 </span>
-                                {{ __('Delete') }}
-                              </button>
-                            </form>
-                          </td>
-                        </tr>
-                      @endforeach
+                                {{ __('Edit') }}
+                              </a>
+
+                              <form class="deleteForm d-inline-block" action="{{ url('admin/studentsManagement/delete', ['id' => $student->id]) }}" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-danger btn-sm deleteBtn">
+                                  <span class="btn-label">
+                                    <i class="fas fa-trash"></i>
+                                  </span>
+                                  {{ __('Delete') }}
+                                </button>
+                              </form>
+                            </td>
+                          </tr>
+                        @endforeach
                       @endforeach
                     </tbody>
                   </table>
