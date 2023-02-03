@@ -14,7 +14,7 @@ class CoursesController extends Controller
   {
     $data['rooms'] = RoomsModel::paginate(6);
     $data['breadcrumbInfo'] = MiscellaneousTrait::getBreadcrumb();
-    $data['pageHeading'] = "Rooms";
-    return view('frontend.rooms', $data);
+    $data['pageHeading'] = "Courses";
+    return view('frontend.courses', $data);
   }
 }
