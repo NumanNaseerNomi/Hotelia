@@ -48,8 +48,8 @@
               <div class="form-group">
                 <label for="">Batch*</label>
                 <select class="form-control" name="batchId" id="in_batch" selected="in_batch">
-                  @foreach($courses as $course)
-                    <option value="{{ $course->id }}">{{ $course->name }}</option>
+                  @foreach($batches as $batch)
+                    <option value="{{ $batch->id }}">{{ $batch->name }}</option>
                   @endforeach
                 </select>
                 <p id="editErr_batchId" class="mt-2 mb-0 text-danger em"></p>
