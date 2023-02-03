@@ -28,6 +28,24 @@
               </div>
             </div>
 
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="">Enable Registration</label>
+                <select class="form-control" name="isRegistrationEnabled">
+                  <option value="false" selected>No</option>
+                  <option value="true">Yes</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="">Registration Fee</label>
+                <input type="text" class="form-control" name="registrationFee" placeholder="Enter Registration Fee">
+                <p id="err_registrationFee" class="mt-2 mb-0 text-danger em"></p>
+              </div>
+            </div>
+
             <div class="col">
               <div class="form-group">
                 <label for="">Description</label>
