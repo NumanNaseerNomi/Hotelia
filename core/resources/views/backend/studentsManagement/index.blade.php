@@ -63,7 +63,8 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($students as $student)
+                      @foreach ($batches as $batch)
+                      @foreach ($batch->getStudents as $student)
                         <tr>
                           <td>{{ $student->id }}</td>
                           <td>{{ $student->firstName }}</td>
@@ -92,6 +93,7 @@
                             </form>
                           </td>
                         </tr>
+                      @endforeach
                       @endforeach
                     </tbody>
                   </table>
