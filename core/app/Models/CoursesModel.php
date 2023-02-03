@@ -10,7 +10,7 @@ class CoursesModel extends Model
   use HasFactory;
 
   protected $table = 'Courses';
-  protected $fillable = ['name', 'group', 'batch', 'option', 'description'];
+  protected $fillable = ['name', 'group', 'batch', 'registrationFee', 'isRegistrationEnabled', 'description'];
 
   public function getBatches()
   {
