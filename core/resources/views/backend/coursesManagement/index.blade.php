@@ -71,7 +71,7 @@
                               <p>{{ $batch->name }}</p>
                             @endforeach
                           </td>
-                          <td>{{ $course->option }}</td>
+                          <td>{{ $course->registrationFee }}</td>
                           <td>{{ $course->description }}</td>
                           <td>
                             <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $course->id }}" data-name="{{ $course->name }}" data-group="{{ $course->group }}" data-description="{{ $course->description }}">
