@@ -21,7 +21,7 @@ class RoomsController extends Controller
 
   public function roomDetails($id)
   {
-    $data['courseDetails'] = CoursesModel::findOrFail($id);
+    $data['roomDetails'] = RoomsModel::findOrFail($id);
     $data['breadcrumbInfo'] = MiscellaneousTrait::getBreadcrumb();
     $data['pageHeading'] = "Room Details";
     return view('frontend.roomDetails', $data);
