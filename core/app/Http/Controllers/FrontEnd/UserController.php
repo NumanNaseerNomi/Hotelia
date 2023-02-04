@@ -630,49 +630,97 @@ class UserController extends Controller
 
   public function applicationFormSubmit(Request $request)
   {
+
+    $request->validate(
+      [
+        'course' => 'required',
+        'location' => 'required',
+        'date' => 'required',
+        'accommodation' => 'required',
+        'email' => 'required',
+        'gender' => 'required|email',
+        'dob' => 'required',
+        'nationality' => 'required',
+        'street' => 'required',
+        'city' => 'required',
+        'country' => 'required',
+        'zipCode' => 'required',
+        'phone' => 'required',
+        'emergencyName' => 'required',
+        'emergencyPhone' => 'required',
+        'emergencyRelationship' => 'required',
+        'question1' => 'required',
+        'question3' => 'required',
+        'question5' => 'required',
+        'question6' => 'required',
+        'question7' => 'required'
+      ]
+    );
+    
     dd($request->all());
-    $rules = [
-      'username' => 'required|unique:users|max:255',
-      'email' => 'required|email:rfc,dns|unique:users|max:255',
-      'password' => 'required|confirmed',
-      'password_confirmation' => 'required'
-    ];
 
-    $message = [
-      'password_confirmation.required' => 'The confirm password field is required.',
-      'g-recaptcha-response.required' => 'Please verify that you are not a robot.',
-      'g-recaptcha-response.captcha' => 'Captcha error! try again later or contact site admin.'
-    ];
+    // $rules =
+    // [
+    //   'course' => 'required',
+    //   'location' => 'required',
+    //   'date' => 'required',
+    //   'accommodation' => 'required',
+    //   'email' => 'required',
+    //   'gender' => 'required|email',
+    //   'dob' => 'required',
+    //   'nationality' => 'required',
+    //   'street' => 'required',
+    //   'city' => 'required',
+    //   'country' => 'required',
+    //   'zipCode' => 'required',
+    //   'phone' => 'required',
+    //   'emergencyName' => 'required',
+    //   'emergencyPhone' => 'required',
+    //   'emergencyRelationship' => 'required',
+    //   'question1' => 'required',
+    //   'question3' => 'required',
+    //   'question5' => 'required',
+    //   'question6' => 'required',
+    //   'question7' => 'required',
+    // ];
 
-    $bs = DB::table('basic_settings')->select('google_recaptcha_status')->first();
+    // $request->validate($rules);
 
-    if ($bs->google_recaptcha_status == 1) {
-      $rules['g-recaptcha-response'] = 'required|captcha';
-    }
+    // $message = [
+    //   'password_confirmation.required' => 'The confirm password field is required.',
+    //   'g-recaptcha-response.required' => 'Please verify that you are not a robot.',
+    //   'g-recaptcha-response.captcha' => 'Captcha error! try again later or contact site admin.'
+    // ];
 
-    $validator = Validator::make($request->all(), $rules, $message);
+    // $bs = DB::table('basic_settings')->select('google_recaptcha_status')->first();
 
-    if ($validator->fails()) {
-      return redirect()->back()->withErrors($validator)->withInput();
-    }
+    // if ($bs->google_recaptcha_status == 1) {
+    //   $rules['g-recaptcha-response'] = 'required|captcha';
+    // }
 
-    $user = new User();
-    $user->username = $request->username;
-    $user->email = $request->email;
-    $user->password = Hash::make($request->password);
+    // $validator = Validator::make($request->all(), $rules, $message);
 
-    // first, generate a random string
-    $randStr = Str::random(20);
+    // if ($validator->fails()) {
+    //   return redirect()->back()->withErrors($validator)->withInput();
+    // }
 
-    // second, generate a token
-    $token = md5($randStr . $request->username . $request->email);
+    // $user = new User();
+    // $user->username = $request->username;
+    // $user->email = $request->email;
+    // $user->password = Hash::make($request->password);
 
-    $user->verification_token = $token;
-    $user->save();
+    // // first, generate a random string
+    // $randStr = Str::random(20);
 
-    // send a mail to user for verify his/her email address
-    $this->sendVerificationEmail($request, $token);
+    // // second, generate a token
+    // $token = md5($randStr . $request->username . $request->email);
 
-    return redirect()->back();
+    // $user->verification_token = $token;
+    // $user->save();
+
+    // // send a mail to user for verify his/her email address
+    // $this->sendVerificationEmail($request, $token);
+
+    // return redirect()->back();
   }
 }
