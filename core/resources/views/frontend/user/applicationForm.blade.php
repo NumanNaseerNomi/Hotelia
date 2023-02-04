@@ -35,6 +35,13 @@
               <form action="{{ url('/user/applicationFormSubmit') }}" method="POST">
                 @csrf
                 <div id="step1">
+
+                  <p class="text-center">Step 1 of 7</p>
+                  <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="14" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-warning text-dark" style="width: 14%">14%</div>
+                  </div>
+                  <br/>
+
                   <div class="input-box">
                     <label>Select the Course*</label>
                     <select id="course" name="course">
@@ -78,6 +85,13 @@
                 </div>
 
                 <div class="d-none" id="step2">
+
+                  <p class="text-center">Step 2 of 7</p>
+                  <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-warning text-dark" style="width: 28%">28%</div>
+                  </div>
+                  <br/>
+
                   <h1 class="text-center">About You</h1>
                   <div class="input-box">
                     <label>First Name*</label>
@@ -101,6 +115,13 @@
                 </div>
 
                 <div class="d-none" id="step3">
+
+                  <p class="text-center">Step 3 of 7</p>
+                  <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-warning text-dark" style="width: 42%">42%</div>
+                  </div>
+                  <br/>
+
                   <h1 class="text-center">About You</h1>
                   <div class="input-box">
                     <label>Gender*</label>
@@ -123,6 +144,13 @@
                 </div>
 
                 <div class="d-none" id="step4">
+
+                  <p class="text-center">Step 4 of 7</p>
+                  <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-warning text-dark" style="width: 56%">56%</div>
+                  </div>
+                  <br/>
+
                   <h1 class="text-center">Your Contact Details</h1>
                   <div class="input-box">
                     <label>Street + House Number*</label>
@@ -151,6 +179,13 @@
                 </div>
 
                 <div class="d-none" id="step5">
+
+                  <p class="text-center">Step 5 of 7</p>
+                  <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-warning text-dark" style="width: 70%">70%</div>
+                  </div>
+                  <br/>
+
                   <h1 class="text-center">Emergency Contact</h1>
                   <div class="input-box">
                     <label>Name*</label>
@@ -169,6 +204,13 @@
                 </div>
 
                 <div class="d-none" id="step6">
+
+                  <p class="text-center">Step 6 of 7</p>
+                  <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-warning text-dark" style="width: 84%">84%</div>
+                  </div>
+                  <br/>
+
                   <div class="input-box">
                     <label>How long have you been practicing Yoga?*</label>
                     <select name="question1">
@@ -207,6 +249,13 @@
                 </div>
 
                 <div class="d-none" id="step7">
+
+                  <p class="text-center">Step 7 of 7</p>
+                  <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-warning text-dark" style="width: 100%">100%</div>
+                  </div>
+                  <br/>
+
                   <div class="input-box">
                     <label>Have you in the last 12 months used tobacco, alcohol, recreational drugs, or illicit substances?*</label>
                     <select name="question7">
