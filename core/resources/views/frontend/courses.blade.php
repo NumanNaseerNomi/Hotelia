@@ -57,7 +57,7 @@
                     <div class="single-room">
                       <div class="room-thumb d-block">
                         <a href="/user/applicationForm">
-                          <img class="lazy" data-src="{{ asset('assets/img/rooms/' . '1640079042.jpg') }}" alt="room">
+                          <img class="lazy" data-src="{{ asset('assets/img/rooms/' . '1640079042.jpg') }}" alt="course">
                         </a>
                       </div>
 
