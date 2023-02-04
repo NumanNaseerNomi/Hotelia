@@ -16,7 +16,7 @@ use App\Http\Controllers\FrontEnd\ServiceController;
 use App\Http\Controllers\BackEnd\SummernoteController;
 use App\Http\Controllers\FrontEnd\Room\RoomController;
 use App\Http\Controllers\FrontEnd\Room\PaytmController;
-use App\Http\Controllers\FrontEnd\Room\RoomsController;
+use App\Http\Controllers\FrontEnd\RoomsController;
 use App\Http\Controllers\FrontEnd\Room\MollieController;
 use App\Http\Controllers\FrontEnd\Room\PayPalController;
 use App\Http\Controllers\FrontEnd\Room\PaystackController;
@@ -85,7 +85,10 @@ Route::middleware('language')->group(function () {
   Route::get('/', [HomeController::class, 'index'])->name('index');
 
   Route::get('/rooms', [RoomController::class, 'rooms'])->name('rooms');
+
   Route::get('/showRooms', [RoomsController::class, 'showRooms'])->name('rooms');
+  Route::get('/roomDetails/{id}', [RoomsController::class, 'roomDetails']);
+
   Route::get('/showCourses', [CoursesController::class, 'showCourses']);
   Route::get('/courseDetails/{id}', [CoursesController::class, 'courseDetails']);
 
