@@ -96,15 +96,18 @@
                 <form action="{{ route('room_booking') }}" method="POST" enctype="multipart/form-data">
                   @csrf
                   <input type="hidden" name="courseId" value="{{ $courseDetails->id }}">
+
                   <div class="mb-2">
                     <div class="input-wrap">
-                      <input type="text" placeholder="{{ __('Number of Guests') }}" name="guests" value="{{ old('guests') }}">
-                      <i class="far fa-users"></i>
+                      <select class="nice-select" name="batch" id="payment-gateways">
+                        <option selected disabled>Select Batch</option>
+                        @foreach ($courseDetails->getBatches as $batch)
+                          <option value="{{ $batch->id }}">{{ $batch->name }}</option>
+                        @endforeach
+                      </select>
                     </div>
-                    @error('guests')
-                      <p class="ml-2 mt-2 text-danger">{{ $message }}</p>
-                    @enderror
                   </div>
+
                   <div class="mt-4">
                     <div class="input-wrap">
                       <button type="submit" class="btn filled-btn btn-block">
