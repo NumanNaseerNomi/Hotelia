@@ -73,16 +73,16 @@
                           </td>
                           <td>
                             @if($course->isRegistrationEnabled)
-                              <span class="badge bg-success m-1">Registration Enabled</span>
+                              <span class="badge bg-primary m-1">Registration Enabled</span>
                             @endif
                             <br/>
                             @if($course->registrationFee)
-                              <span class="badge bg-success m-1">Registration Fee Enabled ({{ $course->registrationFee }})</span>
+                              <span class="badge bg-primary m-1">Registration Fee Enabled ({{ $course->registrationFee }})</span>
                             @endif
                           </td>
                           <td>{{ $course->description }}</td>
                           <td>
-                            <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $course->id }}" data-name="{{ $course->name }}" data-group="{{ $course->group }}" data-description="{{ $course->description }}">
+                            <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $course->id }}" data-name="{{ $course->name }}" data-registration-Fee="{{ $course->registrationFee }}" data-is-Registration-Enabled="{{ $course->isRegistrationEnabled }}" data-description="{{ $course->description }}">
                               <span class="btn-label">
                                 <i class="fas fa-edit"></i>
                               </span>
