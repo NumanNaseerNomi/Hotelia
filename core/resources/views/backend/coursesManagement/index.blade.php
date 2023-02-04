@@ -71,7 +71,14 @@
                               <p>{{ $batch->name }}</p>
                             @endforeach
                           </td>
-                          <td>{{ $course->registrationFee }}</td>
+                          <td>
+                            @if($course->isRegistrationEnabled)
+                              <span class="badge bg-success">Registration Enabled</span>
+                            @endif
+                            @if($course->registrationFee)
+                              <span class="badge bg-success">Registration Fee Enabled ({{ $course->registrationFee }})</span>
+                            @endif
+                          </td>
                           <td>{{ $course->description }}</td>
                           <td>
                             <a class="btn btn-secondary btn-sm mr-1 editBtn" href="#" data-toggle="modal" data-target="#editModal" data-id="{{ $course->id }}" data-name="{{ $course->name }}" data-group="{{ $course->group }}" data-description="{{ $course->description }}">
