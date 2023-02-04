@@ -32,8 +32,8 @@
               <div class="form-group">
                 <label for="">Enable Registration</label>
                 <select class="form-control" name="isRegistrationEnabled">
-                  <option value="false" selected>No</option>
-                  <option value="true">Yes</option>
+                  <option value="0" selected>No</option>
+                  <option value="1">Yes</option>
                 </select>
               </div>
             </div>
