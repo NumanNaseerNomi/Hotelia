@@ -37,31 +37,32 @@
                 <div id="step1">
                   <div class="input-box">
                     <label>Select the Course*</label>
-                    <select id="cars" name="cars">
-                      <option value="volvo">Volvo XC90</option>
-                      <option value="saab">Saab 95</option>
-                      <option value="mercedes">Mercedes SLK</option>
-                      <option value="audi">Audi TT</option>
+                    <select id="course" name="course">
+                      @foreach($courses as $course)
+                        <option value="{{ $course->id }}">{{ $course->name }}</option>
+                      @endforeach
                     </select>
                   </div>
 
                   <div class="input-box">
                     <label>Select Course Location*</label>
-                    <select id="cars" name="cars">
-                      <option value="volvo">Volvo XC90</option>
-                      <option value="saab">Saab 95</option>
-                      <option value="mercedes">Mercedes SLK</option>
-                      <option value="audi">Audi TT</option>
+                    <select id="location" name="location">
+                      @foreach($courses as $course)
+                        @foreach($course->getBatches as $batch)
+                          <option value="{{ $batch->id }}">{{ $batch->location }}</option>
+                        @endforeach
+                      @endforeach
                     </select>
                   </div>
 
                   <div class="input-box">
                     <label>Date*</label>
-                    <select id="cars" name="cars">
-                      <option value="volvo">Volvo XC90</option>
-                      <option value="saab">Saab 95</option>
-                      <option value="mercedes">Mercedes SLK</option>
-                      <option value="audi">Audi TT</option>
+                    <select id="date" name="date">
+                      @foreach($courses as $course)
+                        @foreach($course->getBatches as $batch)
+                          <option value="{{ $batch->id }}">{{ $batch->startDate }} -- {{ $batch->endDate }}</option>
+                        @endforeach
+                      @endforeach
                     </select>
                   </div>
 
