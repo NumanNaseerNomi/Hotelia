@@ -87,6 +87,7 @@ Route::middleware('language')->group(function () {
   Route::get('/rooms', [RoomController::class, 'rooms'])->name('rooms');
   Route::get('/showRooms', [RoomsController::class, 'showRooms'])->name('rooms');
   Route::get('/showCourses', [CoursesController::class, 'showCourses']);
+  Route::get('/courseDetails/{id}', [CoursesController::class, 'courseDetails']);
 
   Route::get('/room_details/{id}/{slug}', [RoomController::class, 'roomDetails'])->name('room_details');
 });
