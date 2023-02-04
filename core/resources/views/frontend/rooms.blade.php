@@ -51,21 +51,21 @@
               </div>
             @else
               <div class="row">
-                @foreach ($rooms as $roomInfo)
+                @foreach ($rooms as $room)
                   <div class="col-md-4">
                     <!-- Single Room -->
                     <div class="single-room">
                       <div class="room-thumb d-block">
-                        <a href="/user/applicationForm">
-                          <img class="lazy" data-src="{{ asset('assets/img/rooms/' . '1640079042.jpg') }}" alt="room">
+                        <a href="{{ url('roomDetails', ['id' => $room->id]) }}">
+                          <img class="lazy" data-src="{{ asset('assets/img/rooms/' . '1640079042.jpg') }}" alt="course">
                         </a>
                       </div>
 
                       <div class="room-desc">
                         <h4>
-                          <p>{{ strlen($roomInfo->name) > 45 ? mb_substr($roomInfo->name, 0, 45, 'utf-8') . '...' : $roomInfo->name }}</p>
+                          <p>{{ strlen($room->name) > 45 ? mb_substr($room->name, 0, 45, 'utf-8') . '...' : $room->name }}</p>
                         </h4>
-                        <p>{{ $roomInfo->description }}</p>
+                        <p>{{ $room->description }}</p>
                       </div>
 
                     </div>
