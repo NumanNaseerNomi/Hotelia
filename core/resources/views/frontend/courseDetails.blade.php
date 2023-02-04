@@ -66,13 +66,44 @@
               <div class="room-details-tab">
                 <div class="row">
 
-                  <div class="col-sm-9">
+                  <div class="col">
                     <div class="tab-content desc-tab-content">
                       <div role="tabpanel" class="tab-pane fade in active show" id="desc">
                         <h5 class="tab-title">{{ __('Course Details') }}</h5>
                         <div class="entry-content">
                           <p>{!! replaceBaseUrl($courseDetails->description, 'summernote') !!}</p>
                         </div>
+                        
+                        <div class="table-responsive">
+                          <table class="table table-striped mt-3" id="basic-datatables">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Batch Name</th>
+                                <th scope="col">Location</th>
+                                <th scope="col">Start Date</th>
+                                <th scope="col">End Date</th>
+                                <th scope="col">Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              @foreach ($courseDetails->getBatches as $batch)
+                                <tr>
+                                  <td>{{ $loop->iteration }}</td>
+                                  <td>{{ $batch->name }}</td>
+                                  <td>{{ $batch->location }}</td>
+                                  <td>{{ $batch->startDate }}</td>
+                                  <td>{{ $batch->endDate }}</td>
+                                  <td>{{ $batch->description }}</td>
+                                </tr>
+                              @endforeach
+                            </tbody>
+                          </table>
+                        </div>
+
+
+
+
                       </div>
                     </div>
                   </div>
@@ -99,10 +130,10 @@
 
                   <div class="mb-2">
                     <div class="input-wrap">
-                      <select class="nice-select" name="batch" id="payment-gateways">
+                      <select class="nice-select" name="batch">
                         <option selected disabled>Select Batch</option>
                         @foreach ($courseDetails->getBatches as $batch)
-                          <option value="{{ $batch->id }}">{{ $batch->name }}</option>
+                          <option value="{{ $batch->id }}"> {{ $loop->iteration }} - {{ $batch->name }}</option>
                         @endforeach
                       </select>
                     </div>
