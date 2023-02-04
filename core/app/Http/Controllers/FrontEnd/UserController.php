@@ -2,26 +2,28 @@
 
 namespace App\Http\Controllers\FrontEnd;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\UserProfileUpdateRequest;
-use App\Models\BasicSettings\MailTemplate;
-use App\Models\PackageManagement\PackageBooking;
-use App\Models\RoomManagement\RoomBooking;
 use App\Models\User;
-use App\Rules\MatchEmailRule;
-use App\Rules\MatchOldPasswordRule;
-use App\Traits\MiscellaneousTrait;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
-use Laravel\Socialite\Facades\Socialite;
+use App\Models\BatchesModel;
+use App\Models\CoursesModel;
+use Illuminate\Http\Request;
+use App\Rules\MatchEmailRule;
+use App\Traits\MiscellaneousTrait;
+use Illuminate\Support\Facades\DB;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
+use App\Rules\MatchOldPasswordRule;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Session;
+use Laravel\Socialite\Facades\Socialite;
+use Illuminate\Support\Facades\Validator;
+use App\Models\BasicSettings\MailTemplate;
+use App\Models\RoomManagement\RoomBooking;
+use App\Http\Requests\UserProfileUpdateRequest;
+use App\Models\PackageManagement\PackageBooking;
 
 class UserController extends Controller
 {
@@ -619,7 +621,11 @@ class UserController extends Controller
 
   public function applicationForm()
   {
-    return view('frontend.user.applicationForm', ['breadcrumbInfo' => $this->breadcrumb]);
+    $data['courses'] = CoursesModel::where('isRegistrationEnabled', 1)->get();
+    $data['breadcrumbInfo'] = $this->breadcrumb;
+    $data['batches'] = BatchesModel::all();
+    // dd($data);
+    return view('frontend.user.applicationForm', $data);
   }
 
   public function applicationFormSubmit(Request $request)
