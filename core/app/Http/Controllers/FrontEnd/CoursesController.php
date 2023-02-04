@@ -26,18 +26,18 @@ class CoursesController extends Controller
     return view('frontend.courses', $data);
   }
 
-  // public function courseDetails($id)
-  // {
-  //   // $id = 55;
-  //   // dd($id);
-  //   $data['course'] = CoursesModel::findOrFail($id);
-  //   $data['breadcrumbInfo'] = MiscellaneousTrait::getBreadcrumb();
-  //   $data['pageHeading'] = "Course Details";
-  //   // dd($data['course']->getBatches);
-  //   return view('frontend.courseDetails', $data);
-  // }
-
   public function courseDetails($id)
+  {
+    // $id = 55;
+    // dd($id);
+    $data['courseDetails'] = CoursesModel::findOrFail($id);
+    $data['breadcrumbInfo'] = MiscellaneousTrait::getBreadcrumb();
+    $data['pageHeading'] = "Course Details";
+    // dd($data['course']->getBatches);
+    return view('frontend.courseDetails', $data);
+  }
+
+  public function courseDetailss($id)
   {
     $queryResult['courseDetails'] = CoursesModel::findOrFail(2);
     $queryResult['breadcrumbInfo'] = MiscellaneousTrait::getBreadcrumb();
