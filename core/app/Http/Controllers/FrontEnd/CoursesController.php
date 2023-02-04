@@ -31,7 +31,7 @@ class CoursesController extends Controller
     $data['courseDetails'] = CoursesModel::findOrFail($id);
     $data['breadcrumbInfo'] = MiscellaneousTrait::getBreadcrumb();
     $data['pageHeading'] = "Course Details";
-    // dd($data['course']->getBatches);
+    // dd($data['courseDetails']->getBatches);
     return view('frontend.courseDetails', $data);
   }
 }
