@@ -40,24 +40,19 @@
               <div class="entry-header">
                 <div class="post-thumb position-relative">
                   <div class="post-thumb-slider">
-                    @php
-                      $sliderImages = json_decode($details->room->slider_imgs);
-                    @endphp
 
                     <div class="main-slider">
-                      @foreach ($sliderImages as $image)
+                      @foreach ($courseDetails as $image)
                         <div class="single-img">
-                          <a href="{{ asset('assets/img/rooms/slider_images/' . $image) }}" class="main-img">
-                            <img src="{{ asset('assets/img/rooms/slider_images/' . $image) }}" alt="Image">
-                          </a>
+                          <img src="{{ asset('assets/img/rooms/slider_images/' . '6264e67c95ee5.jpg') }}" alt="Image">
                         </div>
                       @endforeach
                     </div>
 
                     <div class="dots-slider row">
-                      @foreach ($sliderImages as $image)
+                      @foreach ($courseDetails as $image)
                         <div class="single-dots">
-                          <img src="{{ asset('assets/img/rooms/slider_images/' . $image) }}" alt="image">
+                          <img src="{{ asset('assets/img/rooms/slider_images/' . '6264e67c95ee5.jpg') }}" alt="image">
                         </div>
                       @endforeach
                     </div>
@@ -100,7 +95,7 @@
 
                 <form action="{{ route('room_booking') }}" method="POST" enctype="multipart/form-data">
                   @csrf
-                  <input type="hidden" name="room_id" value="{{ $details->room_id }}">
+                  <input type="hidden" name="courseId" value="{{ $courseDetails->id }}">
                   <div class="mb-2">
                     <div class="input-wrap">
                       <input type="text" placeholder="{{ __('Number of Guests') }}" name="guests" value="{{ old('guests') }}">
@@ -131,15 +126,3 @@
   </main>
 @endsection
 
-<!-- @section('script')
-  <script>
-    'use strict';
-
-    // assign php value to js variable
-    var bookingDates = {!! json_encode($bookingDates) !!};
-    var offlineGateways = {!! json_encode($offlineGateways) !!};
-    var roomRentPerNight = '{{ $details->rent }}';
-  </script>
-
-  <script src="{{ asset('assets/js/room-details.js') }}"></script>
-@endsection -->
