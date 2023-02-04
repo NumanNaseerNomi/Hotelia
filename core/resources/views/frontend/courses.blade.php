@@ -56,7 +56,8 @@
                     <!-- Single Room -->
                     <div class="single-room">
                       <div class="room-thumb d-block">
-                        <a href="/user/applicationForm">
+                      <!-- href="/user/applicationForm"  -->
+                        <a href="{{ url('courseDetails', ['id' => $courseInfo->id]) }}">
                           <img class="lazy" data-src="{{ asset('assets/img/rooms/' . '1640079042.jpg') }}" alt="course">
                         </a>
                       </div>
@@ -74,7 +75,7 @@
               </div>
             @endif
             <div class="row">
-                <div class="col-12">{{$courses->links()}}</div>
+              <div class="col-12">{{$courses->links()}}</div>
             </div>
           </div>
         </div>
