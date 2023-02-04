@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('pageHeading')
-  {{__('Course Details')}}
+  {{__('Room Details')}}
 @endsection
 
 <!-- @php
@@ -18,12 +18,12 @@
     <section class="breadcrumb-area d-flex align-items-center position-relative bg-img-center lazy" data-bg="{{ asset('assets/img/' . $breadcrumbInfo->breadcrumb) }}" >
       <div class="container">
         <div class="breadcrumb-content text-center">
-          <h1>{{ strlen($courseDetails->name) > 30 ? mb_substr($courseDetails->name, 0, 30, 'utf-8') . '...' : $courseDetails->name }}</h1>
+          <h1>{{ strlen($roomDetails->name) > 30 ? mb_substr($roomDetails->name, 0, 30, 'utf-8') . '...' : $roomDetails->name }}</h1>
 
           <ul class="list-inline">
             <li><a href="{{ route('index') }}">{{ __('Home') }}</a></li>
             <li><i class="far fa-angle-double-right"></i></li>
-            <li>Course Details</li>
+            <li>Room Details</li>
           </ul>
         </div>
       </div>
@@ -42,7 +42,7 @@
                   <div class="post-thumb-slider">
 
                     <div class="main-slider">
-                      @foreach ($courseDetails as $image)
+                      @foreach ($roomDetails as $image)
                         <div class="single-img">
                           <img src="{{ asset('assets/img/rooms/slider_images/' . '6264e67c95ee5.jpg') }}" alt="Image">
                         </div>
@@ -50,7 +50,7 @@
                     </div>
 
                     <div class="dots-slider row">
-                      @foreach ($courseDetails as $image)
+                      @foreach ($roomDetails as $image)
                         <div class="single-dots">
                           <img src="{{ asset('assets/img/rooms/slider_images/' . '6264e67c95ee5.jpg') }}" alt="image">
                         </div>
@@ -58,9 +58,9 @@
                     </div>
                   </div>
                 </div>
-                <p id="room-id" class="d-none">{{ $courseDetails->id }}</p>
+                <p id="room-id" class="d-none">{{ $roomDetails->id }}</p>
 
-                <h2 class="entry-title">{{ convertUtf8($courseDetails->name) }}</h2>
+                <h2 class="entry-title">{{ convertUtf8($roomDetails->name) }}</h2>
               </div>
 
               <div class="room-details-tab">
@@ -69,41 +69,10 @@
                   <div class="col">
                     <div class="tab-content desc-tab-content">
                       <div role="tabpanel" class="tab-pane fade in active show" id="desc">
-                        <h5 class="tab-title">{{ __('Course Details') }}</h5>
+                        <h5 class="tab-title">{{ __('Room Details') }}</h5>
                         <div class="entry-content">
-                          <p>{!! replaceBaseUrl($courseDetails->description, 'summernote') !!}</p>
+                          <p>{!! replaceBaseUrl($roomDetails->description, 'summernote') !!}</p>
                         </div>
-                        
-                        <div class="table-responsive">
-                          <table class="table table-striped mt-3" id="basic-datatables">
-                            <thead>
-                              <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Batch Name</th>
-                                <th scope="col">Location</th>
-                                <th scope="col">Start Date</th>
-                                <th scope="col">End Date</th>
-                                <th scope="col">Description</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              @foreach ($courseDetails->getBatches as $batch)
-                                <tr>
-                                  <td>{{ $loop->iteration }}</td>
-                                  <td>{{ $batch->name }}</td>
-                                  <td>{{ $batch->location }}</td>
-                                  <td>{{ $batch->startDate }}</td>
-                                  <td>{{ $batch->endDate }}</td>
-                                  <td>{{ $batch->description }}</td>
-                                </tr>
-                              @endforeach
-                            </tbody>
-                          </table>
-                        </div>
-
-
-
-
                       </div>
                     </div>
                   </div>
@@ -126,23 +95,12 @@
 
                 <form action="{{ route('room_booking') }}" method="POST" enctype="multipart/form-data">
                   @csrf
-                  <input type="hidden" name="courseId" value="{{ $courseDetails->id }}">
-
-                  <div class="mb-2">
-                    <div class="input-wrap">
-                      <select class="nice-select" name="batch">
-                        <option selected disabled>Select Batch</option>
-                        @foreach ($courseDetails->getBatches as $batch)
-                          <option value="{{ $batch->id }}"> {{ $loop->iteration }} - {{ $batch->name }}</option>
-                        @endforeach
-                      </select>
-                    </div>
-                  </div>
+                  <input type="hidden" name="courseId" value="{{ $roomDetails->id }}">
 
                   <div class="mt-4">
                     <div class="input-wrap">
                       <button type="submit" class="btn filled-btn btn-block">
-                        Enroll Now <i class="far fa-long-arrow-right"></i>
+                        Book Now <i class="far fa-long-arrow-right"></i>
                       </button>
                     </div>
                   </div>
