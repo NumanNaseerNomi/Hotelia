@@ -24,6 +24,6 @@ class RoomsController extends Controller
     $data['courseDetails'] = CoursesModel::findOrFail($id);
     $data['breadcrumbInfo'] = MiscellaneousTrait::getBreadcrumb();
     $data['pageHeading'] = "Room Details";
-    return view('frontend.courseDetails', $data);
+    return view('frontend.roomDetails', $data);
   }
 }
