@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\BackEnd;
 
-use App\Models\BatchesModel;
 use App\Models\CoursesModel;
 use Illuminate\Http\Request;
 use App\Models\StudentsModel;
