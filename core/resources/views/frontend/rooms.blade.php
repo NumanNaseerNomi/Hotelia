@@ -56,8 +56,9 @@
                     <!-- Single Room -->
                     <div class="single-room">
                       <div class="room-thumb d-block">
-                        <img class="lazy" data-src="{{ asset('assets/img/rooms/' . '1640079042.jpg') }}" alt="room">
-                        <!-- <img class="lazy" data-src="{{ asset('assets/img/rooms/' . $roomInfo->id) }}" alt="room"> -->
+                        <a href="/user/applicationForm">
+                          <img class="lazy" data-src="{{ asset('assets/img/rooms/' . '1640079042.jpg') }}" alt="room">
+                        </a>
                       </div>
 
                       <div class="room-desc">
