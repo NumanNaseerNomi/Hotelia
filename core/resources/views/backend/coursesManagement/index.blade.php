@@ -73,10 +73,11 @@
                           </td>
                           <td>
                             @if($course->isRegistrationEnabled)
-                              <span class="badge bg-success">Registration Enabled</span>
+                              <span class="badge bg-success m-1">Registration Enabled</span>
                             @endif
+                            <br/>
                             @if($course->registrationFee)
-                              <span class="badge bg-success">Registration Fee Enabled ({{ $course->registrationFee }})</span>
+                              <span class="badge bg-success m-1">Registration Fee Enabled ({{ $course->registrationFee }})</span>
                             @endif
                           </td>
                           <td>{{ $course->description }}</td>
