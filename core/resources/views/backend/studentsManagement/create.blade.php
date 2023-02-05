@@ -52,20 +52,20 @@
               </div>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-12">
               <div class="form-group">
                 <label for="">Batch*</label>
                 <select class="form-control" name="batchId">
                   <option selected disabled>Select Batch</option>
                   @foreach($batches as $batch)
-                    <option value="{{ $batch->id }}">{{ $batch->name }}</option>
+                    <option value="{{ $batch->id }}">{{ $batch->name }} ({{ $batch->getCourse->name }}) ({{ $batch->startDate }} - {{ $batch->endDate }})</option>
                   @endforeach
                 </select>
                 <p id="err_batchId" class="mt-2 mb-0 text-danger em"></p>
               </div>
             </div>
 
-            <div class="col-lg-6">
+            <!-- <div class="col-lg-6">
               <div class="form-group">
                 <label for="">Course*</label>
                 <select class="form-control" name="courseId">
@@ -76,7 +76,7 @@
                 </select>
                 <p id="err_courseId" class="mt-2 mb-0 text-danger em"></p>
               </div>
-            </div>
+            </div> -->
 
           </div>
         </form>
