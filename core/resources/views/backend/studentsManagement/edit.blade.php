@@ -22,7 +22,7 @@
 
             <div class="col-lg-6">
               <div class="form-group">
-                <label for="">First Last Name*</label>
+                <label for="">Last Name*</label>
                 <input type="text" id="in_lastName" class="form-control" name="lastName" placeholder="Enter Last Name">
                 <p id="editErr_lastName" class="mt-2 mb-0 text-danger em"></p>
               </div>
