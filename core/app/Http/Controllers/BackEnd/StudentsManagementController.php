@@ -72,7 +72,13 @@ class StudentsManagementController extends Controller
 
   public function delete($id)
   {
-    StudentsModel::findOrFail($id)->delete();
+    DB::transaction(function () use ($id)
+      {
+        $student = StudentsModel::findOrFail($id);
+        BatchStudentsModel::where('studentId', $student->id)->delete();
+        $student->delete();
+      }
+    );
     return back()->with('success', 'Student deleted successfully!');
   }
 }
