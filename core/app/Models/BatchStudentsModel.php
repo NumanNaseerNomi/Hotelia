@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BatchStudentsModelModel extends Model
+class BatchStudentsModel extends Model
 {
   use HasFactory;
 
-  protected $table = 'BatchStudentsModel';
+  protected $table = 'BatchStudents';
   protected $fillable = ['batchId', 'studentId'];
 }
